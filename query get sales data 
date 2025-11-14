@@ -1,0 +1,261 @@
+SELECT 
+    outlet AS "Outlet",
+    namaoutlet AS "Nama Outlet",
+    namakota AS "Wilayah",
+    tgl_trx AS "Tanggal Trx",
+    DATE_FORMAT(waktu, '%H:%i:%S') AS "Waktu Trx",
+    no_trx AS "No. Trx",
+    kode_promo AS "Kode Promo",
+    namapemesan AS "Nama Customer",
+    phone AS "Phone",
+    remark AS "Remark",
+    kode AS "SKU",
+    nama_sku AS "Nama SKU",
+    kategori.kategori AS "SKU Category",
+    CASE 
+        WHEN RIGHT(LEFT(kode,6),1) = '1' THEN '20x20'
+        WHEN RIGHT(LEFT(kode,6),1) = '2' THEN '20x40'
+        WHEN RIGHT(LEFT(kode,6),1) = '3' THEN '30x40'
+        WHEN RIGHT(LEFT(kode,6),1) = '4' THEN '40x60'
+        WHEN RIGHT(LEFT(kode,6),1) = '5' THEN 'Ind'
+        WHEN RIGHT(LEFT(kode,6),1) = '6' THEN '10x20'
+        ELSE 'Other' 
+    END AS "SKU Size",
+    harga AS "Price",
+    qty AS "Qty",
+    sub_total AS "Gross Sales",
+    diskon_sku AS "Discount",
+    sub_total - diskon_sku AS "Nett Sales",
+    channel AS "Channel"
+FROM (
+    SELECT 
+        tgl_trx,
+        waktu,
+        outlet,
+        namaoutlet,
+        kode,
+        nama_sku,
+        sub_total,
+        qty,
+        diskon_sku,
+        COALESCE(stc.channel, src.channel) AS channel,
+        kode_promo,
+        namapemesan,
+        tlptujuan,
+        remark,
+        namakota,
+        no_trx,
+        harga,
+        phone
+    FROM (
+        SELECT
+            storage_transaksi.id,
+            6 AS kodedb_id,
+            storage_transaksi.outlet,
+            storage_transaksi.tgl_trx,
+            storage_transaksi.waktu,
+            storage_transaksi.namapemesan,
+            storage_transaksi.tlptujuan,
+            storage_transaksi.bruto,
+            storage_transaksi.diskon_rupiah,
+            storage_transaksi.netto,
+            storage_transaksi.remark,
+            storage_transaksi.no_trx,
+            storage_transaksi.kode_promo,
+            outlet.kodeoutlet,
+            outlet.namaoutlet,
+            storage_transaksi_detail.kode AS kode,
+            storage_transaksi_detail.nama AS nama_sku,
+            storage_transaksi_detail.harga,
+            storage_transaksi_detail.qty,
+            (storage_transaksi.diskon_rupiah * (storage_transaksi_detail.qty * storage_transaksi_detail.harga) / storage_transaksi.bruto) AS diskon_sku,
+            storage_transaksi_detail.qty * storage_transaksi_detail.harga AS sub_total,
+            kota.namakota,
+            tempo.customer.nama,
+            tempo.customer.alamat,
+            tempo.customer.phone,
+            tempo.customer.customer_gender,
+            tempo.customer.customer_dob,
+            CASE 
+                WHEN jenistrx IN ('4','8') THEN
+                    CASE 
+                        WHEN alamattujuan = '8' THEN 'B2B'
+                        WHEN storage_transaksi.remark LIKE '%WE%' THEN 'Web'
+                        WHEN storage_transaksi.remark LIKE '%INV2%' THEN 'App'
+                        ELSE 'Chococall'
+                    END
+                WHEN storage_transaksi.nomember IN ('568792', '517298') THEN 'GOFOOD'
+                WHEN storage_transaksi.nomember IN ('1009134', '589021', '807227') THEN 'GRABFOOD'
+                WHEN storage_transaksi.nomember = '587249' THEN 'ECOMMERCE - Tokopedia'
+                WHEN storage_transaksi.nomember IN ('582950','641591') THEN 'SHOPEE FOOD'
+                WHEN storage_transaksi.nomember = '904831' THEN 'ECOMMERCE - SHOPEE MALL'
+                WHEN storage_transaksi.nomember = '898724' THEN 'Tik Tok'
+                WHEN jenistrx = '1' THEN 'Walk In'
+                ELSE 'Others'
+            END AS channel
+        FROM dci.storage_transaksi
+        JOIN dci.storage_transaksi_detail ON storage_transaksi.no_trx = storage_transaksi_detail.no_trx
+        JOIN master.outlet ON storage_transaksi.outlet = outlet.kodeoutlet
+        JOIN master.kota ON outlet.kota = kota.id
+        LEFT JOIN tempo.customer 
+               ON storage_transaksi.nomember_app = tempo.customer.nomember
+              AND storage_transaksi.nomember = tempo.customer.id
+        WHERE storage_transaksi.spoil = 0 
+          AND storage_transaksi.compliment = 0
+          AND (storage_transaksi.outlet != 'XC' OR storage_transaksi.outlet != 'XT')
+          AND storage_transaksi.tgl_trx BETWEEN DATE '2025-10-01' AND DATE '2025-10-31'
+          AND jenistrx IN ('1','4','8')
+          AND storage_transaksi.status NOT IN ('0', '')
+          AND storage_transaksi.outlet IN (
+                SELECT kodeoutlet
+                FROM master.outlet
+                WHERE (franchise != 1 
+                       AND jenis_outlet IN ('', '1', '2') 
+                       AND kodeoutlet NOT IN ('XX', 'XB'))
+                   OR (jenis_outlet = '5' AND status = '1')
+          )
+
+        UNION
+
+        SELECT
+            storage_transaksi.id,
+            0 AS kodedb_id,
+            storage_transaksi.outlet,
+            storage_transaksi.tgl_trx,
+            storage_transaksi.waktu,
+            storage_transaksi.namapemesan,
+            storage_transaksi.tlptujuan,
+            storage_transaksi.bruto,
+            storage_transaksi.diskon_rupiah,
+            storage_transaksi.netto,
+            storage_transaksi.remark,
+            storage_transaksi.no_trx,
+            storage_transaksi.kode_promo,
+            outlet.kodeoutlet,
+            outlet.namaoutlet,
+            storage_transaksi_detail.kode AS sku,
+            storage_transaksi_detail.nama AS nama_sku,
+            storage_transaksi_detail.harga,
+            storage_transaksi_detail.qty,
+            (storage_transaksi.diskon_rupiah * (storage_transaksi_detail.qty * storage_transaksi_detail.harga) / storage_transaksi.bruto) AS diskon_sku,
+            storage_transaksi_detail.qty * storage_transaksi_detail.harga AS sub_total,
+            kota.namakota,
+            tempo.customer.nama,
+            tempo.customer.alamat,
+            tempo.customer.phone,
+            tempo.customer.customer_gender,
+            tempo.customer.customer_dob,
+            CASE 
+                WHEN jenistrx IN ('4','8') THEN
+                    CASE 
+                        WHEN alamattujuan = '8' THEN 'B2B'
+                        WHEN storage_transaksi.remark LIKE '%WE%' THEN 'Web'
+                        WHEN storage_transaksi.remark LIKE '%INV2%' THEN 'App'
+                        ELSE 'Chococall'
+                    END
+                WHEN storage_transaksi.nomember IN ('568792', '517298') THEN 'GOFOOD'
+                WHEN storage_transaksi.nomember IN ('1009134', '589021', '807227') THEN 'GRABFOOD'
+                WHEN storage_transaksi.nomember = '587249' THEN 'ECOMMERCE - Tokopedia'
+                WHEN storage_transaksi.nomember IN ('582950','641591') THEN 'SHOPEE FOOD'
+                WHEN storage_transaksi.nomember = '904831' THEN 'ECOMMERCE - SHOPEE MALL'
+                WHEN storage_transaksi.nomember = '898724' THEN 'Tik Tok'
+                WHEN jenistrx = '1' THEN 'Walk In'
+                ELSE 'Others'
+            END AS channel
+        FROM tempo.storage_transaksi
+        JOIN tempo.storage_transaksi_detail ON storage_transaksi.no_trx = storage_transaksi_detail.no_trx
+        JOIN master.outlet ON storage_transaksi.outlet = outlet.kodeoutlet
+        JOIN master.kota ON outlet.kota = kota.id
+        LEFT JOIN tempo.customer 
+               ON storage_transaksi.nomember_app = tempo.customer.nomember
+              AND storage_transaksi.nomember = tempo.customer.id
+        WHERE storage_transaksi.spoil = 0 
+          AND storage_transaksi.compliment = 0
+          AND (storage_transaksi.outlet != 'XC' OR storage_transaksi.outlet != 'XT')
+          AND storage_transaksi.tgl_trx BETWEEN DATE '2025-10-01' AND DATE '2025-10-31'
+          AND jenistrx IN ('1','4','8')
+          AND storage_transaksi.status NOT IN ('0', '')
+          AND storage_transaksi.outlet IN (
+                SELECT kodeoutlet
+                FROM master.outlet
+                WHERE (franchise != 1 
+                       AND jenis_outlet IN ('', '1', '2') 
+                       AND kodeoutlet NOT IN ('XX', 'XB'))
+                   OR (jenis_outlet = '5' AND status = '1')
+          )
+
+        UNION
+
+        SELECT
+            storage_transaksi.id,
+            0 AS kodedb_id,
+            storage_transaksi.outlet,
+            storage_transaksi.tgl_trx,
+            storage_transaksi.waktu,
+            storage_transaksi.namapemesan,
+            storage_transaksi.tlptujuan,
+            storage_transaksi.bruto,
+            storage_transaksi.diskon_rupiah,
+            storage_transaksi.netto,
+            storage_transaksi.remark,
+            storage_transaksi.no_trx,
+            storage_transaksi.kode_promo,
+            outlet.kodeoutlet,
+            outlet.namaoutlet,
+            storage_transaksi_detail.kode AS sku,
+            storage_transaksi_detail.nama AS nama_sku,
+            storage_transaksi_detail.harga,
+            storage_transaksi_detail.qty,
+            (storage_transaksi.diskon_rupiah * (storage_transaksi_detail.qty * storage_transaksi_detail.harga) / storage_transaksi.bruto) AS diskon_sku,
+            storage_transaksi_detail.qty * storage_transaksi_detail.harga AS sub_total,
+            kota.namakota,
+            tempo.customer.nama,
+            tempo.customer.alamat,
+            tempo.customer.phone,
+            tempo.customer.customer_gender,
+            tempo.customer.customer_dob,
+            CASE 
+                WHEN jenistrx IN ('4','8') THEN
+                    CASE 
+                        WHEN alamattujuan = '8' THEN 'B2B'
+                        WHEN storage_transaksi.remark LIKE '%WE%' THEN 'Web'
+                        WHEN storage_transaksi.remark LIKE '%INV2%' THEN 'App'
+                        ELSE 'Chococall'
+                    END
+                WHEN storage_transaksi.nomember IN ('568792', '517298') THEN 'GOFOOD'
+                WHEN storage_transaksi.nomember IN ('1009134', '589021', '807227') THEN 'GRABFOOD'
+                WHEN storage_transaksi.nomember = '587249' THEN 'ECOMMERCE - Tokopedia'
+                WHEN storage_transaksi.nomember IN ('582950','641591') THEN 'SHOPEE FOOD'
+                WHEN storage_transaksi.nomember = '904831' THEN 'ECOMMERCE - SHOPEE MALL'
+                WHEN storage_transaksi.nomember = '898724' THEN 'Tik Tok'
+                WHEN jenistrx = '1' THEN 'Walk In'
+                ELSE 'Others'
+            END AS channel
+        FROM sistemsurabaya.storage_transaksi
+        JOIN sistemsurabaya.storage_transaksi_detail ON storage_transaksi.no_trx = storage_transaksi_detail.no_trx
+        JOIN master.outlet ON storage_transaksi.outlet = outlet.kodeoutlet
+        JOIN master.kota ON outlet.kota = kota.id
+        LEFT JOIN tempo.customer 
+               ON storage_transaksi.nomember_app = tempo.customer.nomember
+              AND storage_transaksi.nomember = tempo.customer.id
+        WHERE storage_transaksi.spoil = 0 
+          AND storage_transaksi.compliment = 0
+          AND (storage_transaksi.outlet != 'XC' OR storage_transaksi.outlet != 'XT')
+          AND storage_transaksi.tgl_trx BETWEEN DATE '2025-10-01' AND DATE '2025-10-31'
+          AND jenistrx IN ('1','4','8')
+          AND storage_transaksi.status NOT IN ('0', '')
+          AND storage_transaksi.outlet IN (
+                SELECT kodeoutlet
+                FROM master.outlet
+                WHERE (franchise != 1 
+                       AND jenis_outlet IN ('', '1', '2') 
+                       AND kodeoutlet NOT IN ('XX', 'XB'))
+                   OR (jenis_outlet = '5' AND status = '1')
+          )
+    ) AS src
+    LEFT JOIN dci.storage_transaksi_channel stc 
+           ON src.id = stc.storage_transaksi_id 
+          AND src.kodedb_id = stc.kodedb_id
+) AS storage_transaksi
+JOIN master.kategori ON LEFT(kode,2) = kategori.no
+WHERE 1=1;

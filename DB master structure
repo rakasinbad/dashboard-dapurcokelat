@@ -1,0 +1,3619 @@
+-- master.acc_account_code definition
+
+CREATE TABLE `acc_account_code` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `account_code` varchar(30) NOT NULL DEFAULT '',
+  `account_name` varchar(50) NOT NULL DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.acc_account_code_penjualan definition
+
+CREATE TABLE `acc_account_code_penjualan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `account_code` varchar(30) NOT NULL DEFAULT '',
+  `account_name` varchar(50) NOT NULL DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.acc_currency definition
+
+CREATE TABLE `acc_currency` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `currency_code` varchar(30) NOT NULL DEFAULT '',
+  `currency_name` varchar(50) NOT NULL DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.acc_customer_code definition
+
+CREATE TABLE `acc_customer_code` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_code` varchar(30) NOT NULL DEFAULT '',
+  `customer_name` varchar(50) NOT NULL DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.acc_dept_code definition
+
+CREATE TABLE `acc_dept_code` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dept_code` varchar(30) NOT NULL DEFAULT '',
+  `dept_name` varchar(50) NOT NULL DEFAULT '',
+  `sys_code` varchar(20) NOT NULL DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.acc_dept_code_1 definition
+
+CREATE TABLE `acc_dept_code_1` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dept_code` varchar(30) NOT NULL DEFAULT '',
+  `dept_name` varchar(50) NOT NULL DEFAULT '',
+  `sys_code` varchar(30) NOT NULL DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `sys_code_parent` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.acc_produk_jasa definition
+
+CREATE TABLE `acc_produk_jasa` (
+  `code` varchar(10) NOT NULL,
+  `name` varchar(250) DEFAULT NULL,
+  `status` varchar(1) DEFAULT '0',
+  PRIMARY KEY (`code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.acc_sales_jasa definition
+
+CREATE TABLE `acc_sales_jasa` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jasa_code` varchar(30) NOT NULL DEFAULT '',
+  `jasa_name` varchar(50) NOT NULL DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.acc_unit definition
+
+CREATE TABLE `acc_unit` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `unit_code` varchar(30) NOT NULL DEFAULT '',
+  `unit_name` varchar(50) NOT NULL DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.acc_warehouse_code definition
+
+CREATE TABLE `acc_warehouse_code` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `wh_code` varchar(30) NOT NULL DEFAULT '',
+  `wh_name` varchar(50) NOT NULL DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.acc_warehouse_code_1 definition
+
+CREATE TABLE `acc_warehouse_code_1` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `wh_code` varchar(30) NOT NULL DEFAULT '',
+  `wh_name` varchar(50) NOT NULL DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.alamat_outlet definition
+
+CREATE TABLE `alamat_outlet` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kodeoutlet` varchar(10) NOT NULL DEFAULT '',
+  `namaoutlet` varchar(64) NOT NULL DEFAULT '',
+  `ip` varchar(16) NOT NULL DEFAULT '',
+  `db` varchar(24) NOT NULL DEFAULT '',
+  `namapc` varchar(24) NOT NULL DEFAULT '',
+  `ip_printer` varbinary(24) NOT NULL DEFAULT '',
+  `namaprinter` varchar(32) NOT NULL DEFAULT '',
+  `jml_char` varchar(3) NOT NULL DEFAULT '40',
+  `addres` varchar(512) NOT NULL DEFAULT '',
+  `provinsi` varchar(60) NOT NULL DEFAULT '',
+  `kota` varchar(64) NOT NULL DEFAULT '',
+  `kec` varchar(64) NOT NULL DEFAULT '',
+  `kel` varchar(64) NOT NULL DEFAULT '',
+  `zip_code` varchar(64) NOT NULL DEFAULT '',
+  `phone` varchar(16) NOT NULL DEFAULT '',
+  `chococall` varchar(16) NOT NULL DEFAULT '',
+  `id_pt` char(2) NOT NULL DEFAULT '',
+  `email` varchar(64) NOT NULL DEFAULT '',
+  `status` int(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=500 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.anak definition
+
+CREATE TABLE `anak` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `item` varchar(10) NOT NULL DEFAULT '',
+  `child` varchar(10) NOT NULL DEFAULT '',
+  `qty` varchar(10) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.apikey definition
+
+CREATE TABLE `apikey` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `apikey` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `project` varchar(100) NOT NULL,
+  `status` char(1) NOT NULL DEFAULT '1',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.app_benefit definition
+
+CREATE TABLE `app_benefit` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `icon` varchar(100) NOT NULL DEFAULT '',
+  `judul` varchar(50) NOT NULL DEFAULT '',
+  `isi` varchar(250) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.app_event definition
+
+CREATE TABLE `app_event` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(64) NOT NULL DEFAULT '',
+  `kode` varchar(25) NOT NULL DEFAULT '',
+  `mulai` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `sampai` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `image` varchar(150) NOT NULL DEFAULT '',
+  `imagetype` varchar(10) NOT NULL DEFAULT 'image',
+  `imagewidth` int(11) NOT NULL DEFAULT 200,
+  `imageheight` int(11) NOT NULL DEFAULT 200,
+  `maxitem` int(2) NOT NULL DEFAULT 0,
+  `maxperitem` char(3) NOT NULL DEFAULT '1',
+  `style` char(1) NOT NULL DEFAULT '2',
+  `status` char(1) NOT NULL DEFAULT '1',
+  `imagenotif` varchar(150) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.app_event_area definition
+
+CREATE TABLE `app_event_area` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(25) NOT NULL DEFAULT '',
+  `urut` int(1) NOT NULL DEFAULT 1,
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.app_event_customer definition
+
+CREATE TABLE `app_event_customer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_id` int(11) NOT NULL DEFAULT 0,
+  `cust_id` int(11) NOT NULL DEFAULT 0,
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19419 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.app_event_date definition
+
+CREATE TABLE `app_event_date` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_id` int(11) NOT NULL DEFAULT 0,
+  `tgl` date NOT NULL DEFAULT '0000-00-00',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.app_event_outlet definition
+
+CREATE TABLE `app_event_outlet` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_id` int(11) NOT NULL DEFAULT 0,
+  `kode` varchar(10) NOT NULL DEFAULT '',
+  `nama` varchar(64) NOT NULL DEFAULT '',
+  `addr` varchar(150) NOT NULL DEFAULT '',
+  `phone` varchar(20) NOT NULL DEFAULT '',
+  `lat` varchar(20) NOT NULL DEFAULT '',
+  `lng` varchar(20) NOT NULL DEFAULT '',
+  `image` varchar(150) NOT NULL DEFAULT '',
+  `area` varchar(2) NOT NULL DEFAULT '1',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=148 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.app_event_product definition
+
+CREATE TABLE `app_event_product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_id` int(11) NOT NULL DEFAULT 0,
+  `item_code` varchar(10) NOT NULL DEFAULT '',
+  `nama` varchar(30) NOT NULL DEFAULT '',
+  `ukuran` varchar(25) NOT NULL DEFAULT '',
+  `harga` varchar(10) NOT NULL DEFAULT '0',
+  `keterangan` mediumtext NOT NULL,
+  `image` varchar(250) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.app_event_product_stock definition
+
+CREATE TABLE `app_event_product_stock` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_id` int(11) NOT NULL DEFAULT 0,
+  `item_code` varchar(10) NOT NULL DEFAULT '',
+  `outlet` char(10) NOT NULL DEFAULT '',
+  `quota` varchar(6) NOT NULL DEFAULT '0',
+  `sold` varchar(3) NOT NULL DEFAULT '0',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5063 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.app_event_time definition
+
+CREATE TABLE `app_event_time` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_id` int(11) NOT NULL DEFAULT 0,
+  `jam` time NOT NULL DEFAULT '00:00:00',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.app_faq definition
+
+CREATE TABLE `app_faq` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tanya` varchar(100) NOT NULL DEFAULT '',
+  `jawab` varchar(1000) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.app_jenis_kategori_produk definition
+
+CREATE TABLE `app_jenis_kategori_produk` (
+  `kategori_id` int(11) NOT NULL AUTO_INCREMENT,
+  `kategori_name` varchar(20) NOT NULL DEFAULT '',
+  `kategori_status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`kategori_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.app_jenis_varian_produk definition
+
+CREATE TABLE `app_jenis_varian_produk` (
+  `varian_id` int(11) NOT NULL AUTO_INCREMENT,
+  `varian_name` varchar(20) NOT NULL DEFAULT '',
+  `varian_status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`varian_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.app_notif definition
+
+CREATE TABLE `app_notif` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `custid` int(11) NOT NULL,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `tipe` varchar(20) NOT NULL DEFAULT '',
+  `judul` varchar(50) NOT NULL DEFAULT '',
+  `isi` varchar(250) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.app_statik_content definition
+
+CREATE TABLE `app_statik_content` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jenis` varchar(50) NOT NULL DEFAULT '',
+  `isi` text NOT NULL,
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.area definition
+
+CREATE TABLE `area` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `area` varchar(30) NOT NULL DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.auths definition
+
+CREATE TABLE `auths` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `last_activity` datetime DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `auths_email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.bahanbaku definition
+
+CREATE TABLE `bahanbaku` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kategori` varchar(250) NOT NULL DEFAULT '',
+  `item` varchar(250) NOT NULL DEFAULT '',
+  `name` varchar(250) NOT NULL DEFAULT '',
+  `brand` varchar(250) NOT NULL DEFAULT '',
+  `buy_unit` varchar(250) NOT NULL DEFAULT '',
+  `buy_packing` varchar(250) NOT NULL DEFAULT '',
+  `buy_content` varchar(250) NOT NULL DEFAULT '0',
+  `cost_unit` varchar(250) NOT NULL DEFAULT '',
+  `konversi` varchar(250) NOT NULL DEFAULT '1',
+  `req_unit` varchar(250) NOT NULL DEFAULT '',
+  `req_packing` varchar(250) NOT NULL DEFAULT '',
+  `disc` varchar(250) NOT NULL DEFAULT '0',
+  `price` varchar(250) NOT NULL DEFAULT '0',
+  `supplier` varchar(250) NOT NULL DEFAULT '',
+  `editedby` varchar(250) NOT NULL DEFAULT '',
+  `edited_datetime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `status` varchar(250) NOT NULL DEFAULT '',
+  `defaul` varchar(10) NOT NULL DEFAULT '',
+  `unitusage` varchar(250) NOT NULL DEFAULT '',
+  `convusage` varchar(10) NOT NULL DEFAULT '',
+  `buaran` char(1) NOT NULL DEFAULT '0',
+  `kranggan` char(1) NOT NULL DEFAULT '0',
+  `surabaya` char(1) NOT NULL DEFAULT '0',
+  `pekanbaru` char(1) NOT NULL DEFAULT '0',
+  `makassar` char(1) NOT NULL DEFAULT '0',
+  `defaulkranggan` varchar(10) NOT NULL DEFAULT '',
+  `defaulsurabaya` varchar(10) NOT NULL DEFAULT '',
+  `defaulpekanbaru` varchar(10) NOT NULL DEFAULT '',
+  `defaulmakassar` varchar(10) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  KEY `item` (`item`),
+  KEY `buaran` (`buaran`),
+  KEY `kranggan` (`kranggan`),
+  KEY `surabaya` (`surabaya`),
+  KEY `pekanbaru` (`pekanbaru`),
+  KEY `makassar` (`makassar`)
+) ENGINE=InnoDB AUTO_INCREMENT=978 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.bank_kode definition
+
+CREATE TABLE `bank_kode` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode_bank` varchar(12) NOT NULL DEFAULT '',
+  `nama_bank` varchar(48) NOT NULL DEFAULT '',
+  `nama_panjang` varchar(128) NOT NULL DEFAULT '',
+  `icon` varchar(128) NOT NULL DEFAULT '',
+  `status` char(1) DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.bin_card definition
+
+CREATE TABLE `bin_card` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `bin` char(16) NOT NULL DEFAULT '',
+  `keterangan` varchar(64) NOT NULL DEFAULT '',
+  `jenis` varchar(32) NOT NULL DEFAULT '',
+  `bank` varchar(32) NOT NULL DEFAULT '',
+  `bank_code` char(6) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.bs definition
+
+CREATE TABLE `bs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `item` varchar(250) NOT NULL DEFAULT '',
+  `brand` varchar(250) NOT NULL DEFAULT '',
+  `disc` varchar(250) NOT NULL DEFAULT '0',
+  `price` varchar(250) NOT NULL DEFAULT '0',
+  `supplier` varchar(250) NOT NULL DEFAULT '',
+  `defaul` varchar(10) NOT NULL DEFAULT '',
+  `produksi` varchar(20) NOT NULL DEFAULT '',
+  `namabarang` varchar(140) NOT NULL DEFAULT '',
+  `produsen` varchar(64) NOT NULL DEFAULT '',
+  `negara` varchar(50) NOT NULL DEFAULT '',
+  `halal` varchar(50) NOT NULL DEFAULT '',
+  `halal_cert` varchar(64) NOT NULL DEFAULT '',
+  `expdate_sjh` date NOT NULL DEFAULT '0000-00-00',
+  KEY `id` (`id`),
+  KEY `defaul` (`defaul`,`produksi`),
+  KEY `produksi` (`produksi`),
+  KEY `item` (`item`)
+) ENGINE=InnoDB AUTO_INCREMENT=8049 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.bundling definition
+
+CREATE TABLE `bundling` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode` varchar(10) NOT NULL,
+  `paket` varchar(250) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=192 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.catatanlog definition
+
+CREATE TABLE `catatanlog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `nama` varchar(100) NOT NULL DEFAULT '',
+  `keterangan` varchar(255) NOT NULL DEFAULT '',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10740 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.chillnbox_item definition
+
+CREATE TABLE `chillnbox_item` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(50) NOT NULL DEFAULT '',
+  `item_code` varchar(10) NOT NULL DEFAULT '',
+  `sku` varchar(10) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.chillnbox_outlet definition
+
+CREATE TABLE `chillnbox_outlet` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `outlet` varchar(20) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.chillnbox_parstok definition
+
+CREATE TABLE `chillnbox_parstok` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(50) NOT NULL DEFAULT '',
+  `item_code` varchar(10) NOT NULL DEFAULT '',
+  `sku` varchar(10) NOT NULL DEFAULT '',
+  `minstok` int(11) NOT NULL DEFAULT 0,
+  `parstok` int(11) NOT NULL DEFAULT 0,
+  `outlet` varchar(20) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=361 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.ci_session definition
+
+CREATE TABLE `ci_session` (
+  `id` varchar(128) NOT NULL,
+  `ip_address` varchar(45) NOT NULL,
+  `timestamp` int(10) unsigned NOT NULL DEFAULT 0,
+  `data` blob NOT NULL,
+  KEY `ci_session_timestamp` (`timestamp`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.creditlist definition
+
+CREATE TABLE `creditlist` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idcustomer` varchar(10) NOT NULL,
+  `tglbuku` date NOT NULL,
+  `trxdate` datetime NOT NULL,
+  `trxno` varchar(26) NOT NULL,
+  `jmlcredit` varchar(50) NOT NULL,
+  `status` varchar(10) NOT NULL,
+  `jenis` varchar(10) NOT NULL,
+  `paidtrx` varchar(50) NOT NULL DEFAULT '',
+  `paiddate` date NOT NULL,
+  `cash` varchar(20) NOT NULL DEFAULT '',
+  `trf` varchar(20) NOT NULL DEFAULT '',
+  `debit` varchar(20) NOT NULL DEFAULT '',
+  `cc` varchar(20) NOT NULL DEFAULT '',
+  `wo` varchar(20) NOT NULL DEFAULT '',
+  `emp` varchar(20) NOT NULL DEFAULT '',
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=48740 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.data_corporate_chococall definition
+
+CREATE TABLE `data_corporate_chococall` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title_pt` varchar(128) NOT NULL DEFAULT '',
+  `nama_pt` varchar(128) NOT NULL DEFAULT '',
+  `npwp_pt` varchar(64) NOT NULL DEFAULT '',
+  `tlp_pt` varchar(20) NOT NULL DEFAULT '',
+  `alamat_pt` text NOT NULL,
+  `date_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `user_created` varchar(64) NOT NULL DEFAULT '',
+  `outlet` varchar(64) NOT NULL DEFAULT '',
+  `tipe_bisnis` varchar(24) NOT NULL DEFAULT '',
+  `id_customer` varchar(11) NOT NULL DEFAULT '',
+  `integrasi` int(1) NOT NULL DEFAULT 0,
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=231 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.data_expedisi definition
+
+CREATE TABLE `data_expedisi` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(32) NOT NULL DEFAULT '',
+  `url_icon` varchar(64) NOT NULL DEFAULT '',
+  `keterangan` varchar(256) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.dataipdboutlet definition
+
+CREATE TABLE `dataipdboutlet` (
+  `kode` char(2) NOT NULL DEFAULT '',
+  `ipserver` varchar(15) NOT NULL DEFAULT '10.8.0.',
+  `ipkasir` varchar(15) NOT NULL DEFAULT '10.8.0.',
+  `userdb` varchar(10) NOT NULL DEFAULT 'root',
+  `passdb` varchar(20) NOT NULL DEFAULT 'dc',
+  `namadb` varchar(20) NOT NULL DEFAULT 'pos',
+  `dbpusat` varchar(20) NOT NULL DEFAULT 'tempo',
+  `status` char(1) NOT NULL DEFAULT '1',
+  UNIQUE KEY `kode` (`kode`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.delivery definition
+
+CREATE TABLE `delivery` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `delivery` varchar(50) NOT NULL,
+  `kode_area` char(2) NOT NULL DEFAULT '1',
+  `franchise` char(1) NOT NULL DEFAULT '1',
+  `lokasidb` varchar(32) NOT NULL DEFAULT '',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.delivery_chanelorder definition
+
+CREATE TABLE `delivery_chanelorder` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jenis` char(2) NOT NULL DEFAULT '',
+  `chanel_order` varchar(140) NOT NULL DEFAULT '',
+  `keterangan` varchar(140) NOT NULL DEFAULT '',
+  `kategori` varchar(32) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `status` (`status`,`keterangan`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.delivery_dci definition
+
+CREATE TABLE `delivery_dci` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `delivery` varchar(50) NOT NULL,
+  `kode_area` char(2) NOT NULL DEFAULT '1',
+  `franchise` char(1) NOT NULL DEFAULT '1',
+  `lokasidb` varchar(32) NOT NULL DEFAULT '',
+  `center_of_lat` varchar(32) NOT NULL DEFAULT '',
+  `center_of_lng` varchar(32) NOT NULL DEFAULT '',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.delivery_jeniscustomer definition
+
+CREATE TABLE `delivery_jeniscustomer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jenis` char(2) NOT NULL DEFAULT '',
+  `nama_customer` varchar(32) NOT NULL DEFAULT '',
+  `keterangan` varchar(128) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.demos definition
+
+CREATE TABLE `demos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `data` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.departments definition
+
+CREATE TABLE `departments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(250) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` datetime DEFAULT NULL,
+  `code` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.deposit definition
+
+CREATE TABLE `deposit` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL,
+  `idmutasi` varchar(18) NOT NULL,
+  `idcustomer` varchar(10) NOT NULL,
+  `masuk` varchar(10) NOT NULL,
+  `keluar` varchar(10) NOT NULL,
+  `idkasir` varchar(3) NOT NULL,
+  `kodeoutlet` char(3) NOT NULL,
+  `notrxcredit` varchar(64) NOT NULL,
+  `status` char(1) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=242785 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.discount_budget definition
+
+CREATE TABLE `discount_budget` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `target_date` date NOT NULL,
+  `channel` varchar(100) NOT NULL,
+  `budget` bigint(20) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.emoney_to_outlet definition
+
+CREATE TABLE `emoney_to_outlet` (
+  `id_emoney` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_emoney` varchar(128) NOT NULL DEFAULT '',
+  `lokasidb` varchar(128) NOT NULL DEFAULT '',
+  `outlet` varchar(256) NOT NULL DEFAULT '',
+  `aktif` char(1) NOT NULL DEFAULT '1',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_emoney`)
+) ENGINE=InnoDB AUTO_INCREMENT=1009137 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.faspayva definition
+
+CREATE TABLE `faspayva` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `tgl` date NOT NULL DEFAULT '0000-00-00',
+  `no` varchar(5) NOT NULL DEFAULT '',
+  `merchant_id` varchar(10) NOT NULL DEFAULT '',
+  `merchant_name` varchar(30) NOT NULL DEFAULT '',
+  `channel` varchar(50) NOT NULL DEFAULT '',
+  `trx_id` varchar(20) NOT NULL DEFAULT '',
+  `bill_no` varchar(30) NOT NULL DEFAULT '',
+  `refference_id` varchar(100) NOT NULL DEFAULT '',
+  `customer_name` varchar(100) NOT NULL DEFAULT '',
+  `customer_email` varchar(100) NOT NULL DEFAULT '',
+  `bill_refference` varchar(100) NOT NULL DEFAULT '',
+  `trx_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `payment_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `amount` varchar(20) NOT NULL DEFAULT '',
+  `payment_total` varchar(20) NOT NULL DEFAULT '',
+  `status` varchar(30) NOT NULL DEFAULT '',
+  `stat` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8334 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.fiber_storage definition
+
+CREATE TABLE `fiber_storage` (
+  `k` varchar(64) NOT NULL DEFAULT '',
+  `v` blob NOT NULL,
+  `e` bigint(20) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`k`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.harga_kopi definition
+
+CREATE TABLE `harga_kopi` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_code` varchar(10) NOT NULL DEFAULT '',
+  `outlet` varchar(10) NOT NULL DEFAULT '',
+  `harga` varchar(10) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.history_point definition
+
+CREATE TABLE `history_point` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `waktu_int` int(11) NOT NULL DEFAULT 0,
+  `idcustomer` int(11) NOT NULL DEFAULT 0,
+  `masuk` int(11) NOT NULL DEFAULT 0,
+  `keluar` int(11) NOT NULL DEFAULT 0,
+  `sisa` int(11) NOT NULL DEFAULT 0,
+  `no_trx` varchar(64) NOT NULL DEFAULT '',
+  `jenis` char(1) NOT NULL DEFAULT '1',
+  `remark` varchar(256) NOT NULL DEFAULT '',
+  `outlet` varchar(10) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `idcustomer` (`idcustomer`),
+  KEY `gabungan1` (`no_trx`,`jenis`,`status`,`idcustomer`)
+) ENGINE=InnoDB AUTO_INCREMENT=247314 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.history_point_copy definition
+
+CREATE TABLE `history_point_copy` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `waktu_int` int(11) NOT NULL DEFAULT 0,
+  `idcustomer` int(11) NOT NULL DEFAULT 0,
+  `masuk` int(11) NOT NULL DEFAULT 0,
+  `keluar` int(11) NOT NULL DEFAULT 0,
+  `sisa` int(11) NOT NULL DEFAULT 0,
+  `no_trx` varchar(32) NOT NULL DEFAULT '',
+  `jenis` char(1) NOT NULL DEFAULT '1',
+  `remark` varchar(256) NOT NULL DEFAULT '',
+  `outlet` varchar(10) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `idcustomer` (`idcustomer`)
+) ENGINE=InnoDB AUTO_INCREMENT=625 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.history_point_log definition
+
+CREATE TABLE `history_point_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `waktu_int` int(11) NOT NULL DEFAULT 0,
+  `id_history_point` int(11) NOT NULL DEFAULT 0,
+  `jenis` char(1) NOT NULL DEFAULT '1',
+  `mutasi` int(11) NOT NULL DEFAULT 0,
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=143967 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.hpp definition
+
+CREATE TABLE `hpp` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `item` varchar(10) DEFAULT '',
+  `hpp` float DEFAULT 0,
+  `area` int(11) DEFAULT 1,
+  `status` tinyint(1) DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=187 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.ingredients definition
+
+CREATE TABLE `ingredients` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `item` varchar(11) DEFAULT NULL,
+  `revisi` int(2) DEFAULT NULL,
+  `tgl` datetime DEFAULT NULL,
+  `divisi` varchar(64) DEFAULT NULL,
+  `harga_jual` varchar(16) DEFAULT NULL,
+  `qty_item` varchar(16) DEFAULT NULL,
+  `unit_item` varchar(128) DEFAULT NULL,
+  `komposisi` varchar(11) DEFAULT NULL,
+  `qty_kom` varchar(16) DEFAULT NULL,
+  `unit_kom` varchar(128) DEFAULT NULL,
+  `method` varchar(128) DEFAULT NULL,
+  `explanation` varchar(512) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1433 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.insert_settled_pusat definition
+
+CREATE TABLE `insert_settled_pusat` (
+  `int` int(11) NOT NULL AUTO_INCREMENT,
+  `kodeoutlet` varchar(3) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`int`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.invoice_orderdlv definition
+
+CREATE TABLE `invoice_orderdlv` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `no_inv` varchar(32) NOT NULL,
+  `tgl_bikin` datetime NOT NULL,
+  `due_date` datetime NOT NULL,
+  `id_customer` int(12) NOT NULL,
+  `nama_customer` varchar(64) NOT NULL,
+  `alamat` varchar(256) NOT NULL,
+  `nama_inv` varchar(64) DEFAULT NULL,
+  `alamat_inv` varchar(256) DEFAULT NULL,
+  `company` varchar(64) DEFAULT NULL,
+  `telephone` varchar(16) NOT NULL,
+  `total` varchar(12) NOT NULL,
+  `status` int(1) NOT NULL,
+  `paid_date` datetime NOT NULL,
+  `user_paid` varchar(64) NOT NULL,
+  `user_create` varchar(64) NOT NULL,
+  `delivery` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3394 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.invoice_orderdlv_detail definition
+
+CREATE TABLE `invoice_orderdlv_detail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `no_inv` varchar(32) DEFAULT NULL,
+  `no_order` varchar(32) DEFAULT NULL,
+  `tgl_order` datetime DEFAULT NULL,
+  `tgl_kirim` datetime DEFAULT NULL,
+  `nama_by` varchar(128) DEFAULT NULL,
+  `nama_to` varchar(128) DEFAULT NULL,
+  `alamat_to` varchar(512) DEFAULT NULL,
+  `subtotal` varchar(12) DEFAULT NULL,
+  `diskon` varchar(12) DEFAULT NULL,
+  `compliment` varchar(12) DEFAULT NULL,
+  `promo` varchar(12) DEFAULT NULL,
+  `tax` varchar(12) DEFAULT NULL,
+  `delcharge` varchar(12) DEFAULT NULL,
+  `total` varchar(12) DEFAULT NULL,
+  `status` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25400 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.invoice_voucher definition
+
+CREATE TABLE `invoice_voucher` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `no_inv` varchar(18) NOT NULL,
+  `ot_tertagih` varchar(2) NOT NULL,
+  `total` varchar(16) NOT NULL,
+  `date_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `duedate` date NOT NULL DEFAULT '0000-00-00',
+  `creator` varchar(24) NOT NULL,
+  `status` char(1) NOT NULL,
+  `date_paid` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_cancel` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `jenis` char(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.invoice_voucher_detail definition
+
+CREATE TABLE `invoice_voucher_detail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` datetime NOT NULL,
+  `no_inv` varchar(16) NOT NULL,
+  `novoucher` varchar(12) NOT NULL,
+  `outlet` varchar(2) NOT NULL,
+  `tgl_jual` datetime NOT NULL,
+  `nama` varchar(64) DEFAULT NULL,
+  `telp` varchar(16) DEFAULT NULL,
+  `nilai` varchar(9) NOT NULL,
+  `status` char(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.itemcode definition
+
+CREATE TABLE `itemcode` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kategoriutama` char(1) NOT NULL DEFAULT '',
+  `kategori` varchar(250) NOT NULL DEFAULT '',
+  `item` varchar(250) NOT NULL DEFAULT '',
+  `name` varchar(250) NOT NULL DEFAULT '',
+  `buy_unit` varchar(250) NOT NULL DEFAULT '',
+  `buy_packing` varchar(250) NOT NULL DEFAULT '',
+  `buy_content` varchar(250) NOT NULL DEFAULT '0',
+  `cost_unit` varchar(250) NOT NULL DEFAULT '',
+  `konversi` varchar(250) NOT NULL DEFAULT '1',
+  `req_unit` varchar(250) NOT NULL DEFAULT '',
+  `req_packing` varchar(250) NOT NULL DEFAULT '',
+  `convusage` varchar(10) NOT NULL DEFAULT '',
+  `unitusage` varchar(250) NOT NULL DEFAULT '',
+  `status` varchar(250) NOT NULL DEFAULT '',
+  `buaran` char(1) NOT NULL DEFAULT '0',
+  `kranggan` char(1) NOT NULL DEFAULT '0',
+  `surabaya` char(1) NOT NULL DEFAULT '0',
+  `pekanbaru` char(1) NOT NULL DEFAULT '0',
+  `makassar` char(1) NOT NULL DEFAULT '0',
+  `edited_datetime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `editedby` varchar(250) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  KEY `item` (`item`),
+  KEY `status` (`status`),
+  KEY `buaran` (`buaran`),
+  KEY `kranggan` (`kranggan`),
+  KEY `surabaya` (`surabaya`),
+  KEY `pekanbaru` (`pekanbaru`),
+  KEY `makassar` (`makassar`),
+  KEY `kategoriutama` (`kategoriutama`)
+) ENGINE=InnoDB AUTO_INCREMENT=1136 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.itemkonversi definition
+
+CREATE TABLE `itemkonversi` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode` varchar(10) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.jenis_outlet definition
+
+CREATE TABLE `jenis_outlet` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jo_jenis` varchar(2) NOT NULL DEFAULT '',
+  `jo_name` varchar(128) NOT NULL DEFAULT '',
+  `jo_status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.jenis_trxonline definition
+
+CREATE TABLE `jenis_trxonline` (
+  `idcustomer` int(11) NOT NULL,
+  `nama_tampilan` varchar(128) NOT NULL DEFAULT '',
+  `namatujuan` varchar(128) NOT NULL DEFAULT '',
+  `thumbnail` varchar(128) NOT NULL DEFAULT '',
+  `area` varchar(128) NOT NULL DEFAULT '',
+  `outlet` varchar(256) NOT NULL DEFAULT '',
+  `outlet_kecuali` varchar(256) NOT NULL DEFAULT '',
+  `kategori` varchar(32) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`idcustomer`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.jenistrx_pos definition
+
+CREATE TABLE `jenistrx_pos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jenistrx` char(2) NOT NULL DEFAULT '',
+  `label` varchar(32) NOT NULL DEFAULT '',
+  `deskripsi` text NOT NULL,
+  `status` char(1) NOT NULL DEFAULT '1',
+  `status_report` char(10) NOT NULL DEFAULT 'AKTIF',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.jobdetail definition
+
+CREATE TABLE `jobdetail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dept` varchar(100) NOT NULL DEFAULT '',
+  `deskripsi` varchar(250) NOT NULL DEFAULT '',
+  `orderdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `targetdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `startdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `finishdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `status` int(1) NOT NULL DEFAULT 1,
+  `kategori` varchar(100) NOT NULL DEFAULT '',
+  `requestor` varchar(100) NOT NULL DEFAULT '',
+  `subdept` varchar(100) NOT NULL DEFAULT '',
+  `pic` varchar(100) NOT NULL DEFAULT '',
+  `picvendor` varchar(100) NOT NULL DEFAULT '',
+  `keterangan` text NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.kategori definition
+
+CREATE TABLE `kategori` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `no` varchar(4) NOT NULL DEFAULT '',
+  `kategori` varchar(250) NOT NULL,
+  `status` char(1) NOT NULL DEFAULT '1',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=148 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.kodedb definition
+
+CREATE TABLE `kodedb` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `namadb` varchar(20) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.kodeposdlv definition
+
+CREATE TABLE `kodeposdlv` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode` int(7) NOT NULL,
+  `nama` varchar(60) NOT NULL,
+  `kodepos` int(5) NOT NULL,
+  `area` varchar(60) NOT NULL,
+  `kelurahan` varchar(60) NOT NULL,
+  `kecamatan` varchar(60) NOT NULL,
+  `wilayah` varchar(60) NOT NULL,
+  `del_kode` int(5) DEFAULT NULL,
+  `kodeoutlet` varchar(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15967 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.kodeposdlvmlg definition
+
+CREATE TABLE `kodeposdlvmlg` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kelurahan` varchar(30) NOT NULL,
+  `kecamatan` varchar(30) NOT NULL,
+  `area` varchar(30) NOT NULL,
+  `kodepos` varchar(10) NOT NULL,
+  `outlet` varchar(20) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.kodeposdlvsby definition
+
+CREATE TABLE `kodeposdlvsby` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kelurahan` varchar(30) NOT NULL,
+  `kecamatan` varchar(30) NOT NULL,
+  `area` varchar(30) NOT NULL,
+  `kodepos` varchar(10) NOT NULL,
+  `outlet` varchar(20) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.kodeposlengkap definition
+
+CREATE TABLE `kodeposlengkap` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `KODEPOS` varchar(255) NOT NULL,
+  `KELURAHAN` varchar(255) NOT NULL,
+  `KECAMATAN` varchar(255) NOT NULL,
+  `KATEGORI` varchar(255) NOT NULL,
+  `KABUPATEN` varchar(255) NOT NULL,
+  `PROVINSI` varchar(255) NOT NULL,
+  `kodekota` char(1) NOT NULL,
+  `delcharge` varchar(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ID`),
+  KEY `kodepos` (`KODEPOS`)
+) ENGINE=InnoDB AUTO_INCREMENT=2421 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.konversi definition
+
+CREATE TABLE `konversi` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dari` varchar(10) NOT NULL DEFAULT '',
+  `ke` varchar(10) NOT NULL DEFAULT '',
+  `qty` varchar(20) NOT NULL DEFAULT '',
+  `jenis` varchar(10) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=586 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.konversi_bundling definition
+
+CREATE TABLE `konversi_bundling` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tujuan` varchar(9) NOT NULL DEFAULT '',
+  `butuh` varchar(9) NOT NULL DEFAULT '',
+  `namakonversi` varchar(64) NOT NULL DEFAULT '',
+  `qty` varchar(3) NOT NULL DEFAULT '1',
+  `jenis_outlet` char(1) NOT NULL DEFAULT '1',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.konversi_bundling_detail definition
+
+CREATE TABLE `konversi_bundling_detail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tujuan` varchar(9) NOT NULL DEFAULT '',
+  `dari` varchar(9) NOT NULL DEFAULT '',
+  `qty` varchar(9) NOT NULL DEFAULT '',
+  `unit` varchar(14) NOT NULL DEFAULT '',
+  `status` char(2) NOT NULL DEFAULT '1',
+  `wajib` int(2) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=679 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.konversi_sku definition
+
+CREATE TABLE `konversi_sku` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kodedc` varchar(10) NOT NULL,
+  `sku` varchar(16) NOT NULL,
+  `owner` varchar(3) NOT NULL DEFAULT '',
+  `jenis` char(1) NOT NULL DEFAULT '1',
+  `status` char(1) NOT NULL DEFAULT '1',
+  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `user_created` varchar(32) NOT NULL DEFAULT '',
+  `last_edit` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `user_edit` varchar(32) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.konversibebas definition
+
+CREATE TABLE `konversibebas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tujuan` varchar(20) NOT NULL DEFAULT '',
+  `dari` varchar(20) NOT NULL DEFAULT '',
+  `qty` varchar(10) NOT NULL DEFAULT '',
+  `unit` varchar(50) NOT NULL DEFAULT '',
+  `status` varchar(10) NOT NULL DEFAULT '1',
+  `namakonversi` varchar(100) NOT NULL DEFAULT '',
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=292 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.konversibebas_garnis definition
+
+CREATE TABLE `konversibebas_garnis` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tujuan` varchar(20) NOT NULL,
+  `dari` varchar(20) NOT NULL,
+  `qty` varchar(10) NOT NULL,
+  `unit` varchar(50) NOT NULL,
+  `status` varchar(10) NOT NULL,
+  `namakonversi` varchar(100) NOT NULL,
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.konversizahir definition
+
+CREATE TABLE `konversizahir` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode` varchar(15) NOT NULL DEFAULT '',
+  `conv` varchar(15) NOT NULL DEFAULT '',
+  `unit` varchar(15) NOT NULL DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.koordinatoutlet definition
+
+CREATE TABLE `koordinatoutlet` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode` char(2) NOT NULL DEFAULT '',
+  `lat` varchar(50) NOT NULL DEFAULT '',
+  `lng` varchar(50) NOT NULL DEFAULT '',
+  `area` char(1) NOT NULL DEFAULT '',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.kota definition
+
+CREATE TABLE `kota` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `namakota` varchar(50) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.ktp_17agustus definition
+
+CREATE TABLE `ktp_17agustus` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `nomember_app` varchar(11) NOT NULL DEFAULT '',
+  `nomember_pos` varchar(11) NOT NULL DEFAULT '',
+  `phone` varchar(16) NOT NULL DEFAULT '',
+  `jenis_id` varchar(3) NOT NULL DEFAULT '',
+  `nik` varchar(16) NOT NULL DEFAULT '',
+  `foto_ktp` varchar(128) NOT NULL DEFAULT '',
+  `no_trx` varchar(32) NOT NULL DEFAULT '',
+  `namakasir` varchar(64) NOT NULL DEFAULT '',
+  `outlet` varchar(3) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=461 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.latlng definition
+
+CREATE TABLE `latlng` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode` char(12) NOT NULL DEFAULT '',
+  `nama` varchar(50) NOT NULL DEFAULT '',
+  `lat` varchar(20) NOT NULL DEFAULT '',
+  `lng` varchar(20) NOT NULL DEFAULT '',
+  `area` char(2) NOT NULL DEFAULT '',
+  `jenis` char(1) NOT NULL DEFAULT '1',
+  `page_id` int(11) NOT NULL DEFAULT 0,
+  `status` char(1) NOT NULL DEFAULT '1',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=241 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.log definition
+
+CREATE TABLE `log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `log` varchar(5000) NOT NULL DEFAULT '',
+  `waktu` datetime DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1256158 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.log_closing definition
+
+CREATE TABLE `log_closing` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tgl_trx` date NOT NULL DEFAULT '0000-00-00',
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `report` text DEFAULT NULL,
+  `outlet` varchar(10) NOT NULL DEFAULT '',
+  `level_error` char(1) NOT NULL DEFAULT '0',
+  `status` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=220968 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.log_editcustomer definition
+
+CREATE TABLE `log_editcustomer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `data` text NOT NULL,
+  `outlet` varchar(32) NOT NULL DEFAULT '',
+  `user` varchar(32) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1961 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.log_editdata definition
+
+CREATE TABLE `log_editdata` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `data` text NOT NULL,
+  `outlet` char(32) NOT NULL DEFAULT '',
+  `jenislog` char(2) NOT NULL DEFAULT '',
+  `user` varchar(32) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=398 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.log_print_struk definition
+
+CREATE TABLE `log_print_struk` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `notrx` varchar(32) NOT NULL DEFAULT '',
+  `outlet` varchar(10) NOT NULL DEFAULT '',
+  `jenis` char(1) NOT NULL DEFAULT '',
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `notrx` (`notrx`)
+) ENGINE=InnoDB AUTO_INCREMENT=4300196 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.logwa_callcenter definition
+
+CREATE TABLE `logwa_callcenter` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `sender` varchar(16) NOT NULL DEFAULT '',
+  `name` varchar(64) NOT NULL DEFAULT '',
+  `conv_id` varchar(128) NOT NULL DEFAULT '',
+  `chat_id` varchar(128) NOT NULL DEFAULT '',
+  `type` varchar(64) NOT NULL DEFAULT '',
+  `media_id` varchar(128) NOT NULL DEFAULT '',
+  `media_caption` text NOT NULL,
+  `media_filepath` varchar(128) NOT NULL DEFAULT '',
+  `is_read` varchar(1) NOT NULL DEFAULT '',
+  `message` text NOT NULL,
+  `whole_message` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.marketplace definition
+
+CREATE TABLE `marketplace` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode` varchar(11) DEFAULT NULL,
+  `tokopedia` varchar(11) NOT NULL DEFAULT '0',
+  `bukalapak` varchar(11) NOT NULL DEFAULT '0',
+  `lazada` varchar(11) NOT NULL DEFAULT '0',
+  `blibli` varchar(11) NOT NULL DEFAULT '0',
+  `shopee` varchar(11) NOT NULL DEFAULT '0',
+  `outlet` varchar(3) NOT NULL DEFAULT '',
+  `status` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1248 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.mb definition
+
+CREATE TABLE `mb` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kategori` varchar(250) NOT NULL DEFAULT '',
+  `item` varchar(250) NOT NULL DEFAULT '',
+  `name` varchar(250) NOT NULL DEFAULT '',
+  `buy_unit` varchar(250) NOT NULL DEFAULT '',
+  `buy_packing` varchar(250) NOT NULL DEFAULT '',
+  `cost_konversi` varchar(250) NOT NULL DEFAULT '1',
+  `cost_unit` varchar(250) NOT NULL DEFAULT '',
+  `req_konversi` varchar(250) NOT NULL DEFAULT '1',
+  `req_unit` varchar(250) NOT NULL DEFAULT '',
+  `req_packing` varchar(250) NOT NULL DEFAULT '',
+  `usage_konversi` varchar(10) NOT NULL DEFAULT '1',
+  `usage_unit` varchar(250) NOT NULL DEFAULT '',
+  `status` varchar(250) NOT NULL DEFAULT '1',
+  `buaran` char(1) NOT NULL DEFAULT '0',
+  `kranggan` char(1) NOT NULL DEFAULT '0',
+  `surabaya` char(1) NOT NULL DEFAULT '0',
+  `pekanbaru` char(1) NOT NULL DEFAULT '0',
+  `makassar` char(1) NOT NULL DEFAULT '0',
+  `semarang` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `item` (`item`),
+  KEY `buaran` (`buaran`),
+  KEY `kranggan` (`kranggan`),
+  KEY `surabaya` (`surabaya`),
+  KEY `pekanbaru` (`pekanbaru`),
+  KEY `makassar` (`makassar`),
+  KEY `req_konversi` (`req_konversi`)
+) ENGINE=InnoDB AUTO_INCREMENT=1287 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.member_sales definition
+
+CREATE TABLE `member_sales` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nomember` int(11) NOT NULL,
+  `kodeoutlet` char(3) NOT NULL,
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.mutasi definition
+
+CREATE TABLE `mutasi` (
+  `id` float NOT NULL AUTO_INCREMENT,
+  `waktu_server` varchar(20) NOT NULL DEFAULT '',
+  `waktu_bank` varchar(20) NOT NULL DEFAULT '',
+  `bank` varchar(10) NOT NULL DEFAULT '',
+  `debet` varchar(15) NOT NULL DEFAULT '',
+  `kredit` varchar(15) NOT NULL DEFAULT '',
+  `saldo` varchar(15) NOT NULL DEFAULT '',
+  `keterangan` varchar(250) NOT NULL DEFAULT '',
+  `status` char(2) NOT NULL DEFAULT '',
+  `noorder` varchar(20) NOT NULL DEFAULT '',
+  `cab` varchar(10) NOT NULL DEFAULT '',
+  KEY `id` (`id`),
+  KEY `waktu_bank` (`waktu_bank`,`bank`,`debet`),
+  KEY `bankndebet` (`bank`,`debet`)
+) ENGINE=InnoDB AUTO_INCREMENT=23024 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.notif definition
+
+CREATE TABLE `notif` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tujuan` char(2) NOT NULL DEFAULT 'IT',
+  `jenis` char(1) NOT NULL DEFAULT '1',
+  `judul` varchar(25) NOT NULL DEFAULT 'Notification',
+  `pesan` varchar(100) NOT NULL DEFAULT 'Pesan Notification',
+  `status` char(1) NOT NULL DEFAULT '1',
+  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `baca` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.opname definition
+
+CREATE TABLE `opname` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `opname_tiket` varchar(255) NOT NULL DEFAULT '',
+  `kode` varchar(50) NOT NULL DEFAULT '',
+  `nama` varchar(250) NOT NULL DEFAULT '',
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `stok` varchar(10) NOT NULL DEFAULT '',
+  `opname` varchar(10) NOT NULL DEFAULT '',
+  `adjust` varchar(10) NOT NULL DEFAULT '',
+  `unit` varchar(50) NOT NULL DEFAULT '',
+  `packaging` varchar(250) NOT NULL DEFAULT '',
+  `namauser` varchar(250) NOT NULL DEFAULT '',
+  `actionby` varchar(250) NOT NULL DEFAULT '',
+  `actiontime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `tipe_opname` varchar(128) NOT NULL DEFAULT 'opname',
+  `status` char(1) NOT NULL DEFAULT '1',
+  `remark` varchar(255) NOT NULL DEFAULT '',
+  `owner` varchar(32) NOT NULL DEFAULT '',
+  KEY `id` (`id`),
+  KEY `owner` (`status`,`owner`),
+  KEY `opname_tiket` (`opname_tiket`)
+) ENGINE=InnoDB AUTO_INCREMENT=626621 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.orderdlv definition
+
+CREATE TABLE `orderdlv` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kodeorder` char(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `outlet` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `created` datetime NOT NULL,
+  `deldate` datetime NOT NULL,
+  `idcustomer` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `namacustomer` varchar(150) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `phonecustomer` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `addrcustomer` varchar(1024) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `namafrom` varchar(150) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `phonefrom` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `addrfrom` varchar(1024) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `namato` varchar(150) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `phoneto` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `addrto` varchar(1024) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '',
+  `total` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `namakasir` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `remark` text NOT NULL,
+  `paymentmethod` varchar(64) NOT NULL,
+  `status` char(1) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `subtotal` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `delcharge` varchar(12) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `delcharge_maps` varchar(12) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `jenisdiskon` char(1) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `diskonpersen` varchar(3) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `diskonrupiah` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `diskon_ongkir` varchar(10) NOT NULL DEFAULT '0',
+  `point_loyalty` varchar(11) NOT NULL DEFAULT '0',
+  `kode_promo` varchar(64) NOT NULL DEFAULT '',
+  `compliment` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `promo` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `netto` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `tax` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `kota` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `kecamatan` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `kelurahan` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `zipcode` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `outletpengirim` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `kotadelivery` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `cash` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `dateread` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `readby` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `dateprint` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `printby` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `datereceived` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `receivedby` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `delman` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `datetrx` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `tgl_trx` date NOT NULL,
+  `trxby` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `trx_no` varchar(36) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `api` varchar(32) NOT NULL DEFAULT '',
+  `distance` varchar(12) NOT NULL DEFAULT '0',
+  `corporate_id` varchar(11) NOT NULL DEFAULT '',
+  `chanel_order_in` varchar(64) NOT NULL DEFAULT '',
+  `jenis_customer` varchar(64) NOT NULL DEFAULT '',
+  `shipper_id` char(3) NOT NULL DEFAULT '',
+  `shipping_status` varchar(32) NOT NULL DEFAULT '',
+  `metode_kirim` varchar(24) NOT NULL DEFAULT '',
+  `jumlah_armada` char(3) NOT NULL DEFAULT '',
+  `paid_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `status_pajak` varchar(64) NOT NULL DEFAULT '',
+  `no_pengajuan_pajak` varchar(64) NOT NULL DEFAULT '',
+  `order_sn_third_party` varchar(225) NOT NULL DEFAULT '',
+  UNIQUE KEY `id` (`id`),
+  KEY `outletnstatus` (`status`,`outletpengirim`,`created`),
+  KEY `paymentmethod` (`paymentmethod`),
+  KEY `namakasir` (`namakasir`),
+  KEY `phonecustomer` (`phonecustomer`),
+  KEY `kodeorder` (`kodeorder`),
+  KEY `trx_no` (`trx_no`),
+  KEY `kode_promo` (`kode_promo`),
+  KEY `deldate` (`deldate`),
+  KEY `faktur_pajak` (`status_pajak`,`no_pengajuan_pajak`)
+) ENGINE=InnoDB AUTO_INCREMENT=218274 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.orderdlv_copy definition
+
+CREATE TABLE `orderdlv_copy` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kodeorder` char(32) NOT NULL,
+  `outlet` char(2) NOT NULL,
+  `created` datetime NOT NULL,
+  `deldate` datetime NOT NULL,
+  `idcustomer` varchar(10) NOT NULL,
+  `namacustomer` varchar(150) NOT NULL,
+  `phonecustomer` varchar(50) NOT NULL,
+  `addrcustomer` varchar(250) NOT NULL,
+  `namafrom` varchar(150) NOT NULL,
+  `phonefrom` varchar(50) NOT NULL,
+  `addrfrom` varchar(250) NOT NULL,
+  `namato` varchar(150) NOT NULL,
+  `phoneto` varchar(50) NOT NULL,
+  `addrto` varchar(250) NOT NULL,
+  `total` varchar(10) NOT NULL,
+  `namakasir` varchar(50) NOT NULL,
+  `remark` varchar(250) NOT NULL,
+  `paymentmethod` char(1) NOT NULL,
+  `status` char(1) NOT NULL,
+  `subtotal` varchar(10) NOT NULL,
+  `delcharge` varchar(10) NOT NULL,
+  `delcharge_maps` varchar(10) DEFAULT NULL,
+  `jenisdiskon` char(1) DEFAULT NULL,
+  `diskonpersen` varchar(3) DEFAULT NULL,
+  `diskonrupiah` varchar(10) DEFAULT NULL,
+  `compliment` varchar(10) DEFAULT NULL,
+  `promo` varchar(10) DEFAULT NULL,
+  `netto` varchar(10) DEFAULT NULL,
+  `tax` varchar(10) DEFAULT NULL,
+  `kota` varchar(50) NOT NULL,
+  `kecamatan` varchar(50) NOT NULL,
+  `kelurahan` varchar(50) NOT NULL,
+  `zipcode` varchar(10) NOT NULL,
+  `outletpengirim` varchar(50) NOT NULL,
+  `kotadelivery` varchar(50) NOT NULL,
+  `cash` varchar(10) NOT NULL,
+  `dateread` datetime NOT NULL,
+  `readby` varchar(50) NOT NULL,
+  `dateprint` datetime NOT NULL,
+  `printby` varchar(50) NOT NULL,
+  `datereceived` datetime NOT NULL,
+  `receivedby` varchar(50) NOT NULL,
+  `delman` varchar(50) NOT NULL,
+  `datetrx` datetime NOT NULL,
+  `tgl_trx` date NOT NULL,
+  `trxby` varchar(50) NOT NULL,
+  `trx_no` varchar(36) NOT NULL,
+  `api` char(3) NOT NULL,
+  UNIQUE KEY `id` (`id`),
+  KEY `outletnstatus` (`status`,`outletpengirim`,`created`),
+  KEY `paymentmethod` (`paymentmethod`),
+  KEY `namakasir` (`namakasir`)
+) ENGINE=InnoDB AUTO_INCREMENT=522 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.orderdlv_detail definition
+
+CREATE TABLE `orderdlv_detail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idorder` char(50) NOT NULL DEFAULT '',
+  `kode` char(8) NOT NULL DEFAULT '',
+  `nama` varchar(500) NOT NULL DEFAULT '',
+  `qty` varchar(6) NOT NULL DEFAULT '',
+  `unit` varchar(50) NOT NULL DEFAULT '',
+  `harga` varchar(10) NOT NULL DEFAULT '',
+  `remark` varchar(400) NOT NULL DEFAULT '',
+  `promotion_val` varchar(10) NOT NULL DEFAULT '0',
+  `promotion_type` varchar(225) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  KEY `idorder` (`idorder`)
+) ENGINE=InnoDB AUTO_INCREMENT=316527 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.orderdlv_detail_copy definition
+
+CREATE TABLE `orderdlv_detail_copy` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idorder` char(32) NOT NULL,
+  `kode` char(8) NOT NULL,
+  `nama` varchar(150) NOT NULL,
+  `qty` varchar(6) NOT NULL,
+  `unit` varchar(50) NOT NULL,
+  `harga` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idorder` (`idorder`)
+) ENGINE=InnoDB AUTO_INCREMENT=79546 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.orderdlv_detail_logedit definition
+
+CREATE TABLE `orderdlv_detail_logedit` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idorder` char(64) NOT NULL,
+  `kode` char(8) NOT NULL,
+  `nama` varchar(500) NOT NULL,
+  `qty` varchar(6) NOT NULL,
+  `unit` varchar(50) NOT NULL,
+  `harga` varchar(10) NOT NULL,
+  `rec` datetime NOT NULL,
+  `edit_by` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idorder` (`idorder`)
+) ENGINE=InnoDB AUTO_INCREMENT=12759 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.orderdlv_detail_pending definition
+
+CREATE TABLE `orderdlv_detail_pending` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idorder` char(32) NOT NULL,
+  `kode` char(8) NOT NULL,
+  `nama` varchar(150) NOT NULL,
+  `qty` varchar(6) NOT NULL,
+  `unit` varchar(50) NOT NULL,
+  `harga` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.orderdlv_payment_method definition
+
+CREATE TABLE `orderdlv_payment_method` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode_payment` char(2) NOT NULL DEFAULT '',
+  `nama` varchar(32) NOT NULL DEFAULT '',
+  `keterangan` varchar(140) NOT NULL DEFAULT '',
+  `status` varchar(12) NOT NULL DEFAULT 'AKTIF',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.orderdlv_pending definition
+
+CREATE TABLE `orderdlv_pending` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `outlet` char(2) NOT NULL,
+  `created` datetime NOT NULL,
+  `deldate` datetime NOT NULL,
+  `idcustomer` varchar(10) NOT NULL,
+  `namacustomer` varchar(150) NOT NULL,
+  `phonecustomer` varchar(50) NOT NULL,
+  `addrcustomer` varchar(250) NOT NULL,
+  `namafrom` varchar(150) NOT NULL,
+  `phonefrom` varchar(50) NOT NULL,
+  `addrfrom` varchar(250) NOT NULL,
+  `namato` varchar(150) NOT NULL,
+  `phoneto` varchar(50) NOT NULL,
+  `addrto` varchar(250) NOT NULL,
+  `namakasir` varchar(50) NOT NULL,
+  `remark` varchar(250) NOT NULL,
+  `paymentmethod` char(1) NOT NULL,
+  `status` char(1) NOT NULL,
+  `subtotal` varchar(10) NOT NULL,
+  `no_order` varchar(20) DEFAULT NULL,
+  `dateproses` datetime DEFAULT NULL,
+  `prosesby` varchar(64) DEFAULT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.orderdlv_shipping definition
+
+CREATE TABLE `orderdlv_shipping` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kodeorder` varchar(50) NOT NULL DEFAULT '',
+  `shipper_id` char(3) NOT NULL DEFAULT '',
+  `delivery_id` varchar(50) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  `status_kirim` varchar(50) NOT NULL DEFAULT '1',
+  `origin_lat` varchar(24) NOT NULL DEFAULT '',
+  `origin_lng` varchar(24) NOT NULL DEFAULT '',
+  `destination_lat` varchar(24) NOT NULL DEFAULT '',
+  `destination_lng` varchar(24) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=952 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.orderdlv_shipping_status definition
+
+CREATE TABLE `orderdlv_shipping_status` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `status_id` int(2) DEFAULT NULL,
+  `shipper_id` int(2) NOT NULL,
+  `nama_status` varchar(32) NOT NULL DEFAULT '',
+  `keterangan` text NOT NULL,
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.outlet definition
+
+CREATE TABLE `outlet` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kodeoutlet` char(10) NOT NULL DEFAULT '',
+  `namaoutlet` varchar(50) NOT NULL DEFAULT '',
+  `guid` varchar(50) NOT NULL DEFAULT '',
+  `kota` char(2) NOT NULL DEFAULT '',
+  `produksi` char(1) NOT NULL DEFAULT '',
+  `warehouse` char(1) NOT NULL DEFAULT '',
+  `delivery` varchar(2) NOT NULL DEFAULT '',
+  `franchise` char(1) NOT NULL DEFAULT '',
+  `jenis_outlet` char(2) NOT NULL DEFAULT '0',
+  `posweb` char(1) NOT NULL DEFAULT '0',
+  `status` char(1) NOT NULL DEFAULT '1',
+  `parent` varchar(4) NOT NULL DEFAULT '',
+  `am` varchar(26) NOT NULL DEFAULT '',
+  `kodedb_id` char(1) NOT NULL DEFAULT '',
+  `npwp` varchar(100) NOT NULL DEFAULT '',
+  `status_cb` char(1) NOT NULL DEFAULT '',
+  `spv` varchar(15) NOT NULL DEFAULT '',
+  `status_report` char(1) NOT NULL DEFAULT '1',
+  `tgl_buka` date NOT NULL DEFAULT '0000-00-00',
+  `tgl_tutup` date NOT NULL DEFAULT '0000-00-00',
+  UNIQUE KEY `id` (`id`),
+  KEY `kodeoutlet` (`kodeoutlet`),
+  KEY `gabung` (`kodeoutlet`,`produksi`),
+  KEY `produksi` (`produksi`,`status`),
+  KEY `kota` (`kota`,`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=244 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.outlet_copy definition
+
+CREATE TABLE `outlet_copy` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kodeoutlet` char(10) NOT NULL,
+  `namaoutlet` varchar(50) NOT NULL,
+  `guid` varchar(50) NOT NULL,
+  `kota` char(2) NOT NULL,
+  `produksi` char(1) NOT NULL,
+  `delivery` varchar(2) NOT NULL,
+  `franchise` char(1) NOT NULL,
+  `jenis_outlet` char(2) NOT NULL DEFAULT '0',
+  `posweb` char(1) NOT NULL DEFAULT '0',
+  `status` char(1) NOT NULL DEFAULT '1',
+  UNIQUE KEY `id` (`id`),
+  KEY `kodeoutlet` (`kodeoutlet`),
+  KEY `gabung` (`kodeoutlet`,`produksi`)
+) ENGINE=InnoDB AUTO_INCREMENT=144 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.packaging_bundling definition
+
+CREATE TABLE `packaging_bundling` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode` varchar(10) NOT NULL DEFAULT '',
+  `paket` varchar(10) NOT NULL DEFAULT '',
+  `qty` varchar(8) NOT NULL DEFAULT '1',
+  `area` varchar(32) NOT NULL DEFAULT '',
+  `outlet` varchar(10) NOT NULL DEFAULT '',
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `status` char(1) NOT NULL DEFAULT '1',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1498 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.page definition
+
+CREATE TABLE `page` (
+  `page_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `template_id` int(10) unsigned NOT NULL DEFAULT 0,
+  `page_parent` int(10) unsigned NOT NULL DEFAULT 0,
+  `page_guid` varchar(200) NOT NULL,
+  `page_created` int(10) unsigned NOT NULL,
+  `page_modified` int(10) unsigned NOT NULL,
+  `page_published` int(10) unsigned NOT NULL,
+  `page_type` tinyint(3) unsigned NOT NULL DEFAULT 0,
+  `page_cover` int(10) unsigned NOT NULL DEFAULT 0,
+  `page_cover_alt` varchar(200) NOT NULL,
+  `page_link_type` varchar(100) NOT NULL,
+  `page_link` varchar(200) NOT NULL,
+  `page_sidebar` varchar(10) NOT NULL DEFAULT 'Hidden',
+  `sidebar_id` int(10) unsigned NOT NULL DEFAULT 0,
+  `page_comment` varchar(10) NOT NULL DEFAULT 'Disable',
+  `page_status` varchar(10) NOT NULL DEFAULT 'Published',
+  `page_position` int(10) unsigned NOT NULL DEFAULT 0,
+  `page_coordinate` varchar(200) NOT NULL,
+  `page_email` text NOT NULL,
+  `page_price` int(10) unsigned NOT NULL DEFAULT 0,
+  `page_code` varchar(255) NOT NULL,
+  PRIMARY KEY (`page_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.payment_history definition
+
+CREATE TABLE `payment_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `kodepayment` varchar(26) NOT NULL,
+  `baris` varchar(4) NOT NULL,
+  `total` varchar(12) NOT NULL,
+  `userpaid` varchar(32) NOT NULL,
+  `status` int(3) NOT NULL,
+  `marketplace` varchar(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4178 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.payment_history_detail definition
+
+CREATE TABLE `payment_history_detail` (
+  `id` int(12) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `kodepayment` varchar(26) NOT NULL,
+  `idcustomer` varchar(26) NOT NULL,
+  `namacustomer` varchar(128) NOT NULL,
+  `tgl_order` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `kodeorder` varchar(26) NOT NULL,
+  `id_creditlist` varchar(10) NOT NULL,
+  `tgl_credit` datetime NOT NULL,
+  `notrx_credit` varchar(26) NOT NULL,
+  `notrx_pelunasan` varchar(26) NOT NULL,
+  `jmlcredit` varchar(12) NOT NULL DEFAULT '0',
+  `outlet` varchar(10) NOT NULL,
+  `paymentmethod` varchar(2) NOT NULL,
+  `status` int(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27447 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.payment_history_detail_copy definition
+
+CREATE TABLE `payment_history_detail_copy` (
+  `id` int(12) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `kodepayment` varchar(26) NOT NULL,
+  `idcustomer` varchar(26) NOT NULL,
+  `namacustomer` varchar(128) NOT NULL,
+  `tgl_order` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `kodeorder` varchar(26) NOT NULL,
+  `id_creditlist` varchar(10) NOT NULL,
+  `tgl_credit` datetime NOT NULL,
+  `notrx_credit` varchar(26) NOT NULL,
+  `notrx_pelunasan` varchar(26) NOT NULL,
+  `jmlcredit` varchar(12) NOT NULL DEFAULT '0',
+  `outlet` varchar(3) NOT NULL,
+  `paymentmethod` varchar(2) NOT NULL,
+  `status` int(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=970 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.pengajuancompliment definition
+
+CREATE TABLE `pengajuancompliment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nocomp` char(18) NOT NULL DEFAULT '',
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `dari` varchar(100) NOT NULL DEFAULT '',
+  `untuk` varchar(100) NOT NULL DEFAULT '',
+  `keterangan` varchar(250) NOT NULL DEFAULT '',
+  `kode` varchar(10) NOT NULL DEFAULT '',
+  `nama` varchar(50) NOT NULL DEFAULT '',
+  `qty` varchar(10) NOT NULL DEFAULT '0',
+  `outlet` char(10) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  `waktu_approval` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `waktu_penggunaan` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `notrx` varchar(30) NOT NULL DEFAULT '',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2325 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.point_cashback definition
+
+CREATE TABLE `point_cashback` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` varchar(32) NOT NULL DEFAULT '',
+  `customer_id` varchar(11) NOT NULL DEFAULT '',
+  `point` int(11) NOT NULL DEFAULT 0,
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `order_id` (`order_id`,`customer_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=324 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.posversion definition
+
+CREATE TABLE `posversion` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `version` varchar(20) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.printer_setting definition
+
+CREATE TABLE `printer_setting` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode_outlet` varchar(10) NOT NULL DEFAULT '',
+  `nama_printer` varchar(64) NOT NULL DEFAULT '',
+  `nama_pos_kasir` varchar(64) NOT NULL DEFAULT '',
+  `vendor_id_printer` varchar(28) NOT NULL DEFAULT '',
+  `jml_char` varchar(2) NOT NULL DEFAULT '48',
+  `created_at` timestamp NOT NULL,
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=141 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.printpos definition
+
+CREATE TABLE `printpos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktuin` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `no_trx` varchar(40) NOT NULL DEFAULT '',
+  `kode` varchar(20) NOT NULL DEFAULT '',
+  `textprint` mediumtext NOT NULL,
+  `waktuout` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `no_trx` (`no_trx`)
+) ENGINE=InnoDB AUTO_INCREMENT=2704071 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.`privileges` definition
+
+CREATE TABLE `privileges` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `privilege` varchar(50) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.produk definition
+
+CREATE TABLE `produk` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `kode` varchar(250) NOT NULL DEFAULT '',
+  `nama` varchar(250) NOT NULL DEFAULT '',
+  `status` varchar(250) NOT NULL DEFAULT '',
+  `batch` varchar(10) NOT NULL DEFAULT '',
+  `unit` varchar(250) NOT NULL DEFAULT '',
+  `convto` varchar(250) NOT NULL DEFAULT '',
+  `convqty` varchar(250) NOT NULL DEFAULT '',
+  `unitusage` varchar(250) NOT NULL DEFAULT '',
+  `convusage` varchar(10) NOT NULL DEFAULT '',
+  `buaran` char(1) NOT NULL DEFAULT '1',
+  `kranggan` char(1) NOT NULL DEFAULT '1',
+  `surabaya` char(1) NOT NULL DEFAULT '1',
+  `pekanbaru` char(1) NOT NULL DEFAULT '1',
+  `makassar` char(1) NOT NULL DEFAULT '1',
+  `semarang` char(1) NOT NULL DEFAULT '1',
+  `panjang` char(10) NOT NULL DEFAULT '1',
+  `lebar` char(10) NOT NULL DEFAULT '1',
+  `tinggi` char(10) NOT NULL DEFAULT '1',
+  `volume_matrix` varchar(12) NOT NULL DEFAULT '1',
+  UNIQUE KEY `id` (`id`),
+  KEY `status` (`status`),
+  KEY `gabung` (`kode`,`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=1876 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.produk1 definition
+
+CREATE TABLE `produk1` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `kode` varchar(250) NOT NULL DEFAULT '',
+  `nama` varchar(250) NOT NULL DEFAULT '',
+  `status` varchar(250) NOT NULL DEFAULT '',
+  `batch` varchar(10) NOT NULL DEFAULT '',
+  `unit` varchar(250) NOT NULL DEFAULT '',
+  `convto` varchar(250) NOT NULL,
+  `convqty` varchar(250) NOT NULL,
+  `unitusage` varchar(250) NOT NULL DEFAULT '',
+  `convusage` varchar(10) NOT NULL DEFAULT '',
+  UNIQUE KEY `id` (`id`),
+  KEY `status` (`status`),
+  KEY `gabung` (`kode`,`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=692 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.produk_copy definition
+
+CREATE TABLE `produk_copy` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `kode` varchar(250) NOT NULL DEFAULT '',
+  `nama` varchar(250) NOT NULL DEFAULT '',
+  `status` varchar(250) NOT NULL DEFAULT '',
+  `batch` varchar(10) NOT NULL DEFAULT '',
+  `unit` varchar(250) NOT NULL DEFAULT '',
+  `convto` varchar(250) NOT NULL,
+  `convqty` varchar(250) NOT NULL,
+  `unitusage` varchar(250) NOT NULL DEFAULT '',
+  `convusage` varchar(10) NOT NULL DEFAULT '',
+  `buaran` char(1) NOT NULL DEFAULT '1',
+  `kranggan` char(1) NOT NULL DEFAULT '1',
+  `surabaya` char(1) NOT NULL DEFAULT '1',
+  `pekanbaru` char(1) NOT NULL DEFAULT '1',
+  `makassar` char(1) NOT NULL DEFAULT '1',
+  UNIQUE KEY `id` (`id`),
+  KEY `status` (`status`),
+  KEY `gabung` (`kode`,`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=966 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.produkposweb definition
+
+CREATE TABLE `produkposweb` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `head` varchar(8) NOT NULL DEFAULT '',
+  `nama` varchar(100) NOT NULL,
+  `image` varchar(200) NOT NULL DEFAULT '',
+  `jenis` char(1) NOT NULL DEFAULT '',
+  `harga` varchar(10) NOT NULL DEFAULT '',
+  `unit` varchar(20) NOT NULL DEFAULT '',
+  `status` varchar(10) NOT NULL DEFAULT 'AKTIF',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.produksi definition
+
+CREATE TABLE `produksi` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `produksi` varchar(50) NOT NULL DEFAULT '',
+  `nama_daerah` varchar(50) NOT NULL DEFAULT '',
+  `lokasidb` varchar(50) NOT NULL DEFAULT '',
+  `nickname_area` varchar(36) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.promo definition
+
+CREATE TABLE `promo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode` varchar(10) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `validfrom` date NOT NULL,
+  `validto` date NOT NULL,
+  `validday` varchar(50) NOT NULL,
+  `validdate` varchar(50) NOT NULL,
+  `validtime` varchar(50) NOT NULL,
+  `validproduk` varchar(250) NOT NULL,
+  `promoorvoucher` char(1) NOT NULL DEFAULT '',
+  `persenrupiah` char(1) NOT NULL,
+  `nilai` varchar(10) NOT NULL,
+  `status` char(1) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.promo_chococall definition
+
+CREATE TABLE `promo_chococall` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kodepromo` varchar(128) NOT NULL DEFAULT '',
+  `tglstart` date NOT NULL DEFAULT '0000-00-00',
+  `tglend` date NOT NULL DEFAULT '0000-00-00',
+  `kategori` char(1) NOT NULL DEFAULT '1',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.promo_days definition
+
+CREATE TABLE `promo_days` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `promo_id` int(11) NOT NULL DEFAULT 0,
+  `day` varchar(225) NOT NULL DEFAULT '',
+  `promocode` varchar(225) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.promo_detail definition
+
+CREATE TABLE `promo_detail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sku_id` varchar(15) NOT NULL DEFAULT '',
+  `kodepromo` varchar(100) NOT NULL DEFAULT '',
+  `condition` varchar(50) NOT NULL DEFAULT '',
+  `condition_value` varchar(50) DEFAULT '',
+  `kelipatan` int(11) NOT NULL DEFAULT 1,
+  `benefit` varchar(50) NOT NULL DEFAULT '',
+  `benefit_value` varchar(50) NOT NULL DEFAULT '',
+  `max_benefit` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3260 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.promo_kopi definition
+
+CREATE TABLE `promo_kopi` (
+  `promo_kopi_id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode_promo` varchar(50) NOT NULL DEFAULT '',
+  `promo_kopi_harga` char(1) NOT NULL DEFAULT '0',
+  `promo_kopi_beban` varchar(3) NOT NULL DEFAULT '0',
+  `promo_kopi_dari` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`promo_kopi_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.promo_to_carabayar definition
+
+CREATE TABLE `promo_to_carabayar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_promopos` char(11) NOT NULL DEFAULT '0',
+  `nama_promopos` varchar(64) NOT NULL DEFAULT '',
+  `cash` char(1) NOT NULL DEFAULT '0',
+  `card1` char(1) NOT NULL DEFAULT '0',
+  `card2` char(1) NOT NULL DEFAULT '0',
+  `trf` char(1) NOT NULL DEFAULT '0',
+  `dp` char(1) NOT NULL DEFAULT '0',
+  `voucher` char(1) NOT NULL DEFAULT '0',
+  `member` char(1) NOT NULL DEFAULT '0',
+  `employee` char(1) NOT NULL DEFAULT '0',
+  `spoil` char(1) NOT NULL DEFAULT '0',
+  `promo` char(1) NOT NULL DEFAULT '0',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.promocode_induk_anak definition
+
+CREATE TABLE `promocode_induk_anak` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `promo_induk_id` int(11) NOT NULL DEFAULT 0,
+  `promo_induk_name` varchar(128) NOT NULL DEFAULT '',
+  `promo_anak_name` varchar(128) NOT NULL DEFAULT '',
+  `promo_anak_jenis` varchar(32) NOT NULL DEFAULT '',
+  `keterangan` varchar(125) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `status` (`promo_induk_name`,`status`),
+  KEY `promo_anak_name` (`promo_anak_name`,`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.promodetail definition
+
+CREATE TABLE `promodetail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `skema` varchar(100) NOT NULL DEFAULT '',
+  `syarat` text NOT NULL DEFAULT '',
+  `produk_terkait` text NOT NULL DEFAULT '',
+  `max_diskon` double NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.promohead definition
+
+CREATE TABLE `promohead` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(100) NOT NULL DEFAULT '',
+  `namatujuan` varchar(100) NOT NULL DEFAULT '-',
+  `berlakudi` varchar(3) NOT NULL DEFAULT 'ALL',
+  `berlakujamawal` time NOT NULL DEFAULT '00:00:00',
+  `berlakujamakhir` time NOT NULL DEFAULT '00:00:00',
+  `berlakuhari` varchar(100) NOT NULL DEFAULT 'ALL',
+  `berlakuperiodeawal` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `berlakuperiodeakhir` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `durasi` varchar(10) DEFAULT '',
+  `jmlpakai` varchar(10) DEFAULT 'UNLIMITED',
+  `produk` varchar(3) NOT NULL DEFAULT 'ALL',
+  `jenis` varchar(10) NOT NULL DEFAULT 'PROMO',
+  `status` char(1) NOT NULL DEFAULT '0',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.promonasional definition
+
+CREATE TABLE `promonasional` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kodepromo` varchar(30) NOT NULL,
+  `status` char(1) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.promooutlet definition
+
+CREATE TABLE `promooutlet` (
+  `idpromo` int(11) NOT NULL,
+  `outlet` char(2) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.promopos definition
+
+CREATE TABLE `promopos` (
+  `idpromo` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(64) NOT NULL DEFAULT 'nama promo',
+  `target` varchar(128) NOT NULL DEFAULT 'prosespromo.php',
+  `outlet` varchar(500) NOT NULL DEFAULT 'XX,',
+  `region` varchar(200) NOT NULL DEFAULT '',
+  `kode_area` varchar(255) NOT NULL DEFAULT '',
+  `keterangan` varchar(512) NOT NULL DEFAULT '',
+  `validstr` date NOT NULL DEFAULT '0000-00-00',
+  `validto` date NOT NULL DEFAULT '0000-00-00',
+  `jenis` varchar(20) NOT NULL DEFAULT 'custom',
+  `idcustomer` varchar(20) NOT NULL DEFAULT '',
+  `ket` varchar(32) NOT NULL DEFAULT '',
+  `nilai` varchar(20) NOT NULL DEFAULT '',
+  `status` int(1) NOT NULL DEFAULT 1,
+  `kategori_promo` char(1) NOT NULL DEFAULT '1',
+  `management_outlet` varchar(3) NOT NULL DEFAULT '',
+  `stack` tinyint(1) NOT NULL DEFAULT 0,
+  `kelipatan` varchar(6) NOT NULL DEFAULT '',
+  `usage` int(11) NOT NULL DEFAULT 0,
+  `is_all_item` varchar(20) NOT NULL DEFAULT '',
+  `type_promo` varchar(255) NOT NULL DEFAULT '',
+  `benefit_all_item_type` varchar(40) NOT NULL DEFAULT '',
+  `benefit_all_item_value` double NOT NULL DEFAULT 0,
+  `benefit_max` double NOT NULL DEFAULT 0,
+  `layer` varchar(50) NOT NULL DEFAULT '',
+  `prerequisite_promo` varchar(50) NOT NULL DEFAULT '',
+  `maf_id` varchar(255) NOT NULL DEFAULT '',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_by` varchar(20) NOT NULL DEFAULT '',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp(),
+  `updated_by` varchar(50) NOT NULL DEFAULT '',
+  `condition_all_type` varchar(50) NOT NULL DEFAULT '',
+  `condition_all_value` double NOT NULL DEFAULT 0,
+  `pre_condition` varchar(100) NOT NULL DEFAULT '',
+  `pre_condition_value` varchar(100) NOT NULL DEFAULT '',
+  `double_stack` varchar(10) NOT NULL DEFAULT '',
+  `promo_day` varchar(5) NOT NULL DEFAULT '',
+  `nama_promo` varchar(100) NOT NULL DEFAULT '',
+  PRIMARY KEY (`idpromo`)
+) ENGINE=InnoDB AUTO_INCREMENT=2508 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.promopos_bundling definition
+
+CREATE TABLE `promopos_bundling` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(255) NOT NULL DEFAULT '',
+  `promo_code` varchar(255) NOT NULL DEFAULT '',
+  `status` int(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.promopos_bundling_produk definition
+
+CREATE TABLE `promopos_bundling_produk` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `promo_code` varchar(255) NOT NULL DEFAULT '',
+  `bundling_code` varchar(255) NOT NULL DEFAULT '',
+  `item_code` varchar(255) NOT NULL DEFAULT '',
+  `parent` varchar(255) NOT NULL DEFAULT '',
+  `qty` int(11) NOT NULL DEFAULT 1,
+  `price` int(11) NOT NULL DEFAULT 0,
+  `status` int(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=680 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.promopos_coupon definition
+
+CREATE TABLE `promopos_coupon` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `promopos_id` int(11) DEFAULT NULL,
+  `database_id` int(11) DEFAULT 6,
+  `storage_transaksi_id` bigint(20) DEFAULT NULL,
+  `no_trx` varchar(255) DEFAULT '',
+  `coupon_code` varchar(100) DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `send_wa` int(1) DEFAULT 0,
+  PRIMARY KEY (`id`),
+  KEY `promopos_coupon_database_id_IDX` (`database_id`) USING BTREE,
+  KEY `promopos_coupon_storage_transaksi_id_IDX` (`storage_transaksi_id`) USING BTREE,
+  KEY `promopos_coupon_coupon_code_IDX` (`coupon_code`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.promopos_coupon_struk definition
+
+CREATE TABLE `promopos_coupon_struk` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `promopos_id` int(11) DEFAULT NULL,
+  `header_1` varchar(40) DEFAULT '',
+  `header_2` varchar(40) DEFAULT '',
+  `detail_1` varchar(40) DEFAULT '',
+  `detail_2` varchar(40) DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.promopos_group definition
+
+CREATE TABLE `promopos_group` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `group_name` varchar(255) DEFAULT NULL,
+  `status` int(11) DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.promopos_group_detail definition
+
+CREATE TABLE `promopos_group_detail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `group_id` int(11) DEFAULT NULL,
+  `child` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `status` tinyint(1) DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=193 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.promopostarget definition
+
+CREATE TABLE `promopostarget` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(20) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.promoproduk definition
+
+CREATE TABLE `promoproduk` (
+  `idpromo` int(11) NOT NULL,
+  `kode` varchar(10) NOT NULL DEFAULT '',
+  `jenis` char(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.promouser definition
+
+CREATE TABLE `promouser` (
+  `idpromo` int(11) NOT NULL,
+  `idcustomer` int(11) NOT NULL,
+  `starttime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `jmlpakai` int(3) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.pt definition
+
+CREATE TABLE `pt` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `deskripsi` varchar(64) NOT NULL DEFAULT '',
+  `namapt` varchar(48) NOT NULL DEFAULT '',
+  `npwp` varchar(32) NOT NULL DEFAULT '',
+  `phone` varchar(24) NOT NULL DEFAULT '',
+  `alamat` varchar(255) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.purchase_request_categories definition
+
+CREATE TABLE `purchase_request_categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=125 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.querylog definition
+
+CREATE TABLE `querylog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL,
+  `jenis` varchar(10) NOT NULL,
+  `query` text NOT NULL,
+  `ip` varchar(30) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=208517 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.rangkumankodeposdlv definition
+
+CREATE TABLE `rangkumankodeposdlv` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `wilayah` varchar(50) NOT NULL,
+  `kelurahan` varchar(50) NOT NULL,
+  `kecamatan` varchar(50) NOT NULL,
+  `kodepos` varchar(10) NOT NULL,
+  `kodeoutlet` varchar(10) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=386 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.rangkumankodeposorderdlv definition
+
+CREATE TABLE `rangkumankodeposorderdlv` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kota` varchar(50) NOT NULL,
+  `kecamatan` varchar(50) NOT NULL,
+  `kelurahan` varchar(50) NOT NULL,
+  `zipcode` varchar(10) NOT NULL,
+  `outletpengirim` varchar(10) NOT NULL,
+  `delcharge` varchar(10) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5343 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.rec_coupon definition
+
+CREATE TABLE `rec_coupon` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `id_cust` int(11) NOT NULL DEFAULT 0,
+  `id_promo` int(11) NOT NULL DEFAULT 0,
+  `phone` varchar(16) NOT NULL DEFAULT '',
+  `code` varchar(64) NOT NULL DEFAULT '',
+  `qr_image` varchar(100) NOT NULL DEFAULT '',
+  `jml_pakai` varchar(3) NOT NULL DEFAULT '0',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=264898 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.rec_dlv_method definition
+
+CREATE TABLE `rec_dlv_method` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `no` int(11) NOT NULL DEFAULT 0,
+  `nilai` varchar(50) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.rec_gender definition
+
+CREATE TABLE `rec_gender` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nilai` varchar(50) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.rec_jenis definition
+
+CREATE TABLE `rec_jenis` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `keterangan` varchar(100) NOT NULL DEFAULT '',
+  `jenis` varbinary(20) NOT NULL DEFAULT '',
+  `kategori` char(1) NOT NULL DEFAULT '1',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.rec_operator definition
+
+CREATE TABLE `rec_operator` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `operator` varchar(10) NOT NULL DEFAULT '',
+  `remark` varchar(50) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.rec_payment_method definition
+
+CREATE TABLE `rec_payment_method` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nilai` varchar(50) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.rec_penggunaan_promo definition
+
+CREATE TABLE `rec_penggunaan_promo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `customer_id` varchar(11) NOT NULL DEFAULT '',
+  `order_id` varchar(32) NOT NULL DEFAULT '',
+  `promo_id` varchar(11) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `gabung1` (`customer_id`,`promo_id`,`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=93960 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.rec_promo definition
+
+CREATE TABLE `rec_promo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) NOT NULL,
+  `jenis` varchar(20) NOT NULL,
+  `operator` varchar(10) NOT NULL,
+  `nilai` varchar(50) NOT NULL,
+  `kategori` char(1) NOT NULL DEFAULT '1',
+  `status` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1057 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.rec_promo_head definition
+
+CREATE TABLE `rec_promo_head` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode` varchar(50) NOT NULL DEFAULT '',
+  `judul` varchar(100) NOT NULL DEFAULT '',
+  `jenis` int(11) NOT NULL DEFAULT 1,
+  `nilai` float NOT NULL DEFAULT 0,
+  `mintotalqty` int(11) NOT NULL DEFAULT 0,
+  `mintotalnilai` int(11) NOT NULL DEFAULT 0,
+  `maxnilai` int(11) NOT NULL DEFAULT 0,
+  `maxitemqty` int(11) NOT NULL DEFAULT 0,
+  `maxtotalqty` int(11) NOT NULL DEFAULT 0,
+  `quota` int(11) NOT NULL DEFAULT 0,
+  `quotasisa` int(11) NOT NULL DEFAULT 0,
+  `jumlah_pakai` int(3) NOT NULL DEFAULT 0,
+  `bundling` char(1) NOT NULL DEFAULT '0',
+  `file_proses` varchar(200) NOT NULL DEFAULT 'contoh_namafile',
+  `image` varchar(200) NOT NULL DEFAULT 'https://dapurcokelat.com/assets/application/images/promo/img-default-app.png',
+  `imgdalam` varchar(200) NOT NULL DEFAULT 'https://dapurcokelat.com/assets/application/images/promo/img-default-app.png',
+  `tnc` text NOT NULL,
+  `howtouse` text NOT NULL,
+  `status` char(1) NOT NULL DEFAULT '1',
+  `shown` char(1) NOT NULL DEFAULT '4',
+  `datestart` date NOT NULL DEFAULT '0000-00-00',
+  `dateend` date NOT NULL DEFAULT '0000-00-00',
+  `kategori_promo` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=223 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.referensi_customer definition
+
+CREATE TABLE `referensi_customer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `noref` int(2) NOT NULL DEFAULT 0,
+  `nama_ref` varchar(64) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `noref` (`noref`,`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.rekening definition
+
+CREATE TABLE `rekening` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `bank` varchar(10) NOT NULL,
+  `norek` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `pwd` varchar(100) NOT NULL,
+  `delivery` char(1) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.remark_pos definition
+
+CREATE TABLE `remark_pos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(64) NOT NULL DEFAULT 'nama remark',
+  `outlet` varchar(500) NOT NULL DEFAULT 'XX,',
+  `region` varchar(200) NOT NULL DEFAULT '',
+  `kode_area` varchar(24) NOT NULL DEFAULT '',
+  `keterangan` varchar(512) NOT NULL DEFAULT '',
+  `validstr` date NOT NULL DEFAULT '0000-00-00',
+  `validto` date NOT NULL DEFAULT '0000-00-00',
+  `jenis` varchar(20) NOT NULL DEFAULT 'custom',
+  `idcustomer` varchar(20) NOT NULL DEFAULT '',
+  `ket` varchar(32) NOT NULL DEFAULT '',
+  `status` int(1) NOT NULL DEFAULT 1,
+  `management_outlet` varchar(3) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.resep definition
+
+CREATE TABLE `resep` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent` varchar(10) NOT NULL DEFAULT '',
+  `nama` varchar(50) NOT NULL DEFAULT '',
+  `kode` varchar(10) NOT NULL DEFAULT '',
+  `qty` varchar(20) NOT NULL DEFAULT '0',
+  `unit` int(11) NOT NULL DEFAULT 0,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.resep_head definition
+
+CREATE TABLE `resep_head` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(50) NOT NULL,
+  `kode` varchar(10) NOT NULL DEFAULT '',
+  `qty` double NOT NULL DEFAULT 0,
+  `unit` int(11) NOT NULL DEFAULT 0,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.roles definition
+
+CREATE TABLE `roles` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `role` varchar(50) NOT NULL,
+  `description` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='roles for user';
+
+
+-- master.sales_target definition
+
+CREATE TABLE `sales_target` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `target_date` date NOT NULL,
+  `channel` varchar(100) NOT NULL,
+  `target` bigint(20) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=157 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.satuan definition
+
+CREATE TABLE `satuan` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `satuan` varchar(250) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.sertifikat_halal definition
+
+CREATE TABLE `sertifikat_halal` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `bs_id` varchar(11) NOT NULL,
+  `cert_no` varchar(32) NOT NULL DEFAULT '',
+  `cert_link` varchar(128) NOT NULL DEFAULT '',
+  `cert_kategori` char(1) NOT NULL DEFAULT '1',
+  `date_start` date NOT NULL DEFAULT '0000-00-00',
+  `date_end` date NOT NULL DEFAULT '0000-00-00',
+  `id_user` int(11) NOT NULL DEFAULT 0,
+  `produksi` varchar(32) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.settinginvoiceoutlet definition
+
+CREATE TABLE `settinginvoiceoutlet` (
+  `kode` char(10) NOT NULL DEFAULT '',
+  `m` char(1) NOT NULL DEFAULT '',
+  `d` char(1) NOT NULL DEFAULT '',
+  `u` char(1) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '',
+  UNIQUE KEY `kode` (`kode`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.shipper_list definition
+
+CREATE TABLE `shipper_list` (
+  `shipper_id` int(3) NOT NULL AUTO_INCREMENT,
+  `shipper_name` varchar(50) NOT NULL,
+  `status` int(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`shipper_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.shipping_location definition
+
+CREATE TABLE `shipping_location` (
+  `location_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `country_id` int(10) unsigned NOT NULL,
+  `location_parent` int(10) unsigned NOT NULL DEFAULT 0,
+  `location_name` varchar(200) NOT NULL,
+  `level` char(1) NOT NULL,
+  `outlet` char(2) NOT NULL,
+  `idarea` int(10) NOT NULL,
+  PRIMARY KEY (`location_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3423 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.shipping_location_asli definition
+
+CREATE TABLE `shipping_location_asli` (
+  `location_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `country_id` int(10) unsigned NOT NULL,
+  `location_parent` int(10) unsigned NOT NULL DEFAULT 0,
+  `location_name` varchar(200) NOT NULL,
+  `level` char(1) NOT NULL,
+  `outlet` char(2) NOT NULL,
+  `idarea` int(10) NOT NULL,
+  PRIMARY KEY (`location_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2490 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.shipping_location_jkt definition
+
+CREATE TABLE `shipping_location_jkt` (
+  `location_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `country_id` int(10) unsigned NOT NULL,
+  `location_parent` int(10) unsigned NOT NULL DEFAULT 0,
+  `location_name` varchar(200) NOT NULL,
+  `level` char(1) NOT NULL,
+  `outlet` char(2) NOT NULL,
+  `idarea` int(10) NOT NULL,
+  PRIMARY KEY (`location_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2478 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.shipping_location_mks definition
+
+CREATE TABLE `shipping_location_mks` (
+  `location_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `country_id` int(10) unsigned NOT NULL,
+  `location_parent` int(10) unsigned NOT NULL DEFAULT 0,
+  `location_name` varchar(200) NOT NULL,
+  `level` char(1) NOT NULL,
+  `outlet` char(2) NOT NULL,
+  `idarea` int(10) NOT NULL,
+  PRIMARY KEY (`location_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3802 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.shipping_location_mlg definition
+
+CREATE TABLE `shipping_location_mlg` (
+  `location_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `country_id` int(10) unsigned NOT NULL,
+  `location_parent` int(10) unsigned NOT NULL DEFAULT 0,
+  `location_name` varchar(200) NOT NULL,
+  `level` char(1) NOT NULL,
+  `outlet` char(2) NOT NULL,
+  `idarea` int(10) NOT NULL,
+  PRIMARY KEY (`location_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3121 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.shipping_location_new definition
+
+CREATE TABLE `shipping_location_new` (
+  `location_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `country_id` int(10) unsigned NOT NULL,
+  `location_parent` int(10) unsigned NOT NULL DEFAULT 0,
+  `location_name` varchar(200) NOT NULL,
+  `level` char(1) NOT NULL,
+  `outlet` char(2) NOT NULL,
+  `idarea` int(10) NOT NULL,
+  PRIMARY KEY (`location_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2501 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.shipping_location_old definition
+
+CREATE TABLE `shipping_location_old` (
+  `location_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `country_id` int(10) unsigned NOT NULL,
+  `location_parent` int(10) unsigned NOT NULL DEFAULT 0,
+  `location_name` varchar(200) NOT NULL,
+  `level` char(1) NOT NULL,
+  `outlet` char(2) NOT NULL,
+  `idarea` int(10) NOT NULL,
+  PRIMARY KEY (`location_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3121 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.shipping_location_pku definition
+
+CREATE TABLE `shipping_location_pku` (
+  `location_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `country_id` int(10) unsigned NOT NULL,
+  `location_parent` int(10) unsigned NOT NULL DEFAULT 0,
+  `location_name` varchar(200) NOT NULL,
+  `level` char(1) NOT NULL,
+  `outlet` char(2) NOT NULL,
+  `idarea` int(10) NOT NULL,
+  PRIMARY KEY (`location_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4034 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.shipping_location_sby definition
+
+CREATE TABLE `shipping_location_sby` (
+  `location_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `country_id` int(10) unsigned NOT NULL,
+  `location_parent` int(10) unsigned NOT NULL DEFAULT 0,
+  `location_name` varchar(200) NOT NULL,
+  `level` char(1) NOT NULL,
+  `outlet` char(2) NOT NULL,
+  `idarea` int(10) NOT NULL,
+  PRIMARY KEY (`location_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2789 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.shopee_token definition
+
+CREATE TABLE `shopee_token` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(255) DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  `date_create` datetime NOT NULL DEFAULT current_timestamp(),
+  `mode` varchar(255) NOT NULL DEFAULT 'development',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.splitsalesd definition
+
+CREATE TABLE `splitsalesd` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tahun` varchar(4) NOT NULL DEFAULT '',
+  `bulan` varchar(2) NOT NULL DEFAULT '',
+  `jenistrx` char(2) NOT NULL DEFAULT '',
+  `carabayar` varchar(24) NOT NULL DEFAULT '',
+  `idcustomer` varchar(11) NOT NULL DEFAULT '',
+  `ket` varchar(64) NOT NULL DEFAULT '',
+  `level` varchar(24) NOT NULL DEFAULT '',
+  `outlet` varchar(10) NOT NULL DEFAULT '',
+  `region` varchar(24) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.startpos definition
+
+CREATE TABLE `startpos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL,
+  `outlet` varchar(10) NOT NULL,
+  `produksi` varchar(20) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=415605 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.stock_opname_reason definition
+
+CREATE TABLE `stock_opname_reason` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `reason` varchar(128) NOT NULL DEFAULT '',
+  `tipe` varchar(128) NOT NULL DEFAULT '',
+  `posisi` char(2) NOT NULL DEFAULT '',
+  `created_at` timestamp NOT NULL,
+  `status` varchar(32) NOT NULL DEFAULT 'AKTIF',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.subscriber definition
+
+CREATE TABLE `subscriber` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `regid` varchar(200) NOT NULL,
+  `exp` varchar(100) DEFAULT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.supplier_gakpake definition
+
+CREATE TABLE `supplier_gakpake` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nasupp` varchar(250) NOT NULL DEFAULT '',
+  `alsupp` varchar(250) NOT NULL DEFAULT '',
+  `kosupp` varchar(250) NOT NULL DEFAULT '',
+  `telsupp` varchar(250) NOT NULL DEFAULT '',
+  `ppn` varchar(250) NOT NULL DEFAULT 'Y',
+  `npwp` varchar(250) NOT NULL DEFAULT '',
+  `createdby` varchar(250) NOT NULL DEFAULT '',
+  `created_datetime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `editedby` varchar(255) NOT NULL DEFAULT '',
+  `edited_datetime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `status` varchar(255) NOT NULL DEFAULT 'AKTIF',
+  `taxsplit` varchar(2) NOT NULL DEFAULT '1',
+  `pemesan` varchar(2) NOT NULL,
+  `produksi` varchar(20) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  KEY `nasupp` (`nasupp`)
+) ENGINE=InnoDB AUTO_INCREMENT=199 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.suratjalan definition
+
+CREATE TABLE `suratjalan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `outlet` char(2) NOT NULL,
+  `created` datetime NOT NULL,
+  `deldate` datetime NOT NULL,
+  `idcustomer` varchar(10) NOT NULL,
+  `namacustomer` varchar(150) NOT NULL,
+  `phonecustomer` varchar(50) NOT NULL,
+  `addrcustomer` varchar(250) NOT NULL,
+  `namafrom` varchar(150) NOT NULL,
+  `phonefrom` varchar(50) NOT NULL,
+  `addrfrom` varchar(250) NOT NULL,
+  `namato` varchar(150) NOT NULL,
+  `phoneto` varchar(50) NOT NULL,
+  `addrto` varchar(250) NOT NULL,
+  `total` varchar(10) NOT NULL,
+  `delcharge` varchar(6) NOT NULL,
+  `remark` varchar(250) NOT NULL,
+  `paymentmethod` char(1) NOT NULL,
+  `status` char(1) NOT NULL,
+  `printtime` datetime NOT NULL,
+  `sendtime` datetime NOT NULL,
+  `receivetime` datetime NOT NULL,
+  `printby` varchar(150) NOT NULL,
+  `sendby` varchar(150) NOT NULL,
+  `receiveby` varchar(150) NOT NULL,
+  `discount` varchar(3) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.suratjalan_detail definition
+
+CREATE TABLE `suratjalan_detail` (
+  `idorder` int(11) NOT NULL,
+  `kode` char(8) NOT NULL,
+  `nama` varchar(150) NOT NULL,
+  `qty` varchar(6) NOT NULL,
+  `price` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.survey_customer_data definition
+
+CREATE TABLE `survey_customer_data` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nomor_hp` varchar(20) NOT NULL,
+  `nama_customer` varchar(128) NOT NULL DEFAULT '',
+  `tgl_lahir` date NOT NULL DEFAULT '0000-00-00',
+  `gender` char(1) NOT NULL DEFAULT '',
+  `referensi` varchar(128) NOT NULL DEFAULT '',
+  `outlet` char(3) NOT NULL DEFAULT '',
+  `keterangan` text NOT NULL,
+  `date_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `user_created` varchar(128) NOT NULL DEFAULT '',
+  `outlet_created` varchar(128) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`,`nomor_hp`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.system_settings definition
+
+CREATE TABLE `system_settings` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `key` varchar(50) NOT NULL DEFAULT '',
+  `value` mediumtext NOT NULL,
+  `group` varchar(20) NOT NULL DEFAULT 'site',
+  `autoload` enum('no','yes') NOT NULL DEFAULT 'yes',
+  PRIMARY KEY (`id`,`key`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.template definition
+
+CREATE TABLE `template` (
+  `template_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `template_parent` int(10) unsigned NOT NULL DEFAULT 0,
+  `template_type` varchar(50) NOT NULL,
+  `template_module` varchar(50) NOT NULL,
+  `template_body` varchar(50) NOT NULL,
+  `template_title` varchar(50) NOT NULL,
+  `template_meta` text NOT NULL,
+  `template_required` text NOT NULL,
+  `template_image` varchar(50) NOT NULL,
+  `template_public` tinyint(1) unsigned NOT NULL DEFAULT 0,
+  PRIMARY KEY (`template_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.test definition
+
+CREATE TABLE `test` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(50) NOT NULL DEFAULT '',
+  `dadsd` varchar(200) NOT NULL DEFAULT '',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.third_party_log_sync definition
+
+CREATE TABLE `third_party_log_sync` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` datetime NOT NULL DEFAULT current_timestamp(),
+  `log` text DEFAULT NULL,
+  `order_sn` varchar(255) DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=593 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.third_party_order_sync definition
+
+CREATE TABLE `third_party_order_sync` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_sn` varchar(255) NOT NULL DEFAULT '',
+  `order_dlv` varchar(255) DEFAULT '',
+  `created_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `sync_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `platform` varchar(255) NOT NULL DEFAULT 'Shopee Mall',
+  `status_platform` varchar(255) DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=848 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.third_party_sku definition
+
+CREATE TABLE `third_party_sku` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_name` varchar(255) DEFAULT '',
+  `item_id_platform` varchar(255) DEFAULT '',
+  `model_name` varchar(255) DEFAULT '',
+  `model_id` varchar(255) DEFAULT '',
+  `sku_platform` varchar(255) DEFAULT '',
+  `sku_pos` varchar(255) DEFAULT '',
+  `platform` varchar(255) NOT NULL DEFAULT 'Shopee Mall',
+  `status` tinyint(1) DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=204 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.third_party_sku_bundle definition
+
+CREATE TABLE `third_party_sku_bundle` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `third_party_sku_id` int(11) DEFAULT NULL,
+  `sku_pos` varchar(255) DEFAULT '',
+  `qty` int(11) DEFAULT 1,
+  `price_tag` int(1) DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.third_party_warehouse definition
+
+CREATE TABLE `third_party_warehouse` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `wh_name` varchar(255) DEFAULT NULL,
+  `wh_code` varchar(255) DEFAULT NULL,
+  `outlet_code` varchar(255) NOT NULL DEFAULT '',
+  `platform` varchar(255) NOT NULL DEFAULT 'Shopee Mall',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.trxonline definition
+
+CREATE TABLE `trxonline` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode` varchar(10) NOT NULL,
+  `harga` varchar(16) NOT NULL DEFAULT '0',
+  `ojol_id` int(11) NOT NULL,
+  `outlet` char(10) NOT NULL,
+  `status` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `cari_harga` (`kode`,`ojol_id`,`outlet`)
+) ENGINE=InnoDB AUTO_INCREMENT=404696 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.trxonline_old definition
+
+CREATE TABLE `trxonline_old` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode` varchar(11) DEFAULT NULL,
+  `gofood` varchar(11) NOT NULL DEFAULT '0',
+  `grabfood` varchar(11) NOT NULL DEFAULT '0',
+  `happyfresh` varchar(11) NOT NULL DEFAULT '0',
+  `status` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.tujuan definition
+
+CREATE TABLE `tujuan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(250) NOT NULL DEFAULT '',
+  `alamat` varchar(250) NOT NULL DEFAULT '',
+  `notlp` varchar(100) NOT NULL DEFAULT '',
+  `npwp` varchar(100) NOT NULL DEFAULT '',
+  `produksi` varchar(20) NOT NULL DEFAULT '',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.unit definition
+
+CREATE TABLE `unit` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(30) NOT NULL DEFAULT '',
+  `kode` varchar(20) NOT NULL DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.unit_konversi definition
+
+CREATE TABLE `unit_konversi` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dari` int(11) NOT NULL DEFAULT 0,
+  `dari_qty` double NOT NULL DEFAULT 0,
+  `ke` int(11) NOT NULL DEFAULT 0,
+  `ke_qty` double NOT NULL DEFAULT 0,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.`user` definition
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(250) NOT NULL DEFAULT '',
+  `password` varchar(250) NOT NULL DEFAULT '',
+  `nama` varchar(250) NOT NULL DEFAULT '',
+  `dept` varchar(100) NOT NULL DEFAULT '',
+  `sub_dept` varchar(100) NOT NULL DEFAULT '',
+  `level` varchar(10) NOT NULL DEFAULT '',
+  `posisi` varchar(15) NOT NULL DEFAULT '',
+  `email` varchar(250) NOT NULL DEFAULT '',
+  `lastlogin` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `lastlogout` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `produksi` varchar(20) NOT NULL DEFAULT '',
+  `warehouse` varchar(20) NOT NULL DEFAULT '',
+  `fcmtoken` varchar(250) NOT NULL DEFAULT '',
+  `is_active` tinyint(1) NOT NULL DEFAULT 0,
+  `id_role` int(11) NOT NULL DEFAULT 1,
+  `status` char(1) NOT NULL DEFAULT '1',
+  `sedang_cuti` char(1) NOT NULL DEFAULT '0',
+  `salt` varchar(250) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  KEY `gabung` (`user`,`password`)
+) ENGINE=InnoDB AUTO_INCREMENT=2295 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.user_karyawan definition
+
+CREATE TABLE `user_karyawan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(64) DEFAULT NULL,
+  `password` varchar(64) DEFAULT NULL,
+  `salt` varchar(128) NOT NULL DEFAULT '',
+  `nama` varchar(64) DEFAULT NULL,
+  `nik` varchar(11) DEFAULT NULL,
+  `dept` varchar(64) DEFAULT NULL,
+  `sub_dept` varchar(64) DEFAULT NULL,
+  `level` int(1) DEFAULT NULL,
+  `email` varchar(64) DEFAULT NULL,
+  `status` int(1) DEFAULT NULL,
+  `delivery` varchar(2) DEFAULT NULL,
+  `db` char(2) NOT NULL DEFAULT '',
+  `api` char(2) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=208 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.user_mobile_pos definition
+
+CREATE TABLE `user_mobile_pos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nohp` varchar(20) NOT NULL,
+  `kodeoutlet` varchar(20) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `lokasi` varchar(20) NOT NULL,
+  `status` char(1) NOT NULL DEFAULT '1',
+  `title` varchar(50) NOT NULL,
+  `subtitle` varchar(200) NOT NULL,
+  `footer` varchar(200) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+
+-- master.visitorlog definition
+
+CREATE TABLE `visitorlog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL,
+  `ip` varchar(15) NOT NULL,
+  `halaman` varchar(250) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=154359 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.void definition
+
+CREATE TABLE `void` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `notrx` varchar(32) NOT NULL DEFAULT '',
+  `pengganti` varchar(32) NOT NULL DEFAULT '',
+  `notrx_voider` varchar(64) NOT NULL DEFAULT '',
+  `remark` varchar(255) NOT NULL DEFAULT '',
+  `namauser` varchar(50) NOT NULL DEFAULT '',
+  `outlet` varchar(10) NOT NULL DEFAULT '',
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=35593 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.voucher definition
+
+CREATE TABLE `voucher` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kode` varchar(10) NOT NULL,
+  `nomor` varchar(50) NOT NULL,
+  `issueddate` date NOT NULL,
+  `claimdate` datetime NOT NULL,
+  `customerid` varchar(10) NOT NULL,
+  `customername` varchar(50) NOT NULL,
+  `customerphone` varchar(20) NOT NULL,
+  `status` char(1) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.voucher2 definition
+
+CREATE TABLE `voucher2` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `novoucher` varchar(20) NOT NULL DEFAULT '',
+  `nilai` int(12) NOT NULL DEFAULT 0,
+  `expired` date NOT NULL DEFAULT '0000-00-00',
+  `jenis` varchar(2) NOT NULL DEFAULT '',
+  `jenis2` varchar(32) NOT NULL DEFAULT '',
+  `durasi` varchar(3) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '0',
+  `pemegang` varchar(100) NOT NULL DEFAULT '',
+  `tglpemegang` date NOT NULL DEFAULT '0000-00-00',
+  `berlakudi` varchar(160) NOT NULL DEFAULT '',
+  `wording` varchar(180) NOT NULL DEFAULT '',
+  `terjual` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `terpakaidi` varchar(10) NOT NULL DEFAULT '',
+  `tglterpakai` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `notrx_pakai` varchar(64) NOT NULL DEFAULT '',
+  `noinvoicetagih` varchar(64) NOT NULL DEFAULT '',
+  `noinvoicebayar` varchar(64) NOT NULL DEFAULT '',
+  `gen_code` varchar(16) NOT NULL DEFAULT '',
+  `namacustomer` varchar(50) NOT NULL DEFAULT '',
+  `nohpcustomer` varchar(15) NOT NULL DEFAULT '',
+  `nomember` varchar(11) NOT NULL DEFAULT '',
+  `kode_promo` varchar(64) NOT NULL DEFAULT '',
+  UNIQUE KEY `id` (`id`),
+  KEY `novoucher` (`novoucher`,`pemegang`)
+) ENGINE=InnoDB AUTO_INCREMENT=72016 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.voucher2_copy definition
+
+CREATE TABLE `voucher2_copy` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `novoucher` varchar(20) NOT NULL DEFAULT '',
+  `nilai` int(12) NOT NULL DEFAULT 0,
+  `expired` date NOT NULL DEFAULT '0000-00-00',
+  `jenis` varchar(2) DEFAULT '',
+  `durasi` varchar(3) DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '0',
+  `pemegang` varchar(100) NOT NULL DEFAULT '',
+  `tglpemegang` date NOT NULL DEFAULT '0000-00-00',
+  `berlakudi` varchar(160) DEFAULT '',
+  `terjual` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `terpakaidi` varchar(3) NOT NULL DEFAULT '',
+  `tglterpakai` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `noinvoicetagih` varchar(26) NOT NULL DEFAULT '',
+  `noinvoicebayar` varchar(26) NOT NULL DEFAULT '',
+  `namacustomer` varchar(50) NOT NULL DEFAULT '',
+  `nohpcustomer` varchar(15) NOT NULL DEFAULT '',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=64578 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.voucher2_copy2 definition
+
+CREATE TABLE `voucher2_copy2` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `novoucher` varchar(20) NOT NULL DEFAULT '',
+  `nilai` int(12) NOT NULL DEFAULT 0,
+  `expired` date NOT NULL DEFAULT '0000-00-00',
+  `jenis` varchar(2) DEFAULT '',
+  `durasi` varchar(3) DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '0',
+  `pemegang` varchar(100) NOT NULL DEFAULT '',
+  `tglpemegang` date NOT NULL DEFAULT '0000-00-00',
+  `berlakudi` varchar(160) DEFAULT '',
+  `wording` varchar(180) NOT NULL DEFAULT '',
+  `terjual` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `terpakaidi` varchar(3) NOT NULL DEFAULT '',
+  `tglterpakai` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `notrx_pakai` varchar(32) NOT NULL DEFAULT '',
+  `noinvoicetagih` varchar(26) NOT NULL DEFAULT '',
+  `noinvoicebayar` varchar(26) NOT NULL DEFAULT '',
+  `namacustomer` varchar(50) NOT NULL DEFAULT '',
+  `nohpcustomer` varchar(15) NOT NULL DEFAULT '',
+  `nomember` varchar(11) NOT NULL DEFAULT '',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=30094 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.voucher_vendor definition
+
+CREATE TABLE `voucher_vendor` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(64) NOT NULL DEFAULT '',
+  `nama_tampilan` varchar(64) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '1',
+  `status_report` char(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.warehouse_list definition
+
+CREATE TABLE `warehouse_list` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `warehouse_name` varchar(64) NOT NULL DEFAULT '',
+  `warehouse_lokasi` varchar(64) NOT NULL DEFAULT '',
+  `inisial` varchar(6) NOT NULL DEFAULT '',
+  `lokasi_kota` varchar(64) NOT NULL DEFAULT '',
+  `alamat_lokasi` varchar(256) NOT NULL DEFAULT '',
+  `status` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `warehouse_list_status_IDX` (`status`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.warehousesn definition
+
+CREATE TABLE `warehousesn` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `waktu` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `produksi` varchar(20) NOT NULL DEFAULT '',
+  `nopo` varchar(15) NOT NULL DEFAULT '',
+  `itemcode` char(8) NOT NULL DEFAULT '',
+  `batchnumber` varchar(50) NOT NULL DEFAULT '',
+  `expdate` date NOT NULL DEFAULT '0000-00-00',
+  `status` char(1) NOT NULL DEFAULT '1',
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+-- master.demo_details definition
+
+CREATE TABLE `demo_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `demo_id` int(11) DEFAULT NULL,
+  `data` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `demo_id` (`demo_id`),
+  CONSTRAINT `demo_details_ibfk_1` FOREIGN KEY (`demo_id`) REFERENCES `demos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.purchase_requests definition
+
+CREATE TABLE `purchase_requests` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `document_number` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `attachment` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT 'requested',
+  `requester_id` int(11) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` datetime DEFAULT NULL,
+  `area` varchar(200) DEFAULT NULL,
+  `request_for_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `purchase.request.document.number` (`document_number`),
+  KEY `requester_id` (`requester_id`),
+  KEY `purchase_requests_user_FK` (`request_for_id`),
+  CONSTRAINT `purchase_requests_ibfk_1` FOREIGN KEY (`requester_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT `purchase_requests_user_FK` FOREIGN KEY (`request_for_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.role_privileges definition
+
+CREATE TABLE `role_privileges` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `role_id` bigint(20) NOT NULL,
+  `privilege_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `role_privileges_roles_FK_1` (`role_id`),
+  KEY `role_privileges_privileges_FK` (`privilege_id`),
+  CONSTRAINT `role_privileges_privileges_FK` FOREIGN KEY (`privilege_id`) REFERENCES `privileges` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `role_privileges_roles_FK_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=179 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='relation between role and privileges, 1 role to many privileges';
+
+
+-- master.sub_departments definition
+
+CREATE TABLE `sub_departments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(250) NOT NULL,
+  `code` varchar(50) NOT NULL,
+  `department_id` int(11) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `sub_department_id` (`department_id`),
+  CONSTRAINT `sub_departments_ibfk_1` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.user_outlet definition
+
+CREATE TABLE `user_outlet` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `outlet_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_outlet_user_FK` (`user_id`),
+  KEY `user_outlet_outlet_FK` (`outlet_id`),
+  CONSTRAINT `user_outlet_outlet_FK` FOREIGN KEY (`outlet_id`) REFERENCES `outlet` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `user_outlet_user_FK` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=202 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='relation between user and outlet';
+
+
+-- master.user_profiles definition
+
+CREATE TABLE `user_profiles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` datetime DEFAULT NULL,
+  `position` varchar(50) DEFAULT NULL,
+  `sub_department_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `user_profiles_sub_departments_FK` (`sub_department_id`),
+  CONSTRAINT `user_profiles_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `user_profiles_sub_departments_FK` FOREIGN KEY (`sub_department_id`) REFERENCES `sub_departments` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=248 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.user_roles definition
+
+CREATE TABLE `user_roles` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `role_id` bigint(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_roles_user_FK` (`user_id`),
+  KEY `user_roles_roles_FK` (`role_id`),
+  CONSTRAINT `user_roles_roles_FK` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `user_roles_user_FK` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=189 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.purchase_request_approvals definition
+
+CREATE TABLE `purchase_request_approvals` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(50) DEFAULT NULL,
+  `purchase_request_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `signed_at` datetime DEFAULT NULL,
+  `status` varchar(255) DEFAULT 'requested',
+  `level` int(11) NOT NULL DEFAULT 0,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` datetime DEFAULT NULL,
+  `reject_reason` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `purchase_request_id` (`purchase_request_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `purchase_request_approvals_ibfk_1` FOREIGN KEY (`purchase_request_id`) REFERENCES `purchase_requests` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `purchase_request_approvals_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- master.purchase_request_details definition
+
+CREATE TABLE `purchase_request_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pr_category_id` int(11) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `notes` varchar(255) DEFAULT NULL,
+  `supplier` varchar(255) DEFAULT NULL,
+  `amount` int(11) NOT NULL DEFAULT 0,
+  `unit` varchar(10) DEFAULT 'pcs',
+  `unit_price` float DEFAULT 0,
+  `purchase_request_id` int(11) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `purchase_request_id` (`purchase_request_id`),
+  KEY `purchase_request_details_purchase_request_categories_FK` (`pr_category_id`),
+  CONSTRAINT `purchase_request_details_ibfk_1` FOREIGN KEY (`purchase_request_id`) REFERENCES `purchase_requests` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `purchase_request_details_purchase_request_categories_FK` FOREIGN KEY (`pr_category_id`) REFERENCES `purchase_request_categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

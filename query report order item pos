@@ -1,0 +1,24 @@
+SELECT
+	`order` .*,
+	cash,
+	debit,
+	cc,
+	trf,
+	tlptujuan,
+	email,
+	alamat,
+	IF(nama_bank != '', nama_bank, '') AS nama_bank,
+	namaoutlet
+FROM
+	dci.order
+LEFT JOIN dci.storage_transaksi ON
+	storage_transaksi.no_trx = no_transaksi
+LEFT JOIN tempo.`customer` ON
+	customer.id = no_member
+LEFT JOIN master.`bank_kode` ON
+	kode_bank = storage_transaksi.tlptujuan
+LEFT JOIN master.outlet on
+	kodeoutlet = order.outlet
+WHERE
+	order.status > 0
+	AND DATE(order.waktu) BETWEEN '2025-08-04' AND '2025-08-04'
