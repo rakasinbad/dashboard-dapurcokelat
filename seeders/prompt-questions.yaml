@@ -1,0 +1,265 @@
+this is example query for acccounting
+INSERT INTO
+karyawan.questions (text, status)
+VALUES
+(
+'Sejauh mana karyawan mampu melakukan input data dengan teliti dan tanpa kesalahan?',
+'1'
+);
+based on that query, creata bulk insert with this question list:
+isAllDept, true:
+- Sejauh mana karyawan memahami dan menjalankan SOP, Job Description, serta aturan perusahaan dengan baik?  	
+- Sejauh mana karyawan bertanggung jawab, mampu bekerja mandiri, serta mengelola waktu dan beban kerja dengan baik sehingga tugas dapat terselesaikan dengan memuaskan?	
+- Sejauh mana karyawan mampu berpikir positif, menerima saran/kritik, tidak mudah menyerah, serta menunjukkan kemauan untuk berkembang?	
+- Sejauh mana karyawan menunjukkan kepedulian serta mampu bekerjasama dengan rekan kerja maupun atasan?  	
+- Sejauh mana karyawan menunjukkan adab, sikap (attitude), kejujuran, dan loyalitas dalam bekerja?  
+
+dept: ACCOUNTING
+sub_dept: ACCOUNTING
+jabatan: STAFF
+question list:
+- Sejauh mana karyawan mampu melakukan input data dengan teliti dan tanpa kesalahan?  	
+- Sejauh mana karyawan teliti dalam melakukan rekonsiliasi data sehingga tidak terjadi kesalahan?	
+- Sejauh mana karyawan mampu membuat laporan tanpa kesalahan dan menyajikannya dengan baik?  	
+- Sejauh mana karyawan mampu melakukan input mutasi/posting mutasi dengan benar tanpa terjadi kesalahan?  	
+- Sejauh mana karyawan mampu melakukan Stock Opname/Inventory dengan teliti dan tepat waktu?  
+
+dept: DISTRIBUTION
+sub_dept: DISTRIBUTION
+jabatan: STAFF
+question list:
+- Sejauh mana karyawan menggunakan, melaporkan, dan menyalurkan petty cash sesuai peruntukannya tanpa adanya penyimpangan?
+- Sejauh mana karyawan melakukan penggunaan, pelaporan, dan penyaluran voucher BBM serta e-Toll sesuai peruntukannya, tanpa penyimpangan, dan memastikan ketersediaannya?
+- Sejauh mana karyawan mampu menyusun dan menyampaikan laporan dengan jelas, mudah dipahami, tepat waktu, serta bebas dari kesalahan?
+- Sejauh mana karyawan mampu membuat LPPD dan PR dengan teliti, tepat, serta bebas dari kesalahan?
+- Sejauh mana karyawan selalu memonitor pulsa listrik dengan baik sehingga operasional tidak terganggu akibat pemadaman?
+
+dept: FINANCE
+sub_dept: FINANCE
+jabatan: STAFF
+question list:
+- Sejauh mana karyawan melakukan input data dengan teliti dan tanpa kesalahan?
+- Sejauh mana karyawan melakukan rekonsiliasi data dengan teliti dan tanpa kesalahan?
+- Sejauh mana karyawan membuat laporan dengan akurat (tanpa kesalahan) dan menyajikannya dengan baik?
+- Sejauh mana karyawan melakukan input mutasi/posting mutasi dengan teliti sehingga tidak terjadi kesalahan?
+- Sejauh mana karyawan mampu merekap laporan dengan teliti sehingga tidak terjadi kesalahan?
+
+dept: GENERAL AFFAIR
+sub_dept: CLEANER
+jabatan: STAFF
+question list:
+- Sejauh mana karyawan menjaga kebersihan ruangan dan peralatan yang telah digunakan dengan benar?
+- Sejauh mana karyawan menggunakan alat kebersihan serta bahan pembersih sesuai dengan fungsinya?
+- Sejauh mana karyawan memastikan bahwa area/peralatan yang dibersihkan tetap terjaga kebersihannya dan tidak terkontaminasi najis?
+- Sejauh mana karyawan memastikan area yang dibersihkan benar-benar bersih tanpa ada kotoran yang tersisa?
+- Sejauh mana karyawan dapat memahami dan menerapkan cara menghilangkan najis sesuai ketentuan SJPH MUI?
+
+dept: GENERAL AFFAIR
+sub_dept: DRIVER
+jabatan: STAFF
+question list:
+- Selalu menjaga kebersihan unit kendaraan, baik saat digunakan maupun setelah digunakan.
+- Selalu memeriksa kelayakan kendaraan sebelum digunakan.
+- Memastikan kelengkapan seluruh surat-surat kendaraan.
+- Dalam proses pengantaran, memastikan barang yang dikirim sampai ke tujuan tanpa kerusakan.
+- Disaat menjemput/mengantar tidak pernah terlambat sehingga merugikan perusahaan.
+
+dept: GENERAL AFFAIR
+sub_dept: GENERAL
+jabatan: STAFF
+question list:
+- Memberikan pelayanan yang baik kepada tamu dan karyawan.  	
+- Memastikan dokumen yang akan dikirim tidak tertinggal dan terkirim sesuai dengan alamat tujuan.  	
+- Mendistribusikan dokumen secara tepat ke setiap unit kerja tanpa kesalahan.  	
+- Memastikan penggunaan ruang meeting sesuai dengan jadwal yang telah ditentukan.	
+- Pada saat menerima telepon, memberikan informasi sesuai kapasitas dengan baik dan jelas.
+
+dept: GENERAL AFFAIR
+sub_dept: OB_MESSENGER
+jabatan: STAFF
+question list:
+- Melakukan kebersihan di area kerja secara rutin dan berkala.
+- Memahami cara penggunaan alat-alat kebersihan, termasuk bahan kimia pembersih, secara tepat guna dan aman.
+- Melakukan pengiriman dokumen maupun barang lainnya dengan hati-hati sehingga kondisi tetap baik saat diterima.
+- Memastikan prasarana pendukung siap digunakan dalam kondisi baik.
+- Membuat laporan yang mudah dipahami dan akurat.
+
+dept: GENERAL AFFAIR
+sub_dept: SECURITY
+jabatan: STAFF
+question list:
+- Melakukan pengawasan atau pengendalian sesuai dengan teknik pelaksanaan yang telah ditentukan.
+- Melakukan penanggulangan bahaya kebakaran serta menjaga keutuhan barang milik perusahaan.
+- Melakukan pengaturan dan pengawasan parkir kendaraan.
+- Melakukan pemeriksaan terhadap pekerja, tamu, kontraktor, serta kendaraan yang masuk dan keluar perusahaan.
+- Mampu menuangkan temuan atau kejadian yang dialami ke dalam laporan untuk ditindaklanjuti dengan langkah-langkah pengamanan.
+
+dept: GENERAL AFFAIR
+sub_dept: TEKNISI
+jabatan: STAFF
+question list:
+- Memiliki wawasan dan pengetahuan dasar yang memadai terkait tanggung jawab pekerjaannya.
+- Mampu mengoperasikan pengolahan limbah, termasuk mencampur bahan kimia sesuai takaran yang ditentukan.
+- Mampu memperbaiki kerusakan minor pada peralatan penunjang produksi.
+- Mampu memperbaiki kerusakan minor pada infrastruktur serta memahami langkah yang harus dilakukan agar perbaikan tepat guna.
+- Mampu mengantisipasi potensi bahaya di lingkungan kerja sehingga risiko dapat dicegah sejak dini.
+
+dept: HRD
+sub_dept: HRD
+jabatan: STAFF
+question list:
+- Mampu menyelesaikan tugas yang diberikan dengan tepat waktu sesuai target yang telah ditetapkan.	
+- Mampu membuat laporan dengan baik, sistematis, dan mudah dipahami.	
+- Mampu menjaga kerahasiaan atas seluruh informasi dan pekerjaan yang menjadi tanggung jawabnya.
+Menjalankan program kerja yang telah ditetapkan dengan baik.
+- Mampu bekerja sama dalam tim secara efektif untuk mencapai tujuan bersama.
+
+dept: HRD
+sub_dept: TRAINING
+jabatan: STAFF
+question list:
+- Mampu mengimplementasikan rancangan program pelatihan secara efektif dan efisien.
+- Mampu memastikan bahwa karyawan memahami materi pelatihan dengan baik.
+- Mampu melakukan pengajaran dengan teknik yang menyenangkan.
+- Mampu melaksanakan program orientasi dan pelatihan bagi karyawan baru.
+- Mampu menyusun dan menyajikan laporan hasil pelatihan secara jelas dan sistematis.
+
+dept: IT
+sub_dept: IT
+jabatan: STAFF
+question list:
+- Memastikan seluruh peralatan komputer berjalan dan berfungsi dengan baik sehingga dapat mendukung kelancaran pekerjaan.
+- Memiliki keahlian dan penguasaan yang baik terhadap bidang pekerjaannya.
+- Memberikan dukungan kepada departemen lain agar pekerjaan dapat berjalan tanpa hambatan.
+- Mampu menyelesaikan setiap permasalahan dengan segera dan tepat.
+- Mampu menyusun laporan secara jelas terkait temuan atau pengalaman di lapangan, serta memberikan rekomendasi langkah pengamanan yang diperlukan.
+
+dept: MARKETING
+sub_dept: MARKETING
+jabatan: STAFF
+question list:
+- Menjaga dan memelihara peralatan kerja agar tetap dalam kondisi baik sehingga dapat digunakan setiap saat.
+- Menyimpan file, data, dan hasil pekerjaan dengan baik sehingga mudah diakses saat diperlukan.	
+- Dapat memberikan ide-ide konstruktif kepada tim.
+- Mensupport keseluruhan aktivitas tim Digital Marketing agar program kerja berjalan lancar.	
+- Membuat laporan dengan baik, rapi, dan mudah dipahami.
+
+dept: MARKETING
+sub_dept: MARKETING
+jabatan: STAFF
+question list:
+- Mampu menyelesaikan pembuatan desain dengan tepat waktu sesuai target yang ditetapkan.
+- Mampu menghasilkan desain yang selalu update, kekinian, dan relevan sehingga dapat menunjang peningkatan sales.
+- Memastikan desain yang dihasilkan konsisten dengan panduan merek perusahaan, sesuai pesan komunikasi, serta memenuhi standar kualitas visual yang diinginkan.	
+- Memberikan dukungan terhadap seluruh aktivitas tim Design Marketing agar berjalan lancar dan mencapai target yang ditetapkan.
+- Membuat laporan dengan baik, rapi, dan mudah dipahami.
+
+dept: OPERATION
+sub_dept: OUTLET
+jabatan: STAFF
+question list:
+- Memahami dan menjalankan Sistem Jaminan Produk Halal (SJPH) sesuai ketentuan yang berlaku.
+- Mampu membuat wording dengan baik, jelas, dan menarik sesuai kebutuhan komunikasi perusahaan.
+- Selalu melakukan pengecekan stok dan inventory produk secara rutin untuk memastikan ketersediaan sesuai kebutuhan operasional.	
+- Mensupport keseluruhan aktivitas tim agar pekerjaan dapat berjalan lancar dan mencapai target yang ditetapkan.	
+- Membuat laporan dengan baik, rapi, dan mudah dipahami.
+
+dept: OPERATION
+sub_dept: ADMIN
+jabatan: STAFF
+question list:
+- Selalu mempersiapkan kebutuhan administrasi outlet secara lengkap, tepat waktu, dan sesuai ketentuan.
+- Mengupdate stok cake, mencatat orderan cake, serta memastikan orderan terselesaikan dengan baik dan tepat waktu.	
+- Mengelola petty cash dengan baik, akurat, serta dapat dipertanggungjawabkan.	
+- Menginput data dengan teliti dan akurat sehingga meminimalisir terjadinya kesalahan.
+- Membuat laporan dengan baik, rapi, dan mudah dipahami.
+
+dept: PRODUCTION
+sub_dept: CORNER
+jabatan: STAFF
+question list:
+- Memahami dengan baik produk/paket corner dan mampu menjelaskan kepada customer apabila terdapat pertanyaan.
+- Mampu menyusun dengan baik sesuai dengan tema yang diorder.
+- Dalam melakukan persiapan selalu teliti, tepat waktu, dan berkoordinasi dengan tim.	
+- Dalam melakukan persiapan selalu teliti, tepat waktu, dan berkoordinasi dengan tim.	
+- Membuat laporan dengan baik, rapi, dan mudah dipahami.
+
+dept: OPERATION
+sub_dept: CUSTOMER SERVICE
+jabatan: STAFF
+question list:
+- Mampu menjelaskan secara detail produk-produk Dapur Cokelat kepada customer.
+- Mampu berkomunikasi dengan jelas serta bertutur kata dengan baik dan sopan.
+- Mampu menjawab pertanyaan melalui WA maupun email dengan menggunakan kalimat yang jelas, sopan, dan mudah dipahami.	
+- Memastikan setiap pesanan customer diterima oleh outlet dengan lengkap, tepat waktu, dan sesuai permintaan.	
+- Menyelesaikan setiap komplain customer dengan baik, cepat, dan memberikan solusi yang tepat sehingga kepuasan customer tetap terjaga.
+
+dept: OPERATION
+sub_dept: ADMIN_FRANCHISE
+jabatan: STAFF
+question list:
+- Mampu menjalin kerjasama yang baik dengan departemen lain terkait pelaksanaan pekerjaan, sehingga mendukung kelancaran operasional perusahaan.
+- Mampu menjalankan tugas dengan cepat, tepat, dan sesuai target yang ditetapkan.  	
+- Mampu meneruskan informasi dengan benar dan tepat sehingga menghindari mis-komunikasi.	
+- Memberikan dukungan penuh terhadap seluruh aktivitas tim agar pekerjaan berjalan lancar dan target tercapai.	
+- Mampu menyusun laporan secara jelas terkait temuan atau pengalaman di lapangan, serta merekomendasikan langkah-langkah selanjutnya yang diperlukan.
+
+dept: PROCUREMENT
+sub_dept: PROCUREMENT
+jabatan: STAFF
+question list:
+- Memahami secara menyeluruh seluruh proses operasional perusahaan.
+- Mampu mencari dan memilih beberapa vendor secara tepat waktu sesuai kebutuhan perusahaan.
+- Memastikan setiap pesanan diterima dan disiapkan sesuai dengan permintaan customer.	
+- Melakukan kontrol dan evaluasi secara berkala terhadap vendor dan kualitas barang yang dibeli.
+- Mampu menyusun laporan secara jelas terkait temuan, serta merekomendasikan langkah-langkah tindak lanjut yang diperlukan
+
+dept: PRODUCTION
+sub_dept: CORNER
+jabatan: STAFF
+question list:
+- Menjaga kecepatan proses produksi agar sesuai dengan standar yang ditetapkan.
+- Memiliki keahlian khusus di bidangnya yang mendukung pencapaian kualitas kerja dan efisiensi tim.
+- Selalu menjaga penampilan (grooming) agar rapi, profesional, dan sesuai standar perusahaan.
+- Selalu menjaga kesehatan diri serta merapikan dan membersihkan peralatan kerja setelah digunakan.
+- Mengisi form penggunaan bahan baku secara akurat serta menempelkan barcode warna dan tanggal kedaluwarsa dengan tepat
+
+dept: R&D
+sub_dept: R&D
+jabatan: STAFF
+question list:
+- Mampu menciptakan produk baru yang inovatif dan sesuai kebutuhan perusahaan.	
+- Kreatif, inovatif, dan mampu memberikan solusi efektif dalam pekerjaan atau pengembangan produk.	
+- Sejauh mana karyawan mampu menerjemahkan resep menjadi produk yang berkualitas?	
+- Sejauh mana karyawan mampu merealisasikan ide-ide menjadi produk nyata?	
+- Sejauh mana karyawan mampu bekerja secara efektif dalam tim?
+
+dept: SALES & STRATEGY
+sub_dept: SALES & STRATEGY OFFLINE
+jabatan: STAFF
+question list:
+- Sejauh mana karyawan mampu menghitung COGS, estimasi penjualan, dan menyusun budget promosi dengan tepat?	
+- Sejauh mana karyawan mampu membuat pengajuan promosi dengan baik dan tepat?	
+- Sejauh mana karyawan mampu menganalisis data performa penjualan untuk evaluasi dan perencanaan strategi sales ke depan?	
+- Sejauh mana karyawan mampu menangani seluruh permasalahan yang terkait dengan sistem POS?	
+- Sejauh mana karyawan mampu menjalankan tugas-tugas adhoc dengan baik?
+
+dept: SALES & STRATEGY
+sub_dept: SALES & STRATEGY ONLINE
+jabatan: STAFF
+question list:
+- Sejauh mana karyawan mampu mendaftarkan produk baru atau mengubah detail produk di platform delivery tanpa melakukan kesalahan?	
+- Sejauh mana karyawan mampu mengumpulkan dan menyusun rating serta review pelanggan dari platform delivery dengan akurat?	
+- Sejauh mana karyawan mampu membuat permintaan pembayaran ke bagian finance dengan benar dan tepat?	
+- Sejauh mana karyawan mampu membuat laporan kepada atasan terkait permasalahan operasional (platform dan POS) dengan jelas dan tepat?  	
+- Sejauh mana karyawan mampu mengumpulkan dan menyusun data pembatalan dari platform dengan akurat?
+
+dept: WAREHOUSE
+sub_dept: WAREHOUSE
+jabatan: STAFF
+question list:
+- Sejauh mana karyawan selalu melakukan pengecekan tanggal kadaluarsa produk dengan teliti?	
+- Sejauh mana karyawan mampu mengkategorikan barang dengan tepat dan sesuai standar?	
+- Sejauh mana karyawan mampu menyusun barang sesuai prinsip FIFO (First In, First Out) dengan benar?	
+- Sejauh mana karyawan selalu mencatat barang masuk dan keluar ke dalam sistem dengan akurat dan tepat waktu?	
+- Sejauh mana karyawan mampu menjaga kondisi barang tetap baik serta memastikan lokasi penyimpanan bersih, rapi, dan bebas dari binatang atau serangga?

@@ -1,0 +1,62 @@
+this is example query for acccounting 
+INSERT INTO
+  karyawan.questions (text, status)
+VALUES
+  (
+    'Sejauh mana karyawan mampu melakukan input data dengan teliti dan tanpa kesalahan?',
+    '1'
+  );
+  based on that query, createa bulk insert also for this data, set dept and type, based on sttring that i set below, also for questions list need to create data for text column
+
+  dept: FINANCE
+  questions list: 
+  - Sejauh mana karyawan melakukan input data dengan teliti dan tanpa kesalahan?  	
+  - Sejauh mana karyawan melakukan rekonsiliasi data dengan teliti dan tanpa kesalahan?  	
+  - Sejauh mana karyawan membuat laporan dengan akurat (tanpa kesalahan) dan menyajikannya dengan baik?  	
+  - Sejauh mana karyawan melakukan input mutasi/posting mutasi dengan teliti sehingga tidak terjadi kesalahan?  	
+  - Sejauh mana karyawan mampu merekap laporan dengan teliti sehingga tidak terjadi kesalahan?
+
+dept: GENERAL AFFAIR
+  type: CLEANER
+  questions list: 
+  - Sejauh mana karyawan menjaga kebersihan ruangan dan peralatan yang telah digunakan dengan benar?  	
+  - Sejauh mana karyawan menggunakan alat kebersihan serta bahan pembersih sesuai dengan fungsinya?  	
+  - Sejauh mana karyawan memastikan bahwa area/peralatan yang dibersihkan tetap terjaga kebersihannya dan tidak terkontaminasi najis?  	
+  - Sejauh mana karyawan memastikan area yang dibersihkan benar-benar bersih tanpa ada kotoran yang tersisa?  	
+  - Sejauh mana karyawan dapat memahami dan menerapkan cara menghilangkan najis sesuai ketentuan SJPH MUI?  
+
+  dept: GENERAL AFFAIR
+  type: DRIVER
+  questions list: 
+ - Selalu menjaga kebersihan unit kendaraan, baik saat digunakan maupun setelah digunakan.  	
+ - Selalu memeriksa kelayakan kendaraan sebelum digunakan	
+ - Memastikan kelengkapan seluruh surat-surat kendaraan.  	
+ - Dalam proses pengantaran, memastikan barang yang dikirim sampai ke tujuan tanpa kerusakan.  	
+- Disaat menjemput/mengantar tidak pernah terlambat sehingga merugikan perusahaan
+
+ dept: GENERAL AFFAIR
+  type: OB_MESSENGER
+  questions list: 
+- Melakukan kebersihan di area kerja secara rutin dan berkala.  	
+- Memahami cara penggunaan alat-alat kebersihan, termasuk bahan kimia pembersih, secara tepat guna dan aman.  	
+- Melakukan pengiriman dokumen maupun barang lainnya dengan hati-hati sehingga kondisi tetap baik saat diterima.  	
+- Memastikan prasarana pendukung siap digunakan dalam kondisi baik.  	
+- Membuat laporan yang mudah dipahami dan akurat.
+
+ dept: GENERAL AFFAIR
+  type: SECURITY
+  questions list: 
+- Melakukan pengawasan atau pengendalian sesuai dengan teknik pelaksanaan yang telah ditentukan  	
+- Melakukan penanggulangan bahaya kebakaran serta menjaga keutuhan barang milik perusahaan.	
+- Melakukan pengaturan dan pengawasan parkir kendaraan  	
+- Melakukan pemeriksaan terhadap pekerja, tamu, kontraktor, serta kendaraan yang masuk dan keluar perusahaan  	
+- Mampu menuangkan temuan atau kejadian yang dialami ke dalam laporan untuk ditindaklanjuti dengan langkah-langkah pengamanan.  
+
+ dept: HRD
+  type: STAFF
+  questions list: 
+- Memiliki wawasan dan pengetahuan dasar yang memadai terkait tanggung jawab pekerjaannya.	
+- Mampu mengoperasikan pengolahan limbah, termasuk mencampur bahan kimia sesuai takaran yang ditentukan.	
+- Mampu memperbaiki kerusakan minor pada peralatan penunjang produksi.
+- Mampu memperbaiki kerusakan minor pada infrastruktur serta memahami langkah yang harus dilakukan agar perbaikan tepat guna.	
+- Mampu mengantisipasi potensi bahaya di lingkungan kerja sehingga risiko dapat dicegah sejak dini.
