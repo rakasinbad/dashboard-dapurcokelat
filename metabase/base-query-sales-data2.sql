@@ -11,7 +11,6 @@ select
 	remark as "Remark",
 	kode as "SKU",
 	nama_sku as "Nama SKU",
-	kategori.kategori as "SKU Category",
 	case
 		when right(left(kode, 6), 1) = '1' then '20x20'
 		when right(left(kode, 6), 1) = '2' then '20x40'
@@ -359,8 +358,7 @@ WHERE
 		src.id = stc.storage_transaksi_id
 		AND src.kodedb_id = stc.kodedb_id
 ) as storage_transaksi
-join master.kategori on
-	left(kode, 2) = kategori.no
 WHERE
 	1 = 1
-	AND (LOWER(`storage_transaksi`.`no_trx`) LIKE '%OD20251201165035-B2B%')
+	AND (LOWER(`storage_transaksi`.`no_trx`) LIKE '%OD20251201165035-B2B%') 
+    
