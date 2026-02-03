@@ -1,6 +1,23 @@
 based on this data, help me to build bulk update query to update data
 if code have 7 digits add 0 in front of code, example 1060600 should be 01060600
 code:
+10070101
+10070701
+10070109
+16030101
+10070106
+16050101
+16020104
+16060101
+16020102
+16020103
+16020101
+16040101
+16010102
+16010101
+16010103
+10070309
+10070306
 15110101
 15110201
 15100004
@@ -23,6 +40,23 @@ code:
 
 this is the price, the order of code and price should be correct, and convert this to number
 price:
+20,000
+88,000
+28,000
+5,000
+28,000
+10,000
+10,000
+10,000
+10,000
+10,000
+10,000
+8,000
+13,000
+13,000
+13,000
+115,000
+115,000
 8,000
 6,000
 8,000
@@ -45,4 +79,12 @@ price:
 
 this is the query
 
-UPDATE dci.stok SET sell = :price where kode = :code
+SELECT
+ip.id
+FROM
+item_price ip
+LEFT JOIN item_detail id
+ON id.`id` = ip.`item_detail_id`
+LEFT JOIN region r ON r.`id` = ip.`region_id`
+LEFT JOIN location l ON l.`id` = ip.`location_id`
+WHERE (ip.`status` != '0' AND ip.`region_id` NOT IN ('2','3') OR ip.`location_id` != '') and id.code = :kode
