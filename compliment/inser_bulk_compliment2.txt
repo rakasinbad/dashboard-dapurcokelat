@@ -1,0 +1,60 @@
+based on this data generate bulk
+insert
+  sql query
+INSERT INTO
+  karyawan.pengajuancompliment (
+    nocomp,
+    waktu,
+    nik,
+    dari,
+    untuk,
+    keterangan,
+    kode,
+    nama,
+    qty,
+    price,
+    outlet,
+    status,
+    waktu_approval
+  )
+VALUES
+  (
+    '',
+    '2026-01-30 15:07:01',
+    '140102355',
+    'Marketing',
+    'DT',
+    'Untuk Sampel Ke vendor',
+    '01520501',
+    'Pandan Klepon Roll Ind',
+    2,
+    0,
+    'DT',
+    2
+  ) 
+  
+nocomp = CP20260203132700{Kode Outlet} 
+waktu = 2026-02-03 13:27:00 
+nik = 140102355 
+dari = Marketing 
+untuk = based on Outlet column 
+keterangan = based on kebutuhan column 
+kode = based on Item Code Produk column 
+nama = based on Nama Produk column 
+qty = based on qty column 
+price = 0 
+outlet = based on outlet column 
+status = 2 waktu_approval = 2026 -02 -27 16 :31 :00 
+
+for this data if value is empty get value
+from
+  previous row,
+  if kode is 7 digit then
+add
+  0 in front of kode example 1480600 will be 01480600 
+
+ItemCode NamaProdukSistem Qty Outlet/Delpoint Kebutuhan
+05170103 Choco Hazelnut Cookies Large 1 GO Photo shoot marketing
+05170201 Biscoff Cookies Small 2 GO Photo shoot marketing
+05170208 Vanilla Butter Cookies Small 2 GO Photo shoot marketing
+05170204 Coffee Cookies Small 2 GO Photo shoot marketing
