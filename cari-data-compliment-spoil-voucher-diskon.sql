@@ -1,5 +1,5 @@
 SELECT
-  -- Individual Transaction Columns (Query 1)
+  -- Detail Columns from Query 2
   tgl_trx,
   waktu,
   no_trx,
@@ -12,13 +12,23 @@ SELECT
   namapemesan,
   namakasir,
   kode_promo,
-  outlet
+  outlet,
+  -- Summary Columns from Query 1 (Calculated via Window Functions)
+  SUM(bruto) OVER(PARTITION BY namakasir) AS total_bruto_kasir,
+  SUM(diskon_rupiah) OVER(PARTITION BY namakasir) AS total_diskon_kasir,
+  SUM(voucher) OVER(PARTITION BY namakasir) AS total_voucher_kasir,
+  SUM(compliment) OVER(PARTITION BY namakasir) AS total_compliment_kasir,
+  SUM(spoil) OVER(PARTITION BY namakasir) AS total_spoil_kasir,
+  -- The combined "Total Reductions" per cashier
+  (
+    SUM(diskon_rupiah) OVER(PARTITION BY namakasir) + SUM(voucher) OVER(PARTITION BY namakasir) + SUM(compliment) OVER(PARTITION BY namakasir) + SUM(spoil) OVER(PARTITION BY namakasir)
+  ) AS grand_total_reductions_kasir
 FROM
   dci.storage_transaksi
 WHERE
   status != '0'
-  AND tgl_trx BETWEEN '2026-01-01'
-  AND '2026-01-31'
+  AND tgl_trx BETWEEN '2026-02-01'
+  AND '2026-02-28'
   AND spoil != '0'
   AND outlet IN (
     SELECT
@@ -40,5 +50,5 @@ WHERE
       AND kodeoutlet != 'XX'
   )
 ORDER BY
-  outlet,
+  namakasir,
   waktu ASC;
