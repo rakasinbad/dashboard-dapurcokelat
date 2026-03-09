@@ -33,8 +33,8 @@ VALUES
     2
   ) 
   
-nocomp = CP20260203132700{Kode Outlet} 
-waktu = 2026-02-03 13:27:00 
+nocomp = CP20260309143400{Kode Outlet} 
+waktu = 2026-03-009 14:34:00 
 nik = 140102355 
 dari = Marketing 
 untuk = based on Outlet column 
@@ -54,7 +54,16 @@ add
   0 in front of kode example 1480600 will be 01480600 
 
 ItemCode NamaProdukSistem Qty Outlet/Delpoint Kebutuhan
-05170103 Choco Hazelnut Cookies Large 1 GO Photo shoot marketing
-05170201 Biscoff Cookies Small 2 GO Photo shoot marketing
-05170208 Vanilla Butter Cookies Small 2 GO Photo shoot marketing
-05170204 Coffee Cookies Small 2 GO Photo shoot marketing
+10070101	Iced Chocolate 3 GO	
+6370000	Choco Monkey	1 GO	
+01380500	Double Chocolate 1 GO
+01080500	Two Seasons	1 GO
+01040500	Opera Cake	1 GO	
+01480500	Chocolava Cake 1 GO
+10060100	Choco Stick	1 GO
+10100006	Crispy Brownies Cheese 1 GO
+10100007	Crispy Velvet Cake 1	 GO
+10100009	Dark Choco Banana 1 GO
+05170308	Vanilla Butter Cookies 1 GO
+01010005	Topper C 3 GO
+12040012	 Eternal Love	1	 GO
