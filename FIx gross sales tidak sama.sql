@@ -47,7 +47,7 @@ FROM
 				)
 			) AS jcp
 		FROM
-			sistembekasi.storage_transaksi
+			dci.storage_transaksi
 		WHERE
 			storage_transaksi.status != '0'
 			AND tgl_trx BETWEEN '2025-08-01'
@@ -59,7 +59,9 @@ GROUP BY
 	a.status,
 	a.jcp
 ORDER BY
-	a.jenistrx ASC
+	a.jenistrx ASC;
+
+-- line breaker ___
 SELECT
 	st.no_trx,
 	st.bruto,
@@ -70,8 +72,8 @@ FROM
 	join dci.storage_transaksi_detail std on st.no_trx = std.no_trx
 WHERE
 	st.status != '0'
-	AND st.tgl_trx BETWEEN '2026-02-28'
-	AND '2026-02-28'
+	AND st.tgl_trx BETWEEN '2025-04-01'
+	AND '2025-04-31'
 group by
 	st.no_trx;
 
