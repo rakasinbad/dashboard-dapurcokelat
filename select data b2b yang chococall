@@ -1,0 +1,23 @@
+SELECT
+  *
+FROM
+  dci.storage_transaksi
+WHERE
+  jenistrx = '4'
+  AND tgl_trx BETWEEN '2025-03-01'
+  AND '2025-12-31'
+  AND STATUS > 0
+  AND outlet = 'CC';
+
+SELECT
+  *
+FROM
+  master.orderdlv
+WHERE
+  DATE(created) BETWEEN '2025-10-01'
+  AND '2025-12-31'
+  AND paymentmethod = '6'
+  AND outletpengirim = 'b2b'
+  AND STATUS > 0
+ORDER BY
+  id ASC;
