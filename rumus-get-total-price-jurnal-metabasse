@@ -1,1 +1,7 @@
-sum(unit_price * qty - diskon_sku)
+sum(unit_price * qty - diskon_sku) + sum(unit_price * qty - diskon_sku) * 0.11
+
+
+
+sum(sub_total)/ sum(qty) as unit_price,
+		sum(qty) as qty,
+		sum(diskon_sku) as diskon_sku,
