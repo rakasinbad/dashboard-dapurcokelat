@@ -1,0 +1,78 @@
+create function in js to generate query for karyawan.pengajuancompliment based on this data
+
+insert
+  sql query
+INSERT INTO
+  karyawan.pengajuancompliment (
+    nocomp,
+    waktu,
+    nik,
+    dari,
+    untuk,
+    keterangan,
+    kode,
+    nama,
+    qty,
+    price,
+    outlet,
+    status
+  )
+VALUES
+  (
+    '',
+    '2026-03-31 14:27:01',
+    '140102355',
+    'Marketing',
+    :outlet,
+    :keterangan,
+    :code,
+    :nama,
+    :qty,
+    0,
+    :outlet,
+    2
+  ) 
+[
+  {
+    "code": "15150801",
+    "nama": "Box Saja",
+    "qty": 4,
+    "outlet": "Alam Sutera",
+    "keterangan": "Orderan customer"
+  },
+  {
+    "code": "15150801",
+    "nama": "Box Saja",
+    "qty": 2,
+    "outlet": "Biliton",
+    "keterangan": "Orderan customer"
+  },
+  {
+    "code": "15150801",
+    "nama": "Box Saja",
+    "qty": 1,
+    "outlet": "Dapur Cokelat Ahmad Dahlan",
+    "keterangan": "Orderan customer"
+  },
+  {
+    "code": "15150801",
+    "nama": "Box Saja",
+    "qty": 1,
+    "outlet": "Dapur Cokelat Alam Sutera [Updated]",
+    "keterangan": "Orderan customer"
+  },
+  {
+    "code": "15150801",
+    "nama": "Box Saja",
+    "qty": 2,
+    "outlet": "Dapur Cokelat Tanjung Duren",
+    "keterangan": "Orderan customer"
+  },
+  {
+    "code": "15150801",
+    "nama": "Box Saja",
+    "qty": 2,
+    "outlet": "Dapur Cokelat Tebet (Relokasi)",
+    "keterangan": "Orderan customer"
+  }
+]

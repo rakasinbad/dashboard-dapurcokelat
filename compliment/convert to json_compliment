@@ -1,0 +1,65 @@
+convert this data to json form outlet convert to this mapping
+
+Alam Sutera = AS
+Biliton = BL
+Dapur Cokelat Ahmad Dahlan = AD
+Dapur Cokelat Tanjung Duren = TU
+Dapur Cokelat Tebet = TB
+Dapur Cokelat WTC = WTC
+Bogor = BO
+DC Bulak Kapal = BK
+DC Cikarang = CK
+DC Denpasar = BI
+DC Galaxy = GY
+DC Goldfinch = GO
+DC Graha Famili = GF
+DC Greenville = GV
+DC Hrpn Indah = HI
+DC Jemursari = JS
+DC Lebak Bulus = LB
+DC Malang = ML
+DC Medan = ME
+DC Menteng = MT
+DC Muara Karang = MG
+DC Semarang	= SMG
+DC Sidoarjo = TS
+DC Yogyakarta	= JGJ
+Delpo Pamulang = PL
+Delpo Tikukur = TR
+Dlpo Teluk Gong = TG
+Gading Serpong = GS
+Kelapa Gading = KG
+Taman Palem = TP
+Taman Tekno = DT
+Delivery Point Rawamangun = RM
+Dapur Cokelat Artha Graha	= AG
+Delivery Point Granada = GN
+Rungkut = RK
+Delivery Point Bungurasih = BA
+Gresik = GR
+Sunter = ST
+Renon = RN	
+Mahendradatta = MD
+Pasar Minggu = PU
+Delpo Hankam = HK
+Depok = DP
+Jagakarsa = JK
+
+code		nama 				qty	outlet			keterangan		
+	05170105	Kaasstengels cookies large	1	Alam Sutera	Sample affiliate
+	05170204	Coffee cookies Small	2	Alam Sutera	Sample affiliate
+	05170110	Cornflakes Cookies Large	1	Alam Sutera	Sample affiliate
+	05170103	Choco Hazelnut cookies large	1	Alam Sutera	Sample affiliate
+	05170304	Coffee cookies In a Can	2	Alam Sutera	Sample affiliate
+	05170104	Coffee cookies Large	1	Alam Sutera	Sample affiliate
+	05170208	Vanilla Butter Small	1	Alam Sutera	Sample affiliate
+	05170209	Raisin Cookies Small	1	Pasar Minggu	Giveaway
+	10100004	Dark Crakcers	1	Pasar Minggu	Giveaway
+	05180101	Granola Bar	1	Pasar Minggu	Giveaway
+	10100004	Dark Crakcers	1	Delpo Hankam	Giveaway
+	05180101	Granola Bar	1	Depok	Giveaway
+	10100004	Dark Crakcers	1	Depok	Giveaway
+	05180101	Granola Bar	3	Biliton	Giveaway
+	01210603	Mix Fudge Brownies	2	Biliton	Giveaway
+	05180101	Granola Bar	1	Delpo Jagakarsa	Giveaway
+	05170209	Raisin Cookies Small	1	Biliton	Giveaway
