@@ -1,4 +1,4 @@
-convert this data to json form outlet convert to this mapping
+convert this data to json form outlet convert to this mapping for empty keterangan get keterangan from previous row
 
 Alam Sutera = AS
 Biliton = BL
@@ -44,22 +44,122 @@ Pasar Minggu = PU
 Delpo Hankam = HK
 Depok = DP
 Jagakarsa = JK
+Delivery Point Pasar Lama = PS
+Delivery Point Kalisari = CJ
+Delivery Point Manukan Surabaya = MN
+Delivery Point Cibinong = CN
+Citra Raya = CI
+Antapani = AP
 
-code		nama 				qty	outlet			keterangan		
-	05170105	Kaasstengels cookies large	1	Alam Sutera	Sample affiliate
-	05170204	Coffee cookies Small	2	Alam Sutera	Sample affiliate
-	05170110	Cornflakes Cookies Large	1	Alam Sutera	Sample affiliate
-	05170103	Choco Hazelnut cookies large	1	Alam Sutera	Sample affiliate
-	05170304	Coffee cookies In a Can	2	Alam Sutera	Sample affiliate
-	05170104	Coffee cookies Large	1	Alam Sutera	Sample affiliate
-	05170208	Vanilla Butter Small	1	Alam Sutera	Sample affiliate
-	05170209	Raisin Cookies Small	1	Pasar Minggu	Giveaway
-	10100004	Dark Crakcers	1	Pasar Minggu	Giveaway
-	05180101	Granola Bar	1	Pasar Minggu	Giveaway
-	10100004	Dark Crakcers	1	Delpo Hankam	Giveaway
-	05180101	Granola Bar	1	Depok	Giveaway
-	10100004	Dark Crakcers	1	Depok	Giveaway
-	05180101	Granola Bar	3	Biliton	Giveaway
-	01210603	Mix Fudge Brownies	2	Biliton	Giveaway
-	05180101	Granola Bar	1	Delpo Jagakarsa	Giveaway
-	05170209	Raisin Cookies Small	1	Biliton	Giveaway
+
+
+code		nama 				qty				outlet															keterangan		
+01040600	Opera Cake	Loaf	1	Delivery Point Pasar Lama	Giveaway Eid 2026
+01040600	Opera Cake	Loaf	1	Delivery Point Kalisari	
+01040600	Opera Cake	Loaf	1	Delivery Point Manukan Surabaya	
+01040600	Opera Cake	Loaf	1	Delivery Point Cibinong	
+01470600	Kaasstengels Cake	Loaf	1	Delivery Point Manukan Surabaya	
+10070101	Iced Chocolate Original	Cup	2	Goldfinch	Take konten outlet goldfinch
+01030500	Mango Cassata	Ind	1		
+13020204	Spc Coll Idul Fitri 2 (Masjid of Eid)	Pcs	4	Alam Sutera	Konten Act of Sweetness
+01470600	Kaasstengels Cake	Loaf	1	Goldfinch	Konten Unboxing Eid
+01010005	Topper C	Pcs	1	Goldfinch	
+01010005	Topper C	Pcs	1	Goldfinch	
+01010005	Topper C	Pcs	1	Goldfinch	
+13020204	Spc Coll Idul Fitri 2 (Masjid of Eid)	Pcs	5	Semarang	KOL Eid 2026
+13020205	Spc Coll Idul Fitri 3 (Happy Mubarak)	Pcs	2		
+13020206	(Spc Coll Idul Fitri 4 (Peaceful Eid)	Pcs	1		
+13020207	Spc Coll Idul Fitri 5 (Blessing Ramadhan)	Pcs	2		
+01470600	Kaastengels Cake	Loaf	5		
+1120600	Choco Monkey	Loaf	2		
+01480600	Chocolava Cake	Loaf	1		
+01010600	Pudding Cheese Cake	Loaf	1		
+01040600	Opera Cake	Loaf	1		
+13020204	Spc Coll Idul Fitri 2 (Masjid of Eid)	Pcs	4	Yogyakarta	
+13020205	Spc Coll Idul Fitri 3 (Happy Mubarak)	Pcs	2		
+13020206	(Spc Coll Idul Fitri 4 (Peaceful Eid)	Pcs	2		
+13020207	Spc Coll Idul Fitri 5 (Blessing Ramadhan)	Pcs	1		
+01480600	Chocolava Cake	Loaf	2		
+01470600	Kaastengels Cake	Loaf	1		
+01010600	Pudding Cheese Cake	Loaf	2		
+01380600	Double Chocolate	Loaf	2		
+01040600	Opera Cake	Loaf	2		
+01170600	Red Velvet	Loaf	1		
+01010005	Topper C	Pcs	4		
+01470600	Kaastengels Cake	Loaf	1	Galaxy	
+01010600	Pudding Cheese Cake	Loaf	1	Harapan Indah	
+01010005	Topper C	Pcs	1		
+13030101	Hampers Imlek B (Fortune Delight Hampers)	Pcs	1	Muara Karang	
+01470600	Kaastengels Cake	Loaf	2	Alam Sutera	
+01080600	Two Seasons	Loaf	1		
+10070101	Iced Chocolate Original	Cup	2		
+13020204	Spc Coll Idul Fitri 2 (Masjid of Eid)	Pcs	4		
+13020206	(Spc Coll Idul Fitri 4 (Peaceful Eid)	Pcs	2		
+13020207	Spc Coll Idul Fitri 5 (Blessing Ramadhan)	Pcs	1		
+01010100	Pudding Cheese Cake	Reg	1	Gading Serpong	
+01080100	Two Seasons	Reg	1		
+01470100	Kaastengels Cake	Reg	1		
+01440600	Mokka Torte Chocolate	Loaf	1		
+01080600	Two Seasons	Loaf	1		
+13020207	Spc Coll Idul Fitri 5 (Blessing Ramadhan)	Pcs	1		
+01480600	Chocolava Cake	Loaf	1	Citra Raya	
+10070101	Iced Chocolate Original	Cup	1		
+01010005	Topper C	Pcs	1		
+13020206	Spc Coll Idul Fitri 4 (Peaceful Eid)	Pcs	1	Greenville	
+01470600	Kaastengels Cake	Loaf	1		
+01470100	Kaastengels Cake	Reg	2		Gojek Compliment
+01470600	Kaastengels Cake	Loaf	1	Goldfinch	KOL Eid 2026
+01010005	Topper C	Pcs	3		
+13020206	Spc Coll Idul Fitri 4 (Peaceful Eid)	Pcs	3	Antapani	
+13020205	Spc Coll Idul Fitri 3 (Happy Mubarak)	Pcs	2		
+13020204	Spc Coll Idul Fitri 2 (Masjid of Eid)	Pcs	1		
+01080600	Two Seasons	Loaf	3		
+1120600	Choco Monkey	Loaf	2		
+01380600	Double Chocolate	Loaf	1		
+01470100	Kaastengels Cake	Reg	1	Ahmad Dahlan	Gojek Compliment
+13020206	(Spc Coll Idul Fitri 4 (Peaceful Eid)	Pcs	4	Medan	KOL Eid 2026
+13020207	Spc Coll Idul Fitri 5 (Blessing Ramadhan)	Pcs	2		
+13020204	Spc Coll Idul Fitri 2 (Masjid of Eid)	Pcs	1		
+13020205	Spc Coll Idul Fitri 3 (Happy Mubarak)	Pcs	1		
+1120600	Choco Monkey	Loaf	4		
+01470600	Kaastengels Cake	Loaf	2		
+01480600	Chocolava Cake	Loaf	2		
+01040600	Opera Cake	Loaf	1		
+13020204	Spc Coll Idul Fitri 2 (Masjid of Eid)	Pcs	1	Gresik	
+13020205	Spc Coll Idul Fitri 3 (Happy Mubarak)	Pcs	1		
+13020206	Spc Coll Idul Fitri 4 (Peaceful Eid)	Pcs	1		
+01480600	Chocolava Cake	Loaf	1		
+01040600	Opera Cake	Loaf	1		
+01010600	Pudding Cheese Cake	Loaf	1		
+13020204	Spc Coll Idul Fitri 2 (Masjid of Eid)	Pcs	1	Sidoarjo	
+13020205	Spc Coll Idul Fitri 3 (Happy Mubarak)	Pcs	2		
+01470600	Kaastengels Cake	Loaf	1		
+01080600	Two Seasons	Loaf	1		
+01480600	Chocolava Cake	Loaf	1		
+13020204	Spc Coll Idul Fitri 2 (Masjid of Eid)	Pcs	3	Malang	
+13020205	Spc Coll Idul Fitri 3 (Happy Mubarak)	Pcs	2		
+13020206	Spc Coll Idul Fitri 4 (Peaceful Eid)	Pcs	1		
+01470600	Kaastengels Cake	Loaf	2		
+01010600	Pudding Cheese Cake	Loaf	3		
+01480600	Chocolava Cake	Loaf	1		
+13020204	Spc Coll Idul Fitri 2 (Masjid of Eid)	Pcs	1	Denpasar	
+13020205	Spc Coll Idul Fitri 3 (Happy Mubarak)	Pcs	1		
+13020207	Spc Coll Idul Fitri 5 (Blessing Ramadhan)	Pcs	3		
+01010600	Pudding Cheese Cake	Loaf	1		
+01470600	Kaastengels Cake	Loaf	2		
+01040600	Opera Cake	Loaf	1		
+01080600	Two Seasons	Loaf	1		
+01380600	Double Chocolate	Loaf	15		Radio Pinguin FM
+15110201	Spunbond Loaf	Pcs	15		
+01380100	Double Chocolate	Reg	10	Mahendradata	The Rock in Life Radio
+01380100	Double Chocolate	Reg	2	Renon	
+13020204	Spc Coll Idul Fitri 2 (Masjid of Eid)	Pcs	3	Biliton	KOL Eid 2026
+13020205	Spc Coll Idul Fitri 3 (Happy Mubarak)	Pcs	1		
+13020206	Spc Coll Idul Fitri 4 (Peaceful Eid)	Pcs	2		
+13020207	Spc Coll Idul Fitri 5 (Blessing Ramadhan)	PCs	1		
+01040600	Opera Cake	Loaf	6		
+01380600	Double Chocolate	Loaf	3		
+1120600	Choco Monkey	Loaf	2		
+10070101	Iced Chocolate Original	Cup	9		
+01010005	Topper C	Pcs	3		
+01040600	Opera Cake	Reg	4	Biliton	She radio
