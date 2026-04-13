@@ -19,7 +19,12 @@ FROM
       CASE
         WHEN coalesce(stc.channel, src.channel) IN ('Web', 'App') THEN 'Web + App'
         WHEN coalesce(stc.channel, src.channel) IN ('GOFOOD', 'GRABFOOD', 'SHOPEE FOOD')
-        AND src.channel != 'Walk In' THEN src.channel
+        AND src.channel != 'Walk In' THEN 'Food Delivery'
+        WHEN coalesce(stc.channel, src.channel) IN (
+          'ECOMMERCE - Tokopedia',
+          'ECOMMERCE - SHOPEE MALL',
+          'Tik Tok'
+        ) THEN 'E-Commerce'
         WHEN coalesce(src.channel = 'Walk In') THEN 'Walk In'
         ELSE coalesce(src.channel, src.channel)
       END AS channel
