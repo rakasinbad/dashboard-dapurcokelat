@@ -66,7 +66,7 @@ SELECT
 	st.no_trx,
 	st.bruto,
 	sum(std.harga * std.qty) as total_harga,
-	x
+	bruto - sum(std.harga * std.qty) as perbandingan
 FROM
 	dci.storage_transaksi st
 	join dci.storage_transaksi_detail std on st.no_trx = std.no_trx
