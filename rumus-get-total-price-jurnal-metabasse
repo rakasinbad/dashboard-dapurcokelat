@@ -1,4 +1,4 @@
-sum(unit_price * qty - diskon_sku) + sum(unit_price * qty - diskon_sku) * 0.11
+(sum(unit_price * qty - diskon_sku) + sum(unit_price * qty - diskon_sku) * 0.11) - sum(compliment)
 
 
 
