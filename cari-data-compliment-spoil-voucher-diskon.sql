@@ -50,5 +50,5 @@ WHERE
       AND kodeoutlet != 'XX'
   )
 ORDER BY
-  namakasir,
-  waktu ASC;
+  waktu,
+  namakasir ASC;
