@@ -13,8 +13,8 @@ SELECT
       dci.deposit
     WHERE
       outlet in ('AD', 'PT', 'PM')
-      and waktu BETWEEN '2026-06-29 00:00:00'
-      AND '2026-06-29 23:59:59'
+      and waktu BETWEEN '2026-06-25 00:00:00'
+      AND '2026-06-25 23:59:59'
       AND idcustomer = b.idcustomer
       AND pintu = 'cash'
       and status = '1'
@@ -30,8 +30,8 @@ SELECT
       dci.deposit
     WHERE
       outlet in ('AD', 'PT', 'PM')
-      and waktu BETWEEN '2026-06-29 00:00:00'
-      AND '2026-06-29 23:59:59'
+      and waktu BETWEEN '2026-06-25 00:00:00'
+      AND '2026-06-25 23:59:59'
       AND idcustomer = b.idcustomer
       AND pintu = 'debit'
       and status = '1'
@@ -47,8 +47,8 @@ SELECT
       dci.deposit
     WHERE
       outlet in ('AD', 'PT', 'PM')
-      and waktu BETWEEN '2026-06-29 00:00:00'
-      AND '2026-06-29 23:59:59'
+      and waktu BETWEEN '2026-06-25 00:00:00'
+      AND '2026-06-25 23:59:59'
       AND idcustomer = b.idcustomer
       AND pintu = 'cc'
       and status = '1'
@@ -74,7 +74,7 @@ FROM
             dci.deposit
           WHERE
             outlet in ('AD', 'PT', 'PM')
-            and waktu < '2026-06-29 00:00:00'
+            and waktu < '2026-06-25 00:00:00'
             and status = '1'
           GROUP BY
             idcustomer
@@ -97,8 +97,8 @@ FROM
         dci.deposit
       WHERE
         outlet in ('AD', 'PT', 'PM')
-        and waktu BETWEEN '2026-06-29 00:00:00'
-        AND '2026-06-29 23:59:59'
+        and waktu BETWEEN '2026-06-25 00:00:00'
+        AND '2026-06-25 23:59:59'
         and status = '1'
       GROUP BY
         idcustomer
