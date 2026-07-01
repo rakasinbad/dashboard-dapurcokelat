@@ -5,14 +5,16 @@ WITH RawData AS (
 	SELECT
 		storage_transaksi.outlet,
 		storage_transaksi.tgl_trx,
-		storage_transaksi.compliment,
+		CAST(storage_transaksi.compliment AS UNSIGNED) AS compliment,
 		storage_transaksi.member,
 		storage_transaksi.remark,
 		storage_transaksi.no_trx,
 		storage_transaksi.jenistrx,
 		storage_transaksi.nomember,
 		storage_transaksi.alamattujuan,
-		storage_transaksi.diskon_rupiah,
+		(
+			storage_transaksi.diskon_rupiah * (STD.qty * STD.harga) / storage_transaksi.bruto
+		) AS diskon_rupiah,
 		storage_transaksi.bruto,
 		o.kodeoutlet,
 		o.namaoutlet,
@@ -23,7 +25,18 @@ WITH RawData AS (
 		STD.qty,
 		od.kodeorder AS kodeorderdlv,
 		storage_transaksi.voucher,
-		storage_transaksi.spoil,
+		CAST(storage_transaksi.spoil AS UNSIGNED) spoil,
+		storage_transaksi.trf,
+		storage_transaksi.employee,
+		storage_transaksi.cash,
+		storage_transaksi.dp,
+		storage_transaksi.cc,
+		storage_transaksi.debit,
+		(
+			(
+				storage_transaksi.diskon_rupiah * (STD.qty * STD.harga) / storage_transaksi.bruto
+			) * 100 / 111
+		) AS diskon_sku,
 		(
 			CASE
 				WHEN storage_transaksi.jenistrx IN ('4', '8') THEN CASE
@@ -49,10 +62,12 @@ WITH RawData AS (
 				WHEN storage_transaksi.nomember = '898724' THEN 'Tik Tok'
 				when storage_transaksi.nomember in ('1294133') then 'TikTok Go'
 				when storage_transaksi.nomember in ('1294145') then 'Grab Dine Out'
+				when storage_transaksi.`nomember` in ('1343709') then 'B2B Voucher'
 				WHEN storage_transaksi.jenistrx = '1' THEN 'Walk In'
 				ELSE 'Others'
 			END
-		) AS channel
+		) AS channel,
+		IF(cl.`status` = '1', 'Unpaid', 'Paid') AS payment_status
 	FROM
 		dci.storage_transaksi
 		JOIN dci.storage_transaksi_detail STD ON storage_transaksi.no_trx = STD.no_trx
@@ -64,11 +79,12 @@ WITH RawData AS (
 		LEFT JOIN tempo.`customer` c ON storage_transaksi.`nomember_app` = c.`nomember`
 		AND storage_transaksi.`nomember` = c.`id`
 		LEFT JOIN master.orderdlv od ON od.trx_no = storage_transaksi.no_trx
+		LEFT JOIN dci.`creditlist` AS cl ON storage_transaksi.no_trx = cl.trxno
 	WHERE
 		1 = 1
 		AND storage_transaksi.outlet NOT IN('XC', 'XT')
-		AND `storage_transaksi`.`tgl_trx` BETWEEN date '2026-04-01'
-		AND date '2026-04-30'
+		AND `storage_transaksi`.`tgl_trx` BETWEEN date '2026-06-01'
+		AND date '2026-06-30'
 		AND storage_transaksi.jenistrx IN ('1', '4', '8')
 		AND storage_transaksi.`status` NOT IN('0', '')
 		AND storage_transaksi.outlet IN (
@@ -97,14 +113,16 @@ WITH RawData AS (
 	SELECT
 		storage_transaksi.outlet,
 		storage_transaksi.tgl_trx,
-		storage_transaksi.compliment,
+		CAST(storage_transaksi.compliment AS UNSIGNED) AS compliment,
 		storage_transaksi.member,
 		storage_transaksi.remark,
 		storage_transaksi.no_trx,
 		storage_transaksi.jenistrx,
 		storage_transaksi.nomember,
 		storage_transaksi.alamattujuan,
-		storage_transaksi.diskon_rupiah,
+		(
+			storage_transaksi.diskon_rupiah * (STD.qty * STD.harga) / storage_transaksi.bruto
+		) AS diskon_rupiah,
 		storage_transaksi.bruto,
 		o.kodeoutlet,
 		o.namaoutlet,
@@ -115,7 +133,18 @@ WITH RawData AS (
 		STD.qty,
 		od.kodeorder AS kodeorderdlv,
 		storage_transaksi.voucher,
-		storage_transaksi.spoil,
+		CAST(storage_transaksi.spoil AS UNSIGNED) spoil,
+		storage_transaksi.trf,
+		storage_transaksi.employee,
+		storage_transaksi.cash,
+		storage_transaksi.dp,
+		storage_transaksi.cc,
+		storage_transaksi.debit,
+		(
+			(
+				storage_transaksi.diskon_rupiah * (STD.qty * STD.harga) / storage_transaksi.bruto
+			) * 100 / 111
+		) AS diskon_sku,
 		(
 			CASE
 				WHEN storage_transaksi.jenistrx IN ('4', '8') THEN CASE
@@ -141,10 +170,12 @@ WITH RawData AS (
 				WHEN storage_transaksi.nomember = '898724' THEN 'Tik Tok'
 				when storage_transaksi.nomember in ('1294133') then 'TikTok Go'
 				when storage_transaksi.nomember in ('1294145') then 'Grab Dine Out'
+				when storage_transaksi.`nomember` in ('1343709') then 'B2B Voucher'
 				WHEN storage_transaksi.jenistrx = '1' THEN 'Walk In'
 				ELSE 'Others'
 			END
-		) AS channel
+		) AS channel,
+		'Paid' AS payment_status
 	FROM
 		tempo.storage_transaksi
 		JOIN tempo.storage_transaksi_detail STD ON storage_transaksi.no_trx = STD.no_trx
@@ -159,8 +190,8 @@ WITH RawData AS (
 	WHERE
 		1 = 1
 		AND storage_transaksi.outlet NOT IN('XC', 'XT')
-		AND `storage_transaksi`.`tgl_trx` BETWEEN date '2026-04-01'
-		AND date '2026-04-30'
+		AND `storage_transaksi`.`tgl_trx` BETWEEN date '2026-06-01'
+		AND date '2026-06-30'
 		AND storage_transaksi.jenistrx IN ('1', '4', '8')
 		AND storage_transaksi.`status` NOT IN('0', '')
 		AND storage_transaksi.outlet IN (
@@ -189,14 +220,16 @@ WITH RawData AS (
 	SELECT
 		storage_transaksi.outlet,
 		storage_transaksi.tgl_trx,
-		storage_transaksi.compliment,
+		CAST(storage_transaksi.compliment AS UNSIGNED) AS compliment,
 		storage_transaksi.member,
 		storage_transaksi.remark,
 		storage_transaksi.no_trx,
 		storage_transaksi.jenistrx,
 		storage_transaksi.nomember,
 		storage_transaksi.alamattujuan,
-		storage_transaksi.diskon_rupiah,
+		(
+			storage_transaksi.diskon_rupiah * (STD.qty * STD.harga) / storage_transaksi.bruto
+		) AS diskon_rupiah,
 		storage_transaksi.bruto,
 		o.kodeoutlet,
 		o.namaoutlet,
@@ -207,7 +240,18 @@ WITH RawData AS (
 		STD.qty,
 		od.kodeorder AS kodeorderdlv,
 		storage_transaksi.voucher,
-		storage_transaksi.spoil,
+		CAST(storage_transaksi.spoil AS UNSIGNED) spoil,
+		storage_transaksi.trf,
+		storage_transaksi.employee,
+		storage_transaksi.cash,
+		storage_transaksi.dp,
+		storage_transaksi.cc,
+		storage_transaksi.debit,
+		(
+			(
+				storage_transaksi.diskon_rupiah * (STD.qty * STD.harga) / storage_transaksi.bruto
+			) * 100 / 111
+		) AS diskon_sku,
 		(
 			CASE
 				WHEN storage_transaksi.jenistrx IN ('4', '8') THEN CASE
@@ -233,10 +277,12 @@ WITH RawData AS (
 				WHEN storage_transaksi.nomember = '898724' THEN 'Tik Tok'
 				when storage_transaksi.nomember in ('1294133') then 'TikTok Go'
 				when storage_transaksi.nomember in ('1294145') then 'Grab Dine Out'
+				when storage_transaksi.`nomember` in ('1343709') then 'B2B Voucher'
 				WHEN storage_transaksi.jenistrx = '1' THEN 'Walk In'
 				ELSE 'Others'
 			END
-		) AS channel
+		) AS channel,
+		'Paid' AS payment_status
 	FROM
 		sistemsurabaya.storage_transaksi
 		JOIN sistemsurabaya.storage_transaksi_detail STD ON storage_transaksi.no_trx = STD.no_trx
@@ -251,8 +297,8 @@ WITH RawData AS (
 	WHERE
 		1 = 1
 		AND storage_transaksi.outlet NOT IN('XC', 'XT')
-		AND `storage_transaksi`.`tgl_trx` BETWEEN date '2026-04-01'
-		AND date '2026-04-30'
+		AND `storage_transaksi`.`tgl_trx` BETWEEN date '2026-06-01'
+		AND date '2026-06-30'
 		AND storage_transaksi.jenistrx IN ('1', '4', '8')
 		AND storage_transaksi.`status` NOT IN('0', '')
 		AND storage_transaksi.outlet IN (
@@ -290,21 +336,8 @@ ProcessedMath AS (
 				ELSE parent
 			END
 		) AS parent_outlet,
-		(
-			CASE
-				WHEN compliment = 0 THEN qty * (raw_harga * 100 / 111)
-				ELSE 0
-			END
-		) AS sub_total,
-		(
-			CASE
-				WHEN compliment = 0 THEN qty * raw_harga
-				ELSE 0
-			END
-		) AS sub_total_after_tax,
-		(
-			(diskon_rupiah * (qty * raw_harga) / bruto) * 100 / 111
-		) AS diskon_sku
+		(qty * (raw_harga * 100 / 111)) AS sub_total,
+		(qty * raw_harga) AS sub_total_after_tax
 	FROM
 		RawData
 ) -- ==========================================
@@ -364,10 +397,13 @@ SELECT
 	(
 		CASE
 			WHEN member > 0 THEN 'Credit Customer'
-			WHEN alamattujuan = '8' THEN '001'
-			WHEN remark LIKE '%WE%'
-			OR remark LIKE '%INV2%' THEN '002'
-			WHEN nomember IN ('904831') THEN '003'
+			WHEN trf > 0 THEN 'Transfer'
+			WHEN employee > 0 THEN 'Credit Karyawan'
+			WHEN cash > 0 THEN 'Cash'
+			WHEN debit > 0 THEN 'DEBIT/BCA CARD'
+			WHEN cc > 0 THEN 'VISA/MASTER'
+			WHEN dp > 0 THEN 'DOWN PAYMENT'
+			WHEN compliment > 0 THEN 'Compliment'
 			ELSE ''
 		END
 	) AS '#PaymentMethod',
@@ -381,13 +417,15 @@ SELECT
 	sub_total_after_tax - sub_total "PPN",
 	remark "Remark",
 	voucher "Voucher",
+	diskon_rupiah "Diskon SKU After PPN",
 	compliment "Compliment",
 	spoil "Spoil",
-	sub_total_after_tax "Sub Total After PPN"
+	sub_total_after_tax "Sub Total After PPN",
+	payment_status AS "Payment Status"
 FROM
-	ProcessedMath pm
-	JOIN master.outlet mo ON pm.parent_outlet = mo.kodeoutlet
+	ProcessedMath storage_transaksi
+	JOIN master.outlet mo ON storage_transaksi.parent_outlet = mo.kodeoutlet
 WHERE
 	1 = 1
-	AND pm.parent_outlet = 'AP'
-	AND pm.sub_total > -1;
+	AND storage_transaksi.parent_outlet = 'BL'
+	AND storage_transaksi.sub_total > -1;
