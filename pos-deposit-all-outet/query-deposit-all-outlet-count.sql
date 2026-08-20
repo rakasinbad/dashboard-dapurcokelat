@@ -23,15 +23,16 @@ FROM
     FROM
       (
         -- 1. PAST DATA: Calculate the starting balance before the date range
-        SELECTidcustomer,
-        (SUM(depositplus) - SUM(depositmin)) AS `start`,
-        0 AS dpplus,
-        0 AS cash,
-        0 AS debit,
-        0 AS cc,
-        0 AS dpmin,
-        outlet,
-        waktu
+        SELECT
+          idcustomer,
+          (SUM(depositplus) - SUM(depositmin)) AS `start`,
+          0 AS dpplus,
+          0 AS cash,
+          0 AS debit,
+          0 AS cc,
+          0 AS dpmin,
+          outlet,
+          waktu
         FROM
           dci.deposit
         WHERE
