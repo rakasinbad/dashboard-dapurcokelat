@@ -1,450 +1,134 @@
-UPDATE
-    dci.storage_transaksi st
-    JOIN (
+SELECT
+    SUM(a.diskon_ongkir) AS diskon_ongkir,
+    a.jenistrx,
+    a.status,
+    a.jcp,
+    SUM(a.bruto) AS bruto,
+    SUM(a.diskon_rupiah) AS diskon_rupiah,
+    SUM(a.netto) AS netto,
+    SUM(a.tax) AS tax,
+    SUM(a.aftertax) AS aftertax,
+    SUM(a.dlvcharge) AS dlvcharge,
+    SUM(a.total) AS total,
+    SUM(a.cash) AS cash,
+    SUM(a.debit) AS debit,
+    SUM(a.cc) AS cc,
+    SUM(a.dp) AS dp,
+    SUM(a.member) AS member,
+    SUM(a.employee) AS employee,
+    SUM(a.compliment) AS compliment,
+    SUM(a.voucher) AS voucher,
+    SUM(a.trf) AS trf,
+    SUM(a.promo) AS promo,
+    SUM(a.spoil) AS spoil,
+    SUM(a.payment) AS payment,
+    SUM(a.kembalian) AS kembalian,
+    COUNT(a.id) AS jmltrx
+FROM
+    (
         SELECT
-            no_trx
+            *,
+            IF (
+                (
+                    jenistrx = '3'
+                    OR jenistrx = '5'
+                )
+                AND LENGTH(nomember) = '9',
+                '1',
+                IF (
+                    (
+                        jenistrx = '3'
+                        OR jenistrx = '5'
+                    )
+                    AND LENGTH(nomember) != '9'
+                    AND nomember != '',
+                    '2',
+                    '0'
+                )
+            ) AS jcp
         FROM
-            (
+            dci.storage_transaksi
+        WHERE
+            storage_transaksi.status != '0'
+            AND tgl_trx BETWEEN '2026-01-01'
+            AND '2026-01-31'
+            AND bruto >= 0
+            AND outlet IN (
                 SELECT
-                    st.no_trx
+                    kodeoutlet
                 FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
+                    master.outlet
                 WHERE
-                    st.tgl_trx = '2026-06-01'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    1
-            ) t0
-        UNION
-        ALL
+                    produksi IN (
+                        SELECT
+                            id
+                        FROM
+                            master.produksi
+                        WHERE
+                            lokasidb = 'dci'
+                            AND status = '1'
+                    )
+                    AND (
+                        (
+                            franchise != '1'
+                            AND jenis_outlet IN ('', '1', '2')
+                            OR jenis_outlet = '5'
+                        )
+                    )
+                    AND kodeoutlet NOT IN ('XX', 'XY')
+                    AND status_report = '1'
+            )
+    ) AS a
+GROUP BY
+    a.jenistrx,
+    a.status,
+    a.jcp
+ORDER BY
+    a.jenistrx ASC;
+
+-- query 5:
+SELECT
+    SUM(cardname) AS cash,
+    SUM(cardno) AS debit,
+    SUM(cardtype) AS cc,
+    SUM(dp_trf) AS trf,
+    jenistrx
+FROM
+    dci.storage_transaksi
+WHERE
+    tgl_trx BETWEEN '2026-01-01'
+    AND '2026-01-31'
+    AND dp != '0'
+    AND (
+        jenistrx = '1'
+        OR jenistrx = '4'
+    )
+    AND status = '1'
+    AND bruto >= 0
+    AND outlet IN (
         SELECT
-            no_trx
+            kodeoutlet
         FROM
-            (
+            master.outlet
+        WHERE
+            produksi IN (
                 SELECT
-                    st.no_trx
+                    id
                 FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
+                    master.produksi
                 WHERE
-                    st.tgl_trx = '2026-06-02'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    1
-            ) t1
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-07'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    2
-            ) t2
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-10'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    1
-            ) t3
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-11'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    1
-            ) t4
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-12'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    2
-            ) t5
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-14'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    1
-            ) t6
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-15'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    1
-            ) t7
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-16'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    2
-            ) t8
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-17'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    2
-            ) t9
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-19'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    3
-            ) t10
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-20'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    1
-            ) t11
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-21'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    2
-            ) t12
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-22'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    1
-            ) t13
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-24'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    1
-            ) t14
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-25'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    3
-            ) t15
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-26'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    2
-            ) t16
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-27'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    1
-            ) t17
-        UNION
-        ALL
-        SELECT
-            no_trx
-        FROM
-            (
-                SELECT
-                    st.no_trx
-                FROM
-                    dci.storage_transaksi st
-                    JOIN dci.storage_transaksi_detail std ON st.no_trx = std.no_trx
-                WHERE
-                    st.tgl_trx = '2026-06-30'
-                    AND st.jenistrx = 1
-                    AND st.nomember = '1294133'
-                    AND st.status = 1
-                    AND st.is_voided = 0
-                    AND std.kode = '15080001'
-                GROUP BY
-                    st.no_trx
-                LIMIT
-                    2
-            ) t18
-    ) target ON st.no_trx = target.no_trx
-SET
-    st.diskon_rupiah = st.diskon_rupiah + 3000,
-    st.netto = st.netto - 3000,
-    st.aftertax = st.aftertax - 3000,
-    st.total = st.total - 3000,
-    st.member = st.member - 3000,
-    st.payment = st.payment - 3000,
-    st.remark = CONCAT(
-        COALESCE(st.remark, ''),
-        ' | Manual Update Diskon TikTok GO 3000'
-    );
+                    lokasidb = 'dci'
+                    AND status = '1'
+            )
+            AND (
+                (
+                    franchise != '1'
+                    AND jenis_outlet IN ('', '1', '2')
+                    OR jenis_outlet = '5'
+                )
+            )
+            AND kodeoutlet NOT IN ('XX', 'XY')
+            AND status_report = '1'
+    )
+GROUP BY
+    jenistrx
