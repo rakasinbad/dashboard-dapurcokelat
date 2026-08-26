@@ -7,9 +7,8 @@ FROM
   dci.stok_card
 WHERE
   jenis != '0'
-  AND date(created) BETWEEN '2026-06-01'
-  AND '2026-06-30'
-  AND kode = '10010000'
+  AND date(created) BETWEEN '2026-01-01'
+  AND '2026-01-31'
   AND owner IN (
     'AD',
     'AS',
@@ -24,7 +23,6 @@ WHERE
     'BB',
     'BE',
     'BN',
-    'BJ',
     'BR',
     'BA',
     'CH',
@@ -36,7 +34,6 @@ WHERE
     'DU',
     'DK',
     'DG',
-    'FP',
     'GM',
     'GRR',
     'GN',
@@ -46,7 +43,6 @@ WHERE
     'JW',
     'JG',
     'KUR',
-    'KS',
     'KD',
     'KT',
     'KP',
@@ -85,7 +81,6 @@ WHERE
     'VB',
     'WY',
     'BI',
-    'EC',
     'GS',
     'GY',
     'GO',
@@ -116,6 +111,7 @@ WHERE
     'TS',
     'WTC'
   )
+  AND kode = '50010001'
 GROUP BY
   kode,
   jenis
