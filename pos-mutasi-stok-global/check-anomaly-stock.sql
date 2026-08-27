@@ -43,6 +43,7 @@ HAVING
 WITH ranked AS (
     SELECT
         id,
+        owner,
         created,
         kredit,
         debet,
@@ -74,6 +75,7 @@ WITH ranked AS (
 anomalies AS (
     SELECT
         id,
+        owner,
         created,
         kredit,
         debet,
@@ -100,6 +102,7 @@ anomalies AS (
 SELECT
     'INCORRECT_BALANCE' AS anomaly_type,
     id,
+    owner,
     created,
     prev_id,
     prev_created,
