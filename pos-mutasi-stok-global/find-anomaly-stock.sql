@@ -25,7 +25,7 @@ WITH ranked AS (
   FROM
     stok_card
   WHERE
-    kode = '50020011'
+    kode = '40080402'
     AND owner IN (
       'AD',
       'AS',
@@ -128,8 +128,8 @@ WITH ranked AS (
       'TS',
       'WTC'
     )
-    AND created BETWEEN '2026-01-01 00:00:00'
-    AND '2026-01-31 23:59:59'
+    AND created BETWEEN '2026-02-01 00:00:00'
+    AND '2026-02-28 23:59:59'
 ),
 anomalies AS (
   SELECT
