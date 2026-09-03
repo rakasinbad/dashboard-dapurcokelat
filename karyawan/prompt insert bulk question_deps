@@ -1,0 +1,131 @@
+here is my question_depts table structure
+
+id INT(11) NO
+question_id INT(11) NO
+dept VARCHAR(255) YES
+sub_dept VARCHAR(255) YES
+dept_declare VARCHAR(255) YES
+jabatan VARCHAR(255) YES
+
+i need to insert bulk data create bulk query for that
+
+- question_id: 314
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: LEADER
+
+- question_id: 315
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: LEADER
+
+- uestion_id: 316
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: LEADER
+
+- question_id: 317
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: LEADER
+
+- question_id: 318
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: LEADER
+
+- question_id: 314
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: ASSISTANT_SUPERVISOR
+
+- question_id: 315
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: ASSISTANT_SUPERVISOR
+
+- uestion_id: 316
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: ASSISTANT_SUPERVISOR
+
+- question_id: 317
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: ASSISTANT_SUPERVISOR
+
+- question_id: 318
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: ASSISTANT_SUPERVISOR
+
+- question_id: 314
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: SUPERVISOR
+
+- question_id: 315
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: SUPERVISOR
+
+- uestion_id: 316
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: SUPERVISOR
+
+- question_id: 317
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: SUPERVISOR
+
+- question_id: 318
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: SUPERVISOR
+
+- question_id: 314
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: SENIOR_SUPERVISOR
+
+- question_id: 315
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: SENIOR_SUPERVISOR
+
+- uestion_id: 316
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: SENIOR_SUPERVISOR
+
+- question_id: 317
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: SENIOR_SUPERVISOR
+
+- question_id: 318
+- dept: R&D
+- sub_dept: R&D
+- dept_declare: null
+- jabatan: SENIOR_SUPERVISOR
+

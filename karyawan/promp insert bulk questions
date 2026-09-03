@@ -1,0 +1,37 @@
+here is question table structure 
+id INT(11) NO NO 
+text VARCHAR(255) YES NO 
+status VARCHAR(5) YES NO is_all_dept TINYINT(1) YES 0 NO 
+type VARCHAR(50) YES NO 
+question_group_id INT(11) NO NO 
+created_at DATETIME NO 
+current_timestamp() NO 
+updated_at DATETIME NO 
+current_timestamp() NO 
+deleted_at DATETIME YES NO
+
+i need to insert bulk data create bulk query for that 
+- text: Sejauh mana Manajer R&D mampu merencanakan, mengorganisir, dan mengawasi kegiatan penelitian serta pengembangan produk agar berjalan sesuai target waktu, annggaran, dan tujuan perusahaan?
+- status: 1
+- type: rating
+- question_group_id: 4
+
+- text: Sejauh mana Manajer R&D mampu mengelola penggunaan bahan, alat, dan sumber daya penelitian secara efektif dan efisien tanpa mengurangi kualitas hasil pengembangan produk?
+- status: 1
+- type: rating
+- question_group_id: 4
+
+- text: Sejauh mana Manajer R&D mampu mengelola tim R&D dalam menjaga kedisiplinan, meningkatkan kompetensi, mendorong inovasi, serta mencapai produktivitas kerja yang optimal?
+- status: 1
+- type: rating
+- question_group_id: 4
+
+- text: Sejauh mana Manajer R&D berperan dalam memastikan kualitas hasil pengembangan produk, melakukan inovasi, serta menerapkan perbaikan berkelanjutan terhadap proses penelitian dan pengembangan?
+- status: 1
+- type: rating
+- question_group_id: 4
+
+- text: Sejauh mana Manajer R&D mampu berkoordinasi dengan departemen lain (misalnya Produksi, QA, Procurement, Marketing, dan Sales) untuk memastikan hasil pengembangan produk dapat diimplementasikan dan memenuhi kebutuhan bisnis serta pelanggan ?
+- status: 1
+- type: rating
+- question_group_id: 4
