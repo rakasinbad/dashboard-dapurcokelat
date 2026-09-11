@@ -129,7 +129,7 @@ WITH ranked AS (
       'WTC'
     )
     AND created BETWEEN '2026-02-01 00:00:00'
-    AND '2026-02-28 23:59:59'
+    AND '2026-08-31 23:59:59'
 ),
 anomalies AS (
   SELECT

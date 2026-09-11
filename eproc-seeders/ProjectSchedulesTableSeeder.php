@@ -1,0 +1,698 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+
+class ProjectSchedulesTableSeeder extends Seeder
+{
+
+    /**
+     * Auto generated seed file
+     *
+     * @return void
+     */
+    public function run()
+    {
+        
+
+        \DB::table('project_schedules')->delete();
+        
+        \DB::table('project_schedules')->insert(array (
+            0 => 
+            array (
+                'id' => 1,
+                'project_id' => 1,
+                'activity_name' => 'Tender Preparation1',
+                'start_datetime' => '2026-02-25 16:07:33',
+                'end_datetime' => '2026-03-04 16:07:33',
+                'is_mandatory' => 1,
+                'order_sequence' => 1,
+                'created_at' => '2026-02-25 16:07:33',
+                'updated_at' => '2026-02-25 16:07:33',
+            ),
+            1 => 
+            array (
+                'id' => 2,
+                'project_id' => 1,
+                'activity_name' => 'Vendor Selection1',
+                'start_datetime' => '2026-03-05 16:07:33',
+                'end_datetime' => '2026-03-18 16:07:33',
+                'is_mandatory' => 1,
+                'order_sequence' => 2,
+                'created_at' => '2026-02-25 16:07:33',
+                'updated_at' => '2026-02-25 16:07:33',
+            ),
+            2 => 
+            array (
+                'id' => 3,
+                'project_id' => 2,
+                'activity_name' => 'Tender Preparation2',
+                'start_datetime' => '2026-02-25 16:07:33',
+                'end_datetime' => '2026-03-04 16:07:33',
+                'is_mandatory' => 1,
+                'order_sequence' => 1,
+                'created_at' => '2026-02-25 16:07:33',
+                'updated_at' => '2026-02-25 16:07:33',
+            ),
+            3 => 
+            array (
+                'id' => 4,
+                'project_id' => 2,
+                'activity_name' => 'Vendor Selection2',
+                'start_datetime' => '2026-03-05 16:07:33',
+                'end_datetime' => '2026-03-18 16:07:33',
+                'is_mandatory' => 1,
+                'order_sequence' => 2,
+                'created_at' => '2026-02-25 16:07:33',
+                'updated_at' => '2026-02-25 16:07:33',
+            ),
+            4 => 
+            array (
+                'id' => 5,
+                'project_id' => 3,
+                'activity_name' => 'Tender Preparation3',
+                'start_datetime' => '2026-02-25 16:07:33',
+                'end_datetime' => '2026-03-04 16:07:33',
+                'is_mandatory' => 1,
+                'order_sequence' => 1,
+                'created_at' => '2026-02-25 16:07:33',
+                'updated_at' => '2026-02-25 16:07:33',
+            ),
+            5 => 
+            array (
+                'id' => 6,
+                'project_id' => 3,
+                'activity_name' => 'Vendor Selection3',
+                'start_datetime' => '2026-03-05 16:07:33',
+                'end_datetime' => '2026-03-18 16:07:33',
+                'is_mandatory' => 1,
+                'order_sequence' => 2,
+                'created_at' => '2026-02-25 16:07:33',
+                'updated_at' => '2026-02-25 16:07:33',
+            ),
+            6 => 
+            array (
+                'id' => 28,
+                'project_id' => 25,
+                'activity_name' => 'Sourcing Vendor Pengadaan Laptop',
+                'start_datetime' => '2026-06-05 00:00:00',
+                'end_datetime' => '2026-06-09 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-05 17:46:16',
+                'updated_at' => '2026-06-05 17:46:16',
+            ),
+            7 => 
+            array (
+                'id' => 29,
+                'project_id' => 25,
+                'activity_name' => 'Penunjukan Vendor Pengadaan Laptop',
+                'start_datetime' => '2026-06-05 00:00:00',
+                'end_datetime' => '2026-06-09 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-05 17:46:16',
+                'updated_at' => '2026-06-05 17:46:16',
+            ),
+            8 => 
+            array (
+                'id' => 30,
+                'project_id' => 25,
+                'activity_name' => 'Penerbitan PO',
+                'start_datetime' => '2026-06-10 00:00:00',
+                'end_datetime' => '2026-06-11 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-05 17:46:16',
+                'updated_at' => '2026-06-05 17:46:16',
+            ),
+            9 => 
+            array (
+                'id' => 33,
+                'project_id' => 28,
+                'activity_name' => 'Request For Proposal for CCTV Installation ',
+                'start_datetime' => '2026-06-15 00:00:00',
+                'end_datetime' => '2026-06-17 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-15 12:50:55',
+                'updated_at' => '2026-06-15 12:50:55',
+            ),
+            10 => 
+            array (
+                'id' => 34,
+                'project_id' => 28,
+                'activity_name' => 'Vendor Appointment',
+                'start_datetime' => '2026-06-17 00:00:00',
+                'end_datetime' => '2026-06-18 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-15 12:50:55',
+                'updated_at' => '2026-06-15 12:50:55',
+            ),
+            11 => 
+            array (
+                'id' => 35,
+                'project_id' => 28,
+                'activity_name' => 'CCTV Installation Work',
+                'start_datetime' => '2026-06-19 00:00:00',
+                'end_datetime' => '2026-06-27 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-15 12:50:55',
+                'updated_at' => '2026-06-15 12:50:55',
+            ),
+            12 => 
+            array (
+                'id' => 36,
+                'project_id' => 29,
+                'activity_name' => 'test schedule 1',
+                'start_datetime' => '2026-06-17 00:00:00',
+                'end_datetime' => '2026-06-30 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-16 14:59:06',
+                'updated_at' => '2026-06-16 14:59:06',
+            ),
+            13 => 
+            array (
+                'id' => 37,
+                'project_id' => 30,
+            'activity_name' => 'Pengumuman Tender Proyek Renovasi Fasad Delivery Point (Delpo) Phase 1',
+                'start_datetime' => '2026-06-22 09:00:00',
+                'end_datetime' => '2026-06-23 16:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-22 08:22:55',
+                'updated_at' => '2026-06-22 08:22:55',
+            ),
+            14 => 
+            array (
+                'id' => 38,
+                'project_id' => 30,
+            'activity_name' => 'Evaluasi Proposal Penawaran Proyek Renovasi Fasad Delivery Point (Delpo) Phase 1',
+                'start_datetime' => '2026-06-23 15:00:00',
+                'end_datetime' => '2026-06-24 16:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-22 08:22:55',
+                'updated_at' => '2026-06-22 08:22:55',
+            ),
+            15 => 
+            array (
+                'id' => 39,
+                'project_id' => 30,
+            'activity_name' => 'Penunjukan Vendor Proyek Renovasi Fasad Delivery Point (Delpo) Phase 1',
+                'start_datetime' => '2026-06-24 17:00:00',
+                'end_datetime' => '2026-06-25 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-22 08:22:55',
+                'updated_at' => '2026-06-22 08:22:55',
+            ),
+            16 => 
+            array (
+                'id' => 40,
+                'project_id' => 31,
+                'activity_name' => 'Internal Assessment dan Pengajuan Budget Pengadaan',
+                'start_datetime' => '2026-04-20 00:00:00',
+                'end_datetime' => '2026-07-01 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-24 19:12:07',
+                'updated_at' => '2026-07-02 08:12:01',
+            ),
+            17 => 
+            array (
+                'id' => 41,
+                'project_id' => 31,
+                'activity_name' => 'Pengumuman Tender Pengadaan Pengadaan Layanan WhatsApp Business API dan Omni Channel CRM',
+                'start_datetime' => '2026-07-02 09:00:00',
+                'end_datetime' => '2026-07-03 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-24 19:12:07',
+                'updated_at' => '2026-07-02 08:19:55',
+            ),
+            18 => 
+            array (
+                'id' => 42,
+                'project_id' => 31,
+                'activity_name' => 'Penerimaan Penawaran Pengadaan Jasa Pengadaan Layanan WhatsApp Business API dan Omni Channel CRM',
+                'start_datetime' => '2026-07-02 00:00:00',
+                'end_datetime' => '2026-07-06 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-24 19:12:07',
+                'updated_at' => '2026-07-02 08:19:55',
+            ),
+            19 => 
+            array (
+                'id' => 43,
+                'project_id' => 31,
+                'activity_name' => 'Evaluasi & Nego Pengadaan Jasa Chatbot AI & Omnichannel',
+                'start_datetime' => '2026-07-06 00:00:00',
+                'end_datetime' => '2026-07-08 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-24 19:12:07',
+                'updated_at' => '2026-07-02 08:19:55',
+            ),
+            20 => 
+            array (
+                'id' => 44,
+                'project_id' => 32,
+                'activity_name' => '1. Pengumuman sourcing pengadaan stiker',
+                'start_datetime' => '2026-06-25 16:00:00',
+                'end_datetime' => '2026-06-26 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-25 16:33:42',
+                'updated_at' => '2026-06-25 16:51:40',
+            ),
+            21 => 
+            array (
+                'id' => 45,
+                'project_id' => 32,
+                'activity_name' => '2. Penerimaan penawaran',
+                'start_datetime' => '2026-06-25 00:00:00',
+                'end_datetime' => '2026-06-26 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-25 16:33:42',
+                'updated_at' => '2026-06-25 16:33:42',
+            ),
+            22 => 
+            array (
+                'id' => 46,
+                'project_id' => 32,
+                'activity_name' => '3. Evaluasi dan nego',
+                'start_datetime' => '2026-06-26 00:00:00',
+                'end_datetime' => '2026-06-27 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-25 16:33:42',
+                'updated_at' => '2026-06-25 16:33:42',
+            ),
+            23 => 
+            array (
+                'id' => 47,
+                'project_id' => 32,
+                'activity_name' => '4. Penunjukan vendor pengadaan stiker',
+                'start_datetime' => '2026-06-30 00:00:00',
+                'end_datetime' => '2026-07-01 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-06-25 16:33:42',
+                'updated_at' => '2026-06-25 16:51:40',
+            ),
+            24 => 
+            array (
+                'id' => 51,
+                'project_id' => 31,
+                'activity_name' => 'Penunjukan Vendor ',
+                'start_datetime' => '2026-07-08 00:00:00',
+                'end_datetime' => '2026-07-09 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-02 08:12:01',
+                'updated_at' => '2026-07-02 08:19:55',
+            ),
+            25 => 
+            array (
+                'id' => 52,
+                'project_id' => 45,
+                'activity_name' => 'test',
+                'start_datetime' => '2026-07-07 00:00:00',
+                'end_datetime' => '2026-07-28 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-06 17:11:40',
+                'updated_at' => '2026-07-06 17:11:40',
+            ),
+            26 => 
+            array (
+                'id' => 53,
+                'project_id' => 47,
+                'activity_name' => 'test',
+                'start_datetime' => '2026-07-07 00:00:00',
+                'end_datetime' => '2026-07-29 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-06 17:22:06',
+                'updated_at' => '2026-07-06 17:22:06',
+            ),
+            27 => 
+            array (
+                'id' => 54,
+                'project_id' => 48,
+                'activity_name' => 'Sourcing Vendor - Project Reposisi Outdoor AC - Outlet Muara karang',
+                'start_datetime' => '2026-07-08 00:00:00',
+                'end_datetime' => '2026-07-09 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-08 20:28:44',
+                'updated_at' => '2026-07-08 20:28:44',
+            ),
+            28 => 
+            array (
+                'id' => 55,
+                'project_id' => 48,
+                'activity_name' => 'Penerimaan penawaran - Project Reposisi Outdoor AC - Outlet Muara Karang',
+                'start_datetime' => '2026-07-09 00:00:00',
+                'end_datetime' => '2026-07-10 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-08 20:35:45',
+                'updated_at' => '2026-07-08 20:35:45',
+            ),
+            29 => 
+            array (
+                'id' => 56,
+                'project_id' => 48,
+                'activity_name' => 'Evaluasi Penawaran - Project Reposisi Outdoor AC - Outlet Muara Karang',
+                'start_datetime' => '2026-07-10 00:00:00',
+                'end_datetime' => '2026-07-11 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-08 20:35:45',
+                'updated_at' => '2026-07-08 20:35:45',
+            ),
+            30 => 
+            array (
+                'id' => 57,
+                'project_id' => 48,
+                'activity_name' => 'Penunjukan Vendor  - Project Reposisi Outdoor AC - Outlet Muara Karang',
+                'start_datetime' => '2026-07-10 00:00:00',
+                'end_datetime' => '2026-07-11 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-08 20:35:45',
+                'updated_at' => '2026-07-08 20:35:45',
+            ),
+            31 => 
+            array (
+                'id' => 58,
+                'project_id' => 52,
+                'activity_name' => ' Pengumuman sourcing pengadaan SERAGAM FACILITY DAN PROCUREMENT',
+                'start_datetime' => '2026-07-16 00:00:00',
+                'end_datetime' => '2026-07-17 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-16 11:09:42',
+                'updated_at' => '2026-07-16 11:09:42',
+            ),
+            32 => 
+            array (
+                'id' => 59,
+                'project_id' => 52,
+                'activity_name' => 'Penerimaan penawaran SERAGAM FACILITY DAN PROCUREMENT',
+                'start_datetime' => '2026-07-17 00:00:00',
+                'end_datetime' => '2026-07-21 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-16 11:09:42',
+                'updated_at' => '2026-07-16 11:09:42',
+            ),
+            33 => 
+            array (
+                'id' => 60,
+                'project_id' => 52,
+                'activity_name' => 'Evaluasi dan nego SERAGAM FACILITY DAN PROCUREMENT',
+                'start_datetime' => '2026-07-21 00:00:00',
+                'end_datetime' => '2026-07-23 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-16 11:09:42',
+                'updated_at' => '2026-07-16 11:09:42',
+            ),
+            34 => 
+            array (
+                'id' => 61,
+                'project_id' => 52,
+                'activity_name' => 'Penunjukan vendor pengadaan SERAGAM FACILITY DAN PROCUREMENT',
+                'start_datetime' => '2026-07-24 00:00:00',
+                'end_datetime' => '2026-07-25 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-16 11:09:42',
+                'updated_at' => '2026-07-16 11:09:42',
+            ),
+            35 => 
+            array (
+                'id' => 62,
+                'project_id' => 54,
+                'activity_name' => 'Pengumuman sourcing pengadaan Renovasi Outlet Menteng',
+                'start_datetime' => '2026-07-17 00:00:00',
+                'end_datetime' => '2026-07-21 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-17 20:46:35',
+                'updated_at' => '2026-07-17 20:46:35',
+            ),
+            36 => 
+            array (
+                'id' => 63,
+                'project_id' => 54,
+                'activity_name' => 'Penerimaan penawaran Renovasi Outlet Menteng',
+                'start_datetime' => '2026-07-21 00:00:00',
+                'end_datetime' => '2026-07-23 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-17 20:46:35',
+                'updated_at' => '2026-07-17 20:46:35',
+            ),
+            37 => 
+            array (
+                'id' => 64,
+                'project_id' => 54,
+                'activity_name' => 'Evaluasi dan nego',
+                'start_datetime' => '2026-07-23 00:00:00',
+                'end_datetime' => '2026-07-24 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-17 20:46:35',
+                'updated_at' => '2026-07-17 20:46:35',
+            ),
+            38 => 
+            array (
+                'id' => 65,
+                'project_id' => 54,
+                'activity_name' => 'Penunjukan vendor pengadaan',
+                'start_datetime' => '2026-07-24 00:00:00',
+                'end_datetime' => '2026-07-25 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-17 20:46:35',
+                'updated_at' => '2026-07-17 20:46:35',
+            ),
+            39 => 
+            array (
+                'id' => 66,
+                'project_id' => 56,
+                'activity_name' => 'schedule 1',
+                'start_datetime' => '2026-07-22 00:00:00',
+                'end_datetime' => '2026-07-30 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-21 17:31:01',
+                'updated_at' => '2026-07-21 17:31:01',
+            ),
+            40 => 
+            array (
+                'id' => 67,
+                'project_id' => 57,
+                'activity_name' => 'Schedule 1',
+                'start_datetime' => '2026-07-22 00:00:00',
+                'end_datetime' => '2026-07-31 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-21 17:39:56',
+                'updated_at' => '2026-07-21 17:39:56',
+            ),
+            41 => 
+            array (
+                'id' => 68,
+                'project_id' => 63,
+                'activity_name' => 'Sourcing Vendor',
+                'start_datetime' => '2026-07-25 00:00:00',
+                'end_datetime' => '2026-07-28 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-07-25 08:09:19',
+                'updated_at' => '2026-07-25 08:09:19',
+            ),
+            42 => 
+            array (
+                'id' => 69,
+                'project_id' => 76,
+                'activity_name' => 'testing',
+                'start_datetime' => '2026-08-05 00:00:00',
+                'end_datetime' => '2026-08-31 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-08-04 10:16:21',
+                'updated_at' => '2026-08-04 10:16:21',
+            ),
+            43 => 
+            array (
+                'id' => 70,
+                'project_id' => 77,
+                'activity_name' => 'testing IT',
+                'start_datetime' => '2026-08-06 00:00:00',
+                'end_datetime' => '2026-08-31 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-08-04 10:23:06',
+                'updated_at' => '2026-08-04 10:23:06',
+            ),
+            44 => 
+            array (
+                'id' => 71,
+                'project_id' => 95,
+                'activity_name' => 'pengadaan telur 19/8',
+                'start_datetime' => '2026-08-18 00:00:00',
+                'end_datetime' => '2026-08-19 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-08-18 09:45:51',
+                'updated_at' => '2026-08-18 09:45:51',
+            ),
+            45 => 
+            array (
+                'id' => 72,
+                'project_id' => 99,
+                'activity_name' => 'Pengadaan Telur',
+                'start_datetime' => '2026-08-19 12:00:00',
+                'end_datetime' => '2026-08-19 17:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-08-19 13:52:19',
+                'updated_at' => '2026-08-19 13:52:19',
+            ),
+            46 => 
+            array (
+                'id' => 73,
+                'project_id' => 101,
+            'activity_name' => 'Pengadaan Kebutuhan Natal 2026 - ATK (isolasi & Lem)',
+                'start_datetime' => '2026-08-24 00:00:00',
+                'end_datetime' => '2026-08-31 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-08-20 11:55:34',
+                'updated_at' => '2026-08-20 11:55:34',
+            ),
+            47 => 
+            array (
+                'id' => 74,
+                'project_id' => 102,
+            'activity_name' => 'Pengadaan Kebutuhan Natal 2026 - ATK (Sealing Tape)',
+                'start_datetime' => '2026-08-24 00:00:00',
+                'end_datetime' => '2026-08-31 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-08-20 12:01:02',
+                'updated_at' => '2026-08-20 12:01:02',
+            ),
+            48 => 
+            array (
+                'id' => 75,
+                'project_id' => 103,
+                'activity_name' => 'Pengadaan Telur',
+                'start_datetime' => '2026-08-21 08:00:00',
+                'end_datetime' => '2026-08-21 13:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-08-20 13:17:43',
+                'updated_at' => '2026-08-20 13:17:43',
+            ),
+            49 => 
+            array (
+                'id' => 76,
+                'project_id' => 108,
+                'activity_name' => 'Pengadaan Telur',
+                'start_datetime' => '2026-08-22 08:00:00',
+                'end_datetime' => '2026-08-22 11:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-08-21 13:32:55',
+                'updated_at' => '2026-08-21 13:32:55',
+            ),
+            50 => 
+            array (
+                'id' => 77,
+                'project_id' => 109,
+                'activity_name' => 'Pengadaan Telur',
+                'start_datetime' => '2026-08-24 09:00:00',
+                'end_datetime' => '2026-08-24 13:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-08-21 13:38:30',
+                'updated_at' => '2026-08-21 13:38:30',
+            ),
+            51 => 
+            array (
+                'id' => 78,
+                'project_id' => 144,
+                'activity_name' => 'Pengumuman sourcing pengadaan Pekerjaan Renovasi / Partisi K3 41 TEKNO',
+                'start_datetime' => '2026-09-02 00:00:00',
+                'end_datetime' => '2026-09-03 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-09-02 21:10:58',
+                'updated_at' => '2026-09-02 21:10:58',
+            ),
+            52 => 
+            array (
+                'id' => 79,
+                'project_id' => 144,
+                'activity_name' => 'Penerimaan penawaran',
+                'start_datetime' => '2026-09-03 00:00:00',
+                'end_datetime' => '2026-09-04 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-09-02 21:10:58',
+                'updated_at' => '2026-09-02 21:10:58',
+            ),
+            53 => 
+            array (
+                'id' => 80,
+                'project_id' => 144,
+                'activity_name' => 'Evaluasi dan nego',
+                'start_datetime' => '2026-09-03 00:00:00',
+                'end_datetime' => '2026-09-04 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-09-02 21:10:58',
+                'updated_at' => '2026-09-02 21:10:58',
+            ),
+            54 => 
+            array (
+                'id' => 81,
+                'project_id' => 144,
+                'activity_name' => 'Penunjukan vendor pengadaan',
+                'start_datetime' => '2026-09-04 00:00:00',
+                'end_datetime' => '2026-09-07 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-09-02 21:10:58',
+                'updated_at' => '2026-09-02 21:10:58',
+            ),
+            55 => 
+            array (
+                'id' => 82,
+                'project_id' => 155,
+                'activity_name' => 'activy1',
+                'start_datetime' => '2026-09-17 00:00:00',
+                'end_datetime' => '2026-09-30 00:00:00',
+                'is_mandatory' => 1,
+                'order_sequence' => 0,
+                'created_at' => '2026-09-07 11:42:37',
+                'updated_at' => '2026-09-07 11:42:37',
+            ),
+        ));
+        
+        
+    }
+}
