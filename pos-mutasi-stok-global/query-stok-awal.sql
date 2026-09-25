@@ -21,10 +21,8 @@ FROM
 				'BK',
 				'CK',
 				'CI',
-				'ATMK',
 				'BB',
 				'BE',
-				'BN',
 				'BR',
 				'BA',
 				'CH',
@@ -53,7 +51,6 @@ FROM
 				'MN',
 				'MJ',
 				'MTH',
-				'MC',
 				'PG',
 				'PE',
 				'PL',
@@ -81,7 +78,6 @@ FROM
 				'TN',
 				'TD',
 				'VB',
-				'WY',
 				'BI',
 				'GS',
 				'GY',
@@ -113,9 +109,10 @@ FROM
 				'TS',
 				'WTC'
 			)
+			AND su.kode LIKE '0_______'
 			AND jenis != 0
-			AND created BETWEEN DATE_SUB('2026-01-01', INTERVAL 3 YEAR)
-			AND '2026-01-01'
+			AND created BETWEEN DATE_SUB('2026-08-01', INTERVAL 3 YEAR)
+			AND '2026-08-01'
 		GROUP BY
 			owner,
 			kode
@@ -124,8 +121,8 @@ FROM
 	AND sc.`owner` = su.owner
 WHERE
 	jenis != 0
-	AND created BETWEEN DATE_SUB('2026-01-01', INTERVAL 3 YEAR)
-	AND '2026-01-01'
+	AND created BETWEEN DATE_SUB('2026-08-01', INTERVAL 3 YEAR)
+	AND '2026-08-01'
 	AND sc.owner IN (
 		'AD',
 		'AS',
@@ -136,10 +133,8 @@ WHERE
 		'BK',
 		'CK',
 		'CI',
-		'ATMK',
 		'BB',
 		'BE',
-		'BN',
 		'BR',
 		'BA',
 		'CH',
@@ -168,7 +163,6 @@ WHERE
 		'MN',
 		'MJ',
 		'MTH',
-		'MC',
 		'PG',
 		'PE',
 		'PL',
@@ -196,7 +190,6 @@ WHERE
 		'TN',
 		'TD',
 		'VB',
-		'WY',
 		'BI',
 		'GS',
 		'GY',
@@ -228,6 +221,6 @@ WHERE
 		'TS',
 		'WTC'
 	)
-	AND sc.kode = '50010001'
+	AND kode = '00000901'
 GROUP BY
 	su.k
