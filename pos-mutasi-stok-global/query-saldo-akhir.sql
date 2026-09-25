@@ -113,13 +113,9 @@ FROM
 				'TS',
 				'WTC'
 			)
-			AND (
-				su.kode LIKE '4_______'
-				or su.kode LIKE '5_______'
-			)
 			AND jenis != 0
-			AND DATE(created) BETWEEN DATE_SUB('2026-01-31', INTERVAL 3 YEAR)
-			AND '2026-01-31'
+			AND DATE(created) BETWEEN DATE_SUB('2026-08-01', INTERVAL 3 YEAR)
+			AND '2026-08-31'
 		GROUP BY
 			owner,
 			kode
@@ -128,8 +124,8 @@ FROM
 	AND sc.`owner` = su.owner
 WHERE
 	jenis != 0
-	AND DATE(created) BETWEEN DATE_SUB('2026-01-31', INTERVAL 3 YEAR)
-	AND '2026-01-31'
+	AND DATE(created) BETWEEN DATE_SUB('2026-08-01', INTERVAL 3 YEAR)
+	AND '2026-08-31'
 	AND sc.owner in (
 		'AD',
 		'AS',
@@ -232,6 +228,6 @@ WHERE
 		'TS',
 		'WTC'
 	)
-	AND sc.kode = '50010001'
+	AND sc.kode = '01010002'
 GROUP BY
 	su.k
