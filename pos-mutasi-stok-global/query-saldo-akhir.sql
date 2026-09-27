@@ -1,17 +1,17 @@
 SELECT
 	sc.kode,
-	sum(saldo) as saldo
+	sc.owner sum(saldo) AS saldo
 FROM
-	stok_card as sc
+	stok_card AS sc
 	INNER JOIN (
 		SELECT
 			kode AS k,
 			MAX(id) AS max_id,
 			owner
 		FROM
-			stok_card as su
+			stok_card AS su
 		WHERE
-			su.owner in (
+			su.owner IN (
 				'AD',
 				'AS',
 				'AP',
@@ -19,12 +19,15 @@ FROM
 				'BL',
 				'BO',
 				'BK',
+				'CC',
+				'CS',
 				'CK',
 				'CI',
-				'ATMK',
+				'HGAS',
+				'HGAR',
+				'HGSO',
 				'BB',
 				'BE',
-				'BN',
 				'BR',
 				'BA',
 				'CH',
@@ -53,7 +56,6 @@ FROM
 				'MN',
 				'MJ',
 				'MTH',
-				'MC',
 				'PG',
 				'PE',
 				'PL',
@@ -81,7 +83,6 @@ FROM
 				'TN',
 				'TD',
 				'VB',
-				'WY',
 				'BI',
 				'GS',
 				'GY',
@@ -90,6 +91,7 @@ FROM
 				'GV',
 				'GR',
 				'HI',
+				'HO',
 				'JS',
 				'JGJ',
 				'KW',
@@ -114,7 +116,7 @@ FROM
 				'WTC'
 			)
 			AND jenis != 0
-			AND DATE(created) BETWEEN DATE_SUB('2026-08-01', INTERVAL 3 YEAR)
+			AND DATE(created) BETWEEN DATE_SUB('2026-08-31', INTERVAL 3 YEAR)
 			AND '2026-08-31'
 		GROUP BY
 			owner,
@@ -124,9 +126,9 @@ FROM
 	AND sc.`owner` = su.owner
 WHERE
 	jenis != 0
-	AND DATE(created) BETWEEN DATE_SUB('2026-08-01', INTERVAL 3 YEAR)
+	AND DATE(created) BETWEEN DATE_SUB('2026-08-31', INTERVAL 3 YEAR)
 	AND '2026-08-31'
-	AND sc.owner in (
+	AND sc.owner IN (
 		'AD',
 		'AS',
 		'AP',
@@ -134,12 +136,15 @@ WHERE
 		'BL',
 		'BO',
 		'BK',
+		'CC',
+		'CS',
 		'CK',
 		'CI',
-		'ATMK',
+		'HGAS',
+		'HGAR',
+		'HGSO',
 		'BB',
 		'BE',
-		'BN',
 		'BR',
 		'BA',
 		'CH',
@@ -168,7 +173,6 @@ WHERE
 		'MN',
 		'MJ',
 		'MTH',
-		'MC',
 		'PG',
 		'PE',
 		'PL',
@@ -196,7 +200,6 @@ WHERE
 		'TN',
 		'TD',
 		'VB',
-		'WY',
 		'BI',
 		'GS',
 		'GY',
@@ -205,6 +208,7 @@ WHERE
 		'GV',
 		'GR',
 		'HI',
+		'HO',
 		'JS',
 		'JGJ',
 		'KW',
@@ -228,6 +232,6 @@ WHERE
 		'TS',
 		'WTC'
 	)
-	AND sc.kode = '01010002'
+	AND sc.kode = '03010100'
 GROUP BY
 	su.k
