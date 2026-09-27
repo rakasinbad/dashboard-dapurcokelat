@@ -1,17 +1,17 @@
 SELECT
 	sc.kode,
-	sum(saldo) AS saldo
+	sum(saldo) as saldo
 FROM
-	stok_card AS sc
+	stok_card as sc
 	INNER JOIN (
 		SELECT
 			kode AS k,
 			MAX(id) AS max_id,
 			owner
 		FROM
-			stok_card AS su
+			stok_card as su
 		WHERE
-			su.owner IN (
+			su.owner in (
 				'AD',
 				'AS',
 				'AP',
@@ -19,8 +19,13 @@ FROM
 				'BL',
 				'BO',
 				'BK',
+				'CC',
+				'CS',
 				'CK',
 				'CI',
+				'HGAS',
+				'HGAR',
+				'HGSO',
 				'BB',
 				'BE',
 				'BR',
@@ -86,6 +91,7 @@ FROM
 				'GV',
 				'GR',
 				'HI',
+				'HO',
 				'JS',
 				'JGJ',
 				'KW',
@@ -109,10 +115,9 @@ FROM
 				'TS',
 				'WTC'
 			)
-			AND su.kode LIKE '0_______'
 			AND jenis != 0
 			AND created BETWEEN DATE_SUB('2026-08-01', INTERVAL 3 YEAR)
-			AND '2026-08-01'
+			and '2026-08-01'
 		GROUP BY
 			owner,
 			kode
@@ -122,8 +127,8 @@ FROM
 WHERE
 	jenis != 0
 	AND created BETWEEN DATE_SUB('2026-08-01', INTERVAL 3 YEAR)
-	AND '2026-08-01'
-	AND sc.owner IN (
+	and '2026-08-01'
+	AND sc.owner in (
 		'AD',
 		'AS',
 		'AP',
@@ -131,8 +136,13 @@ WHERE
 		'BL',
 		'BO',
 		'BK',
+		'CC',
+		'CS',
 		'CK',
 		'CI',
+		'HGAS',
+		'HGAR',
+		'HGSO',
 		'BB',
 		'BE',
 		'BR',
@@ -198,6 +208,7 @@ WHERE
 		'GV',
 		'GR',
 		'HI',
+		'HO',
 		'JS',
 		'JGJ',
 		'KW',
@@ -221,6 +232,6 @@ WHERE
 		'TS',
 		'WTC'
 	)
-	AND kode = '00000901'
+	AND kode = '50020011'
 GROUP BY
 	su.k
