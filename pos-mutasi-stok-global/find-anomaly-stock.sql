@@ -25,7 +25,7 @@ WITH ranked AS (
   FROM
     stok_card
   WHERE
-    kode = '40080402'
+    kode = '50020011'
     AND owner IN (
       'AD',
       'AS',
@@ -34,12 +34,15 @@ WITH ranked AS (
       'BL',
       'BO',
       'BK',
+      'CC',
+      'CS',
       'CK',
       'CI',
-      'ATMK',
+      'HGAS',
+      'HGAR',
+      'HGSO',
       'BB',
       'BE',
-      'BN',
       'BR',
       'BA',
       'CH',
@@ -68,7 +71,6 @@ WITH ranked AS (
       'MN',
       'MJ',
       'MTH',
-      'MC',
       'PG',
       'PE',
       'PL',
@@ -96,7 +98,6 @@ WITH ranked AS (
       'TN',
       'TD',
       'VB',
-      'WY',
       'BI',
       'GS',
       'GY',
@@ -105,6 +106,7 @@ WITH ranked AS (
       'GV',
       'GR',
       'HI',
+      'HO',
       'JS',
       'JGJ',
       'KW',
@@ -128,7 +130,7 @@ WITH ranked AS (
       'TS',
       'WTC'
     )
-    AND created BETWEEN '2026-02-01 00:00:00'
+    AND created BETWEEN '2022-01-01 00:00:00'
     AND '2026-08-31 23:59:59'
 ),
 anomalies AS (
