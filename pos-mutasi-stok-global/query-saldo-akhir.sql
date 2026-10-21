@@ -1,6 +1,7 @@
 SELECT
 	sc.kode,
-	sc.owner sum(saldo) AS saldo
+	sc.owner,
+	sum(saldo) AS saldo
 FROM
 	stok_card AS sc
 	INNER JOIN (
