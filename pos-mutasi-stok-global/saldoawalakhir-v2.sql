@@ -11,125 +11,7 @@ WITH prev_month AS (
   FROM
     dci.stok_card
   WHERE
-    kode = '50020011'
-    AND owner IN (
-      'AD',
-      'AS',
-      'AP',
-      'AG',
-      'BL',
-      'BO',
-      'BK',
-      'CC',
-      'CS',
-      'CK',
-      'CI',
-      'HGAS',
-      'HGAR',
-      'HGSO',
-      'BB',
-      'BE',
-      'BR',
-      'BA',
-      'CH',
-      'BU',
-      'CD',
-      'CP',
-      'DY',
-      'DA',
-      'DU',
-      'DK',
-      'DG',
-      'GM',
-      'GRR',
-      'GN',
-      'GW',
-      'JB',
-      'JU',
-      'JW',
-      'JG',
-      'KUR',
-      'KD',
-      'KT',
-      'KP',
-      'KC',
-      'MD',
-      'MN',
-      'MJ',
-      'MTH',
-      'PG',
-      'PE',
-      'PL',
-      'PDR',
-      'PRT',
-      'PS',
-      'PU',
-      'PT',
-      'PN',
-      'PM',
-      'RM',
-      'RN',
-      'RK',
-      'SB',
-      'SC',
-      'SD',
-      'SK',
-      'SRT',
-      'TM',
-      'DT',
-      'TK',
-      'TL',
-      'TG',
-      'TR',
-      'TN',
-      'TD',
-      'VB',
-      'BI',
-      'GS',
-      'GY',
-      'GO',
-      'GF',
-      'GV',
-      'GR',
-      'HI',
-      'HO',
-      'JS',
-      'JGJ',
-      'KW',
-      'KG',
-      'LB',
-      'ML',
-      'ME',
-      'MT',
-      'MG',
-      'MS',
-      'OT',
-      'B2B',
-      'B2BS',
-      'DB',
-      'SY',
-      'SMG',
-      'ST',
-      'TP',
-      'TU',
-      'TB',
-      'TS',
-      'WTC'
-    )
-    AND created BETWEEN '2026-07-01 00:00:00'
-    AND '2026-07-31 23:59:59'
-    AND jenis != '0'
-),
--- Current month's transactions per owner
-curr_transactions AS (
-  SELECT
-    owner,
-    SUM(kredit) AS total_kredit,
-    SUM(debet) AS total_debet
-  FROM
-    dci.stok_card
-  WHERE
-    kode = '50020011'
+    kode = '52220001'
     AND owner IN (
       'AD',
       'AS',
@@ -236,6 +118,124 @@ curr_transactions AS (
     )
     AND created BETWEEN '2026-08-01 00:00:00'
     AND '2026-08-31 23:59:59'
+    AND jenis != '0'
+),
+-- Current month's transactions per owner
+curr_transactions AS (
+  SELECT
+    owner,
+    SUM(kredit) AS total_kredit,
+    SUM(debet) AS total_debet
+  FROM
+    dci.stok_card
+  WHERE
+    kode = '52220001'
+    AND owner IN (
+      'AD',
+      'AS',
+      'AP',
+      'AG',
+      'BL',
+      'BO',
+      'BK',
+      'CC',
+      'CS',
+      'CK',
+      'CI',
+      'HGAS',
+      'HGAR',
+      'HGSO',
+      'BB',
+      'BE',
+      'BR',
+      'BA',
+      'CH',
+      'BU',
+      'CD',
+      'CP',
+      'DY',
+      'DA',
+      'DU',
+      'DK',
+      'DG',
+      'GM',
+      'GRR',
+      'GN',
+      'GW',
+      'JB',
+      'JU',
+      'JW',
+      'JG',
+      'KUR',
+      'KD',
+      'KT',
+      'KP',
+      'KC',
+      'MD',
+      'MN',
+      'MJ',
+      'MTH',
+      'PG',
+      'PE',
+      'PL',
+      'PDR',
+      'PRT',
+      'PS',
+      'PU',
+      'PT',
+      'PN',
+      'PM',
+      'RM',
+      'RN',
+      'RK',
+      'SB',
+      'SC',
+      'SD',
+      'SK',
+      'SRT',
+      'TM',
+      'DT',
+      'TK',
+      'TL',
+      'TG',
+      'TR',
+      'TN',
+      'TD',
+      'VB',
+      'BI',
+      'GS',
+      'GY',
+      'GO',
+      'GF',
+      'GV',
+      'GR',
+      'HI',
+      'HO',
+      'JS',
+      'JGJ',
+      'KW',
+      'KG',
+      'LB',
+      'ML',
+      'ME',
+      'MT',
+      'MG',
+      'MS',
+      'OT',
+      'B2B',
+      'B2BS',
+      'DB',
+      'SY',
+      'SMG',
+      'ST',
+      'TP',
+      'TU',
+      'TB',
+      'TS',
+      'WTC'
+    )
+    AND created BETWEEN '2026-09-01 00:00:00'
+    AND '2026-10-31 23:59:59'
     AND jenis != '0'
   GROUP BY
     owner
@@ -359,8 +359,8 @@ curr_month AS (
       'TS',
       'WTC'
     )
-    AND created BETWEEN '2026-08-01 00:00:00'
-    AND '2026-08-31 23:59:59'
+    AND created BETWEEN '2026-09-01 00:00:00'
+    AND '2026-10-31 23:59:59'
     AND jenis != '0'
 )
 SELECT
