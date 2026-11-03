@@ -1,0 +1,157 @@
+projects
+id	BIGINT(20) UNSIGNED
+project_code	VARCHAR(50)
+title	VARCHAR(255)
+description	TEXT
+department	VARCHAR(100)
+source_pr_number	VARCHAR(100)
+estimated_budget	DECIMAL(15,2)
+created_by	BIGINT(20) UNSIGNED
+approved_by	BIGINT(20) UNSIGNED
+status	enum('draft','requested','approval_in_progress','approved','rejected','rfq_created','closed')
+approved_at	TIMESTAMP
+expired_at	TIMESTAMP
+rejection_reason	TEXT
+remark	TEXT
+location_id	BIGINT(20) UNSIGNED
+created_at	TIMESTAMP
+updated_at	TIMESTAMP
+deleted_at	TIMESTAMP
+sub_department	VARCHAR(100)
+
+project_items
+id	BIGINT(20) UNSIGNED
+project_id	BIGINT(20) UNSIGNED
+item_name	VARCHAR(500)
+pr_item_reference_id	VARCHAR(100)
+quantity	DECIMAL(12,2)
+uom	VARCHAR(50)
+specs	LONGTEXT
+target_unit_price	DECIMAL(15,2)
+target_unit_price_max	DECIMAL(15,2)
+created_at	TIMESTAMP
+updated_at	TIMESTAMP
+
+project_item_attachments
+id	BIGINT(20) UNSIGNED
+project_item_id	BIGINT(20) UNSIGNED
+file_path	VARCHAR(255)
+file_name	VARCHAR(255)
+file_type	VARCHAR(255)
+file_size	BIGINT(20) UNSIGNED
+created_at	TIMESTAMP
+updated_at	TIMESTAMP
+
+project_approval_entries
+id	BIGINT(20) UNSIGNED
+project_id	BIGINT(20) UNSIGNED
+approver_id	BIGINT(20) UNSIGNED
+status	enum('pending','approved','rejected')
+notes	TEXT
+processed_at	TIMESTAMP
+created_at	TIMESTAMP
+updated_at	TIMESTAMP
+
+rfqs
+id	BIGINT(20) UNSIGNED
+project_id	BIGINT(20) UNSIGNED
+rfq_number	VARCHAR(50)
+type	enum('open_tender','invited_only')
+status	enum('draft','published','negotiation','evaluation','awarded','closed','cancelled','partial_award')
+location_id	BIGINT(20) UNSIGNED
+project_type	VARCHAR(255)
+published_at	TIMESTAMP
+created_at	TIMESTAMP
+updated_at	TIMESTAMP
+deleted_at	TIMESTAMP
+remark	TEXT
+external_notes	TEXT
+
+rfq_invitations
+id	BIGINT(20) UNSIGNED
+rfq_id	BIGINT(20) UNSIGNED
+vendor_id	BIGINT(20) UNSIGNED
+invited_at	TIMESTAMP
+status	enum('pending','viewed','accepted','declined')
+created_at	TIMESTAMP
+updated_at	TIMESTAMP
+
+rfps
+id	BIGINT(20) UNSIGNED
+project_id	BIGINT(20) UNSIGNED
+rfp_number	VARCHAR(50)
+title	VARCHAR(255)
+description	TEXT
+tender_method	enum('open','invited')
+technical_weightage	INT(11)
+financial_weightage	INT(11)
+submission_deadline	TIMESTAMP
+published_at	TIMESTAMP
+status	enum('draft','published','negotiation','technical_evaluation','financial_opening','awarded','closed','cancelled','partial_award')
+location_id	BIGINT(20) UNSIGNED
+created_at	TIMESTAMP
+updated_at	TIMESTAMP
+deleted_at	TIMESTAMP
+remark	TEXT
+external_notes	TEXT
+
+rfp_submissions
+id	BIGINT(20) UNSIGNED
+rfp_id	BIGINT(20) UNSIGNED
+vendor_id	BIGINT(20) UNSIGNED
+quotation_id	BIGINT(20) UNSIGNED
+submitted_at	TIMESTAMP
+status	enum('invited','accepted','submitted','technical_scored','shortlisted','rejected','awarded')
+technical_score_raw	DECIMAL(5,2)
+technical_score_weighted	DECIMAL(5,2)
+offered_price	DECIMAL(15,2)
+financial_score_weighted	DECIMAL(5,2)
+total_combined_score	DECIMAL(5,2)
+evaluator_notes	TEXT
+created_at	TIMESTAMP
+updated_at	TIMESTAMP
+deleted_at	TIMESTAMP
+
+quotations
+id	BIGINT(20) UNSIGNED
+quotable_type	VARCHAR(255)
+quotable_id	BIGINT(20) UNSIGNED
+vendor_id	BIGINT(20) UNSIGNED
+quotation_number	VARCHAR(100)
+total_amount	DECIMAL(15,2)
+valid_until	DATE
+payment_terms	VARCHAR(255)
+proposal_file_path	VARCHAR(2048)
+current_version	INT(11)
+delivery_lead_time	INT(10) UNSIGNED
+status	enum('draft','submitted','revised','rejected','awarded','negotiation')
+is_finalized	TINYINT(1)
+location_id	BIGINT(20) UNSIGNED
+submitted_at	TIMESTAMP
+created_at	TIMESTAMP
+updated_at	TIMESTAMP
+deleted_at	TIMESTAMP
+
+quotation_versions
+id	BIGINT(20) UNSIGNED
+quotation_id	BIGINT(20) UNSIGNED
+version_number	INT(11)
+total_amount	DECIMAL(15,2)
+items_snapshot	LONGTEXT
+proposal_file_path	VARCHAR(255)
+created_by	BIGINT(20) UNSIGNED
+created_at	TIMESTAMP
+
+quotation_items
+id	BIGINT(20) UNSIGNED
+quotation_id	BIGINT(20) UNSIGNED
+project_item_id	BIGINT(20) UNSIGNED
+awarded_vendor_id	BIGINT(20) UNSIGNED
+tender_id	BIGINT(20) UNSIGNED
+offered_qty	DECIMAL(12,2)
+offered_unit_price	DECIMAL(15,2)
+tax_percentage	DECIMAL(5,2)
+total_price	DECIMAL(15,2)
+remarks	TEXT
+created_at	TIMESTAMP
+updated_at	TIMESTAMP
